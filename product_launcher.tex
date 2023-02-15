@@ -1,0 +1,870 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{pscyr}
+\usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+%\usepackage{wallpaper}
+\usepackage{pifont}
+%\usepackage{ulem}
+\usepackage{cancel}
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{comment}
+%\usepackage{background}
+%\usepackage{subcaption}
+\usepackage{tikz}
+
+\renewcommand\theequation{{\color{blue}\arabic{equation}}}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+%\def\be{\numberwithin{equation}{section}\begin{eqnarray}}
+%\def\ee{\end{eqnarray}}
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+
+\def\trademark{{\hbox{\tiny TM}}}
+\def\dim{\textmd{dim} \hskip 3 pt}
+\def\p{\partial}
+\def\R{\Rightarrow}
+\def\ph{\varphi}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{definition}
+\newtheorem{Def}[thm]{Definition}
+
+%\setcounter{section}{-1}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\cross}{\ding{55}}%
+
+
+
+
+
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][\ ]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\definecolor{backgroundcyan}{HTML}{61B1D2}     % 97, 177, 210
+\definecolor{modcyan}{HTML}{76DEF8}            % 118, 222, 248
+\definecolor{mygolden}{HTML}{F4E95D}           % 244, 233, 93
+\definecolor{mytruegolden}{HTML}{DEAA21}       % 222, 170, 33
+\definecolor{theirgolden}{HTML}{C1D68F}        % 193, 214, 143
+\definecolor{coolestblue}{HTML}{034775}        % 3, 71, 117
+\definecolor{modgreen}{HTML}{0CE6B8}           % 12, 230, 184
+\definecolor{newgolden}{HTML}{A27009}           % 162, 112, 9
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%$\sqrt[a]{b} \quad \oldsqrt[a]{b}$
+
+
+\begin{document}
+
+
+\baselineskip14pt
+\bigskip
+
+
+
+
+\title{Product launcher's guide}
+
+
+\maketitle
+
+%\tableofcontents
+%\bigskip
+%\bigskip
+
+
+
+
+A \textit{product} is anything that is made to be used by others. Examples of products are: browser game, investment firm, coffee shop, charity. 
+
+
+
+Every product consists of the three layers: \textit{concept}, \textit{implementation}, \textit{promotion}. These are three different directions of work, executed by different people --- concept can be formulated and reformulated only by product owner, implementation is done by designers and engineers, promotion is done by product owner and marketing team. Quality of work varies from layer to layer: there are products with great concept, bad implementation and mediocre promotion; there are products with bad concept, bad implementation and outstanding promotion; etc. Even when a concept is amazing, flawed implementation or promotion may ruin the product.
+
+
+
+
+
+We call a concept \textit{lucrative} if the two following statements are true: 
+
+\begin{itemize}
+
+\item it is the concept of a for-profit product
+
+\item either the product is expected to take a market share\footnote{You shall start with a large share of a small but growing (SAM(t) shall look promising) market. Ideally, become a monopoly on that market.} greater than 10\%, or earnings higher than 10\% of your net worth are expected in the short term.
+
+
+\end{itemize}
+
+Consider the two lists:
+
+\begin{itemize}
+
+\item list of concepts that have intrinsic value for you, i.e. you want to implement them for free or even at a loss
+
+\item list of lucrative concepts that have no intrinsic value for you, i.e. you are interested in them as long as they are lucrative, otherwise you gradually discontinue the development.
+
+\end{itemize}
+
+We call these two lists \textit{the two baskets}.
+
+
+
+
+\section{What products shall I launch?}
+
+
+
+
+
+%\item[1.2.] Products that are part of Umbrella cannot make money on people's grief. E.g. a product that provides microloans with 2\% daily interest cannot be part of Umbrella.
+
+
+%\item[1.4.] Umbrella launches commercial products in one of the two cases: either if the product is expected to take a market share greater than 1\%, or if \textit{significant} earnings are expected in the short term.
+
+
+
+%\item[1.3.] Products that are part of Umbrella do not have to be commercial. Umbrella launches non-profit products in one of the two cases: \begin{itemize} \item the motivation or goal of launching the product is determined before the work on it started \item the product gives some measurable result. \end{itemize}
+
+%They can pursue other goals, be caused by a different motivation, if the two conditions are met: \begin{itemize} \item the motivation or goal of launching the product is determined before the work on it started \item the product gives some measurable result (not necessarily financial, but necessarily measurable). \end{itemize}
+
+
+
+
+
+Launch only products whose	concepts fit into one of the two baskets. 
+
+
+
+
+\item[1.3.] In Umbrella, we discontinue a product if it does not satisfy the \textit{selection rule} anymore.
+
+
+
+
+\begin{comment}
+\begin{itemize}
+\item кто ваши конкуренты, кто может им стать, кто самый большой, сколько он зарабатывает
+\item сколько клиенты тратят денег до того, как начать вами пользоваться?
+\item какая у вас будет самая большая проблема через 6 месяцев?
+
+\item способны ли вы создать прорывную технологию, вместо постоянных усовершенствований?
+\item начинаете ли вы с большой долей маленького рынка?
+
+\item какова ваша стратегия вывода продукта на рынок?
+\item будут ли ваши рыночные позиции прочны через 10 лет?
+\item удалось ли вам обнаружить уникальную возможность, которую другие не видят?
+\end{itemize}
+\end{comment}
+
+
+
+
+
+%\item[1.6.] From the Umbrella point of view, launching a product is the algorithmizable task, and uncertainties (userbase growth, conversion to payments, retention, revenue) are random variables whose probability densities can be estimated. 
+
+
+
+
+
+\item[1.1.] Umbrella is the umbrella (hence the name) company for various products and their product teams governed by the principles formulated hereinafter. %, each of which is governed by the principles formulated hereinafter. %This corporate ethic is called the Umbrella Constitution; this document is devoted to its exposition.
+
+
+%\item[1.2.] In Umbrella, any work that can be algorithmized shall be algorithmized and then performed according to the algorithm (when necessary, the algorithm can be corrected). %(Doing something that you know how to do is pleasant, pondering how to do a task with no known solution is not.)
+
+\item[1.2.] In Umbrella, we start to implement a product concept if each of the following criteria is met (the \textit{selection rule}):
+
+\begin{itemize}
+\item it does not earn on people's grief (e.g. a product that provides microloans with 2\% daily interest cannot be part of Umbrella)
+\item for commercial products, one of the two following statements shall be true: either the product is expected to take a market share greater than 1\%, or earnings higher than 1\% of the company balance are expected in the short term. 
+\end{itemize}
+
+\section{smth}
+
+"Фаундеры и инвесторы имеют кучу херни в голове по поводу фандрезинга на ранних стадиях. Сигнальный риск, высокая оценка, провал следующего раунда, необходимость в известных инвесторах, добавляющих стоимость, чтобы выиграть, недостаточное количество денег, чтобы перейти в следующий раунд, аналогичный сбор средств конкурента и т.д.
+
+По моему опыту, есть только две вещи, которые в конечном итоге имеют значение: 
+
+1) достигли ли вы Product-Market Fit 
+и 
+2) насколько сильно вы размыли свою долю, чтобы добиться этого.
+
+В 99% случаев единственное, что имеет значение, — это Product-Market Fit . Это дает вам наибольшее влияние на все будущие привлечения инвестиций. Вся вышеперечисленная чушь (и все остальные оптимизации привлечения инвестиций) становятся важными менее чем в 1% случаев. Оптимизируйте для 99%.
+
+Лучший совет по привлечению инвестиций на ранней стадии: быстро получите деньги, которые вам нужны, от людей с достаточной репутацией, готовых потерять эти деньги и не ебать вам мозги; и вернуться к работе, учась у своих клиентов и пытаясь достичь Product-Market Fit.
+
+Максимальное сокращение размытия гарантирует, что вы сохраните контроль над своей компанией. Быстрое привлечение инвестиций и возвращение к работе гарантирует, что вы не влюбитесь в привлечение инвестиций и сфокусируетесь на сложной проблеме создания чего-то, чего хотят люди."
+
+
+
+
+
+
+
+
+
+
+
+\section{How to generate concepts?}
+
+Proceed from the fact that all technologies that are not prohibited by the laws of physics already exist. In this assumption, come up with product concepts and use cases.
+
+
+
+
+
+\section{Shall I do something before the start of the implementation?}
+
+Yes. Prior to start of the implementation, win on paper.
+
+
+By definition, you \textit{have won on paper} if, given a concept, you have all the following things written down: 
+
+\begin{itemize}
+
+\item the concept 
+
+\item list of use cases
+
+\item list of stages of implementation
+
+\item for each stage of implementation, weekly spending schedule (schedule of weekly costs)
+
+\item for each stage of implementation, number of required employees and names of their positions
+
+\item for each position name, list of problems for the candidate to solve during the interview
+
+\item promotion plan (see \href{https://garkoosha.org/misc/promotion.pdf}{Promotion} for details)
+
+\item for each stage of promotion, weekly spending schedule (schedule of weekly costs)
+
+\item an estimate for $SAM (t)$, i.e. the dynamic of $SAM$\footnote{$SAM$, serviceable addressable market --- the size of the market that the company is able to serve, taking into account its competencies and focus (for example, American seafood market, British dental clinic market, French market for ERP software for pharmaceutical businesses). The dynamic of $SAM$ depends on external factors, which you cannot influence. You can and shall estimate $SAM(t)$, you cannot influence it.}
+
+\item an estimate of the product capitalization dynamics (it should take into account both market competition and $SAM$ dynamics)\footnote{For a public company, its valuation is calculated as the value of 1 share multiplied by the total number of shares. For a company whose shares are not traded on an exchange, valuation couldn't be calculated. Instead, it is estimated; different people provide different estimations. One of the ways to estimate is via using the same p/e ratio as competitors who have underwent the IPO. (Companies that share a similar business type <<should>> have similar p/e ratio, since their risk profiles are identical.) If there's no public company of similar business type, estimation gets harder. SAM is good estimation, as well as its alleged dynamics.}
+
+\item an estimate of when will investor get back their money and with what multiplicator
+
+\item which amount of money at which round do you need to raise to withstand market competition
+
+\item the detailed breakdown of investment expenditures
+
+
+
+\item Мне нравится фраза «Steam for blockchain-based games». «We are Steam for blockchain-based games.» Иметь понятное короткое описание продукта --- очень важно. (Точнее, не иметь его — ред флаг.)
+
+
+- месячные расходы на команду должны быть настолько малыми насколько возможно, в идеале $0 (долбоёбы тратящие на зарплаты больше $20k/месяц быстро разоряются)
+- если нет выручки, то её и не будет. Глупо думать, что сейчас проект не приносит выручку, а потом случится магия и он начнёт её приносить. 
+- самым лучшим критерием того, нужен твой продукт кому-то или ты тратишь время на хуйню, является размер выручки, полученной тобой в этом месяце.
+
+
+99 процентов стартапов умирают --- не нужно удивляться этому
+
+
+
+\end{itemize}
+
+
+\section{Do I need an investment?}
+
+Есть твой баланс
+Есть сумма, которую тебе реально попросить у родителей
+Есть сумма, которую ты легко можешь заработать в месяц
+
+Сумма этих трёх величин должна быть > трат твоего стартапа в год
+
+А ещё есть продажи
+
+%\item любой VC предпочитают инвестировать в тех, кто может а) быстро расти б) на быстрорастущем рынке. 
+
+
+
+
+We call the investment \textit{necessary} if all of the following statements are true: 
+
+
+
+
+\footnote{Bear in mind that investment is spent on \textit{implementation} and \textit{promotion}. Investment cannot be spent on \textit{concept} --- the cost of formulating a \textit{concept} is zero.}
+
+Yes, if you \textit{have won on paper}.
+
+% There are forms of ownership in which co-owners are liable for losses. There is form of ownership in which co-owners are not liable for losses but the legal entity is.
+
+As long as you can move on without investment, do it.
+
+
+
+If the \textit{concept} does not require substantial amounts of money for implementation or promotion (e.g. a single coffee \& sandwich kiosk), then you don't need any investment. (By <<substantial>> we mean that you do not have the needed amount of money, your parents cannot grant it to you, and you couldn't earn it in several months.) On the other hand, if the \textit{concept} requires substantial amounts of money for implementation or promotion, then you do need the investment. If the situation is not crystal clear, proceed. 
+
+% If the investment is not necessary, do not consider any investment offers. Consider investment offers only for necessary investments.
+
+Do not consider any investment offers unless the investment is necessary.
+
+
+
+
+\begin{enumerate}
+
+\item If you have no estimate of when will investor get back their money and with what multiplicator, then yes. Otherwise, proceed to the next step of the algorithm.
+
+
+
+
+
+
+
+
+The later you receive the investment, the stronger is your negotiating position.
+
+
+If you can cover those expenses yourself, do not take an investment. However, recall that receiving an investment is not momentary but lengthy process (investment didn't take place until you have the money at your disposal). If only investors understand that you're running out of money, they'll blackmail you.
+
+
+\item Бери инвестиции только тогда, когда знаешь, через какое время инвестор получит returns и каким будет размер этого return.
+
+
+\end{enumerate}
+
+
+
+
+
+%There's no riskless investing. There's always a risk that your company will fail. The earlier the stage, the higher the risk. Take money no earlier than implementation is finished.
+
+
+
+
+
+There are \textit{valuation-focused companies} and \textit{profit-focused companies}. 
+
+
+% Valuation-focused companies earn on exit, profit-focused companies earn on operations.
+
+Valuation-focused companies may operate at a loss for years, still raising investment rounds one after another if the growth of relevant metrics (such as monthly active users) impresses investors. They proceed from the premise that they have access to investment.
+
+Profit-focused companies proceed from the premise that exit will never happen, i.e. nobody would ever reach for them with the offer to sell the company. Thus, they focus on profit.
+
+
+Есть два вида компаний. Одни ставят своей целью заработать основные деньги на экзите. Вторые исходят из того, что экзита никогда не будет, и нужно зарабатывать на операционной деятельности.
+
+Соответственно, для первых очень важна оценка компании, для вторых --- заработок (monthly net profit).
+
+
+
+If you can withstand market competition without it, no. Otherwise, yes. The amount that you need depends on the market competition as well.
+
+
+
+% Investments are doping which you cannot avoid since all your competitors use it. Bigger investment leads to, ceteris paribus, bigger growth rate and larger market share.
+
+If the investment will be spent in such a way that the value of your share increases, then yes. Otherwise, no. 
+
+
+
+
+The amount that you need depends on the market competition as well.
+
+In case of valuation-focused company: if spending the investment will raise the value of your share, then yes; otherwise, no.
+
+In case of profit-focused company: if spending the investment will raise your MRR, then yes; otherwise, no.
+
+Если полученные в результате инвестиции деньги будут потрачены так, что стоимость твоей доли увеличится, то да.
+
+
+
+
+
+
+
+
+
+
+
+\section{Are there any red flags that signal to stay away from an investment offer?}
+
+Yes. 
+
+We call the investment offer \textit{acceptable} if all the following statements are true: 
+
+\begin{itemize}
+
+\item the investment termsheet is prepared not on the investor's side but on your side
+
+\item accepting the investment does not put you at risk of losing your full control over operations\footnote{Acknowledge that having less than 50\% of shares does not automatically make you losing the ultimate control over governance. You can retain the control via the mechanism of class A shares and class B shares (class A share vote counts as e.g. 10 votes, class B share vote counts as 1 vote), or via mechanism of voting and non-voting shares (in terms of dividend, liquidation etc they are the same, but those that do not belong to you are non-voting). Just sell class B shares to investors and keep class A shares. Or sell non-voting shares to investors and keep the voting ones.} 
+
+% Decline any investment that may put you at risk of losing your full control over operations. 
+
+\item your motivation will not be impaired by the fact that as long as the company exists, every your effort would profit this investor as well\footnote{The share is inalienable. As long as the company exists, every effort that would lead to bigger profit for yourself would also lead to bigger profit for all the other shareholders as well. This may impair your motivation to work in case a shareholder does not fulfill their obligations or you just don't like someone of them anymore.} 
+
+
+
+
+
+
+\end{itemize}
+
+
+
+
+\section{I've received several acceptable investment offers, and the investment is necessary; which offer to select?}
+
+
+
+Some investors append the termsheet with the legal obligation to provide a non-financial value (e.g. various PR services) in addition to the investment, while some do not.\footnote{Some investors verbally promise a non-financial value. To avoid situations when the promised value is not delivered, append the termsheet with the commitments of the non-financial value, specifying penalties for non-compliance.} Thus, each offer is the pair (financial value offered, non-financial value offered).
+
+Non-financial value can be relevant and irrelevant. Services that you would buy at market price if they were not offered as the part of the deal are called \textit{relevant}; other services constitute the irrelevant part of the offered non-financial value. 
+
+% Denote the sum of financial value and the market price of the relevant non-financial value as the \textit{total value}. 
+
+We define the \textit{total value} on an offer as follows: $$\text{total value} = \text{financial value} + \text{the market price of the relevant non-financial value}$$ Choose the offer with the highest total value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Will the investor fund me?}
+
+If the investor believes that you will bring a return higher than other ways to invest money, you will receive the money. If the investor does not think so, then you will not receive the money. As simple as that.
+
+(здесь про risk тоже сказать)
+
+Ставьте себя на место инвестора. Вы бы сами купили y\% от своей компании за \$X вот сейчас? Вы уверены, что, инвестировав в вашу компанию, вы получили бы назад \$f(X) через время T?
+
+
+
+Слушай, ну, совет для закрытия раунда простой — уметь чётко объяснить инвестору, когда он получит назад свои деньги и с каким мультипликатором. Если ты умеешь убедительно объяснять это, то деньги тебе дадут.
+
+Вероятность успеха этого объяснения намного выше, если у тебя уже есть выручка и она растёт.
+
+Полистал WP — нихуя не понятно. Свой токен за каким-то хуем, decentralized NFT exchange, в нашем космическом корабле будет всё. Чем сложнее продукт, тем менее вероятно что пользователь будет в него вникать. Вникать он и на работе вникает, которая ему остоебенила и от которой он отдохнуть пришёл.
+
+Идеальный продукт — google.com. Он предоставляет одну услугу. Не десять услуг, не пять услуг, а одну услугу.
+
+
+
+
+
+\section{Fundraising tips}
+
+
+
+
+
+Always remember that the amount of investors and investment firms on the globe is immense. If there are few investors in your region, you simply live in a wrong region.
+
+
+
+
+Pitch to a lot of investors: the more investors you communicate with, the better your negotiating position is and the more likely some of them will provide you the needed amount.
+
+
+
+
+
+Investors can be professional (VC funds, private equity funds) and unprofessional (all the rest, i.e. friends, family, fools, random rich people). The difference between the two groups is in the quality of their analysis and in the formality of communication. Informal communication has its pros and cons, e.g. it imposes an obligation to listen to the investor's family issues or to go to karaoke with them at 3am.
+
+
+
+
+The difficulty of fundraising depends:
+
+\begin{itemize}
+
+\item on the amount of time the investor knows you
+
+\item on the quality of your product
+
+\item on whether you know when will investor receive back their money and with what multiplicator
+
+\item on whether you know which amount of money at which round do you need to raise to withstand market competition
+
+\item on the sobriety of your reasoning when you speak about market competition
+
+\item on depth of your understanding of industry
+
+\item on whether you have the detailed breakdown of investment expenditures
+
+\item on who you approach. Smart investors are distributed unevenly --- in some regions there are none or almost none of them, in some regions there are many of them.
+
+\item on your industry. There are industries where the market thinks a new company has little chance. On the contrary, there are industries about which people believe one can make good money there. Clearly, this affects the behavior of potential investors.
+
+\item on whether you have a common background with a potential investor. If you grew up in different countries and your native languages are different, this is one story. If you come from the same neighborhood or are graduates of the same university, that's a completely different story.
+
+
+\item on whether the investor you're talking to knows your industry. Those who have worked in your industry will be much more interested in you during the entire time of your cooperation. You will not have to explain trivial things to them, you will feel more attention and respect for yourself, and your company's ceteris paribus valuation will most likely be higher.
+
+\item on product complexity (the more complex the product, the less likely users or investors will delve into it) 
+
+
+
+\item on your company's jurisdiction. Courts of some jurisdictions are generally viewed as prone to corruption, courts of other jurisdictions are generally trusted. Investor is less likely to invest if he or she is unfamiliar with the legal system of the jurisdiction. Tax rate on exit is of great importance to investors as well.
+
+
+
+
+
+
+
+\item on your reputation. Companies of those with history of bringing great returns to early investors are very likely to be funded. Valuation of such companies may grow purely based on market expectations of these founders. Companies of those with history of deceiving investors or partners are very unlikely to be funded. 
+
+
+
+
+
+
+\item on your steadfast will to reach your goals with or without the investor you're talking to. Whenever others feel that you want something bad, they experience a temptation to help you.
+
+
+
+
+
+
+
+\end{itemize}
+
+
+
+\section{The Code Of Conduct}
+
+
+A \textit{code of conduct} is a set of values, rules, proper practices, standards, and principles outlining what employers expect from staff within an organization. This file lays out the code of conduct I find perfect.
+
+
+
+\subsection{General provisions}
+
+
+\item[1.1.] Our company is the group of teams, each of which is responsible for one specific mission. Every employee knows which team is responsible for which mission.
+
+\item[1.2.] Every employee who is not a CEO has one and only one manager, i.e. the person who can assign tasks to the employee. (Otherwise this employee could report to the manager 1 that they've been busy with the tasks given by manager 2, and report to the manager 2 they've been busy with the tasks given by manager 1.) This also means manager of an employee's manager cannot assign tasks to the employee.
+
+\item[1.3.] Group meetings and group calls cannot be part of the workflow. They are acceptable as a form of recreation and socialization, but participation in them cannot be mandatory. Work issues are resolved without them (e.g. in group chat or in one-to-one communication).
+
+\item[1.4.] Some types of work cannot be done unless at specific hours. Examples are live broadcasting, sales assistant work, teaching, house construction together with third-party workers. If this is not the case (if a work can be done at other times than specific hours), the following rules apply:
+
+- when to work and when to rest is every employee's own business; there are no <<working hours>>
+- nobody cares about the amount of hours spent on work; work is evaluated solely by deliverables submitted by the deadline
+- attending office is optional; you attend office whenever you want to 
+- in office, employees can watch videos, sleep and relax in any way that does not disturb others (sophisticated tasks cannot be done without rest breaks)
+- for employees working remotely, we do not use software that tracks the amount of screen time or mouse cursor movements. 
+
+
+
+
+
+%\section{Employee rights}
+
+
+%\begin{enumerate}
+
+
+
+
+
+
+
+
+
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+\subsection{Conflict resolution algorithm}
+
+
+
+
+
+\begin{enumerate}
+
+\item[2.1.] Any employee for whom Ethics Committee gets a \textit{sufficient evidence} that they either:
+\begin{enumerate}
+
+\item committed a rude behavior towards a colleague (this includes a rude behavior towards a subordinate)
+\item continued to harass an employee with intrusive communication after the employee has clearly stated that he or she is not in the mood to talk at the moment
+\item made a public statement that undermines team reputation
+\item told a joke that included a discriminatory statement
+\item made a compliment with sexual overtones 
+
+\end{enumerate} receives the \textit{warning}. 
+
+
+
+
+
+\item[2.2.] Any employee for whom the Ethics Committee gets a \textit{sufficient evidence} that they either:
+
+\begin{enumerate}
+\item intentionally punched someone
+\item admitted sexual harassment
+\item is sadist, tyrant, psychopath, gaslighter
+\item actually thinks that some race, nation, appearance, height, weight, gender is inferior or superior
+\item have discussed their compensation size with another employee(s) who do not work for financial or accounting department 
+\item made a public statement about their compensation size or a colleague's compensation size
+
+\end{enumerate} gets fired. 
+
+
+
+\item[2.3.] To inform the Ethics Committee about a behavior described in 2.1 and 2.2., use \href{mailto:ethics@companyname.com}{ethics@companyname.com}. It doesn't matter whether you report anonymously or not --- the investigation will start in either case. The Ethics Committee may also learn about a misconduct on their own, but don't leave it to chance, report if a misconduct happened.
+
+
+
+\item[2.4.] Whenever the Ethics Committee learns about a behavior described in 2.1 and 2.2., the investigation starts. This investigation can have only three outcomes: <<no sufficient evidence>>, <<sufficient evidence of one of the behaviors described in 2.1. established>>, <<sufficient evidence of one of the behaviors described in 2.2. established>>. 
+
+
+
+
+\item[2.5.] Whenever the Ethics Committee believes that the case is studied in detail, the investigation ends and the email from \href{mailto:ethics@companyname.com}{ethics@companyname.com} is sent with those involved in the case being the receivers of the email. This email shall contain the official statement (i.e. one of the three outcomes described in 2.4.) and arguments that led to the decision.
+
+
+
+\item[2.6.] The maximum number of \textit{warnings} that a person can get is two; at the third, the person is fired. 
+
+
+
+
+ 
+
+
+
+\subsection{Waivers}
+
+\item[3.1.] Any manager can place any subordinate on waivers. When this happens, the subordinate leaves the team and is released from current tasks.
+
+Being placed on waivers does not mean you're a bad employee. This may mean that your team doesn't need your skills at the moment, or that your manager has succeeded in hiring an industry rock star for your job.
+
+
+\item[3.2.] Any employee can also self-place themselves for waivers. When this happens, the employee leaves the team and is released from current tasks.
+
+Being left by an employee does not mean you're a bad manager. This may mean that the employee feels a mismatch between their professional goals and actual work, or that the employee wants to work in a team in which their close friends work.
+
+
+\item[3.3.] Employees who are on waivers are paid 100\% of their compensation size. 
+
+\item[3.4.] Any manager can take any employee from waivers to their team.
+
+\item[3.5.] Employees who are on waivers for longer than 60 days are fired.
+
+
+\item[3.6.] Managers are advised to place those who bring no value for a long time on waivers. If you have someone in your team who brings no value for a long time, write to \href{mailto:hr@companyname.com}{hr@companyname.com}. Anonymity is guaranteed.
+
+
+
+\subsection{Other regulations}
+
+
+
+
+
+
+
+\item[4.8.] Employees are obliged to refrain from work when they have not slept enough, or when they feel physically or mentally sick. (Poor physical or mental state worsens the quality of decisions.)
+
+
+
+
+\item[4.10.] Each of the shareholders' emails, as well as the work emails of each of the employees, are known to every employee. (There must be a way for employees to communicate to shareholders about what worries them in top management.)
+
+
+\subsection{Who decides on compensation size?}
+
+%\item[4.11.] The CFO's responsibility is to negotiate salaries.
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+\section{Profiling}
+
+
+\begin{enumerate}
+
+\item Umbrella HRs make and maintain psychological profile of a candidate. 
+
+%(Forcing people to do what does not correspond to the maximum values of their 16-vector is ineffective. In the absence of external compulsion, people engage in activities that excite their reward centers the most. Therefore, it is better to choose people with the maximum values of their 16-vector that are needed for a position.)
+
+\item[5.4.] Every quarter Umbrella employees are re-interviewed by HR in person (to avoid copy-paste) with the following questions:
+
+\begin{enumerate}
+
+\item how would you spend your year salary?
+
+\item what is the profession of your dream?
+
+\item is there something that you want to study in the next 12 months? answers that are not related to work are also perfectly fine 
+
+\item imagine you have loads of money (50 million USD in cash); what would you do on daily basis? how would you typical day look like? what is the <<life of your dream>>? (different people prefer different lifestyles)
+\end{enumerate}
+
+\item[5.2.] HR tracks and reports the episodes of unloadedness, downtime, non-optimal roles of employees.
+
+%\item[5.3.] HR measures the LTV of each employee (the amount of money earned or saved for the company by an employee minus the amount of money and resources spent on the employee). 
+
+%Увольнять нужно быстро. Чем быстрее компания расстанется с сотрудником, «не вписавшимся» в команду, тем быстрее наймет нового, а уволенный — устроится на более подходящую для него работу.
+
+
+
+
+\end{enumerate}
+
+
+
+
+%\section{HR algorithm of Umbrella}
+
+
+%\begin{enumerate}
+
+
+
+% \item Umbrella HRs assess applicant's level of erudition. Низкий уровень эрудиции указывает на низкий уровень базовой мотивации <<поисковое поведение>>, а людей нелюбознательных мы не хотим видеть в команде. (We do not hire people with an insufficiently broad erudition.) Если признано, что уровень базовой мотивации <<поисковое поведение>> выше чем 70/100, proceed.
+
+
+
+
+%\item[5.1.] In Umbrella, only charismatic people are admitted to HR. (Non-charismatic person could not hire candidate who are of Umbrella's interest.)
+
+
+%Persons who committed at least one severe ethical violation cannot be hired by Umbrella.
+
+%Any candidate for whom there is \textit{sufficient evidence} of two or more episodes of the behaviors (a)-(h), cannot be hired by Umbrella. (We do not want to make people ineligible due to statements they've committed when they were 18.)
+
+% search for applicant past history red flags (took the internal kitchen of a company outside it, rude behavior or discrediting statements on social networks). If no red flags found, proceed.
+
+% Umbrella HRs who hire such a person get punished.
+
+
+
+
+
+%\end{enumerate}
+
+
+
+
+
+
+\begin{comment}
+
+% \section{Оптимальное решение как функция ресурсов}
+
+What can Umbrella provide to a product owner:
+
+\begin{itemize}
+\item funds (ability to check hypotheses)
+\item team members (devs, marketing)
+\item expertise (we know how to launch products)
+\end{itemize}
+
+
+Every product owner that becomes Umbrella employee shall explain their motivation: «I want to make this amount of money», «I want to do the following useful product». 
+
+
+Как принять решение, тестировать продуктовую гипотезу или нет? Смотреть на 4-tuple [product owner's enthusiasm about the idea, amount of funds needed, amount of time needed, amount of human resources needed]. Каждая из последних трёх компонент должна быть невелика. Первая компонента --- ключевая. Ваш product owner всё равно имеет какие-то предпочтения. По факту делаться будет тот продукт, который хочет делать product owner.
+
+
+
+
+Продукты бывают двух типов: продукты, ставящие своей целью быстрый рост пользовательской базы, захват большой доли рынка и рост капитализации (we will call these products \textit{startups}), и продукты, ставящие своей целью быстрый заработок (we will call these products \textit{profit-oriented}). Startups live 5-10 years, profit-oriented products may live as little as 2 weeks. На данный момент мы не очень понимаем, нет ли юридической проблемы при продаже компании, если её юрлицо зарегано позже чем продукт начал зарабатывать и налоги она не платила. Поэтому модель с капитализацией и продажей стартапа мы пока что не рассматриваем.
+
+Стартап это не про быстрый заработок; человек, который хочет стартап, должен уметь отвечать на следующие вопросы:
+
+\begin{itemize}
+\item в какой юрисдикции вы платите налоги
+\item на что вы потратите \$100k 
+\item кто ваши конкуренты, кто может им стать, кто самый большой, сколько он зарабатывает
+\item сколько клиенты тратят денег до того, как начать вами пользоваться?
+\item какая у вас будет самая большая проблема через 6 месяцев?
+\item почему вы готовы потратить следующие 5-10 лет, работая над этой идеей?
+\item способны ли вы создать прорывную технологию, вместо постоянных усовершенствований?
+\item начинаете ли вы с большой долей маленького рынка?
+\item у вас есть правильная команда?
+\item какова ваша стратегия вывода продукта на рынок?
+\item будут ли ваши рыночные позиции прочны через 10 лет?
+\item удалось ли вам обнаружить уникальную возможность, которую другие не видят?
+\end{itemize}
+
+
+Главная метрика стартапа --- график функции капитализация компании (t). Главная метрика profit-oriented product --- график функции чистая прибыль (t).
+
+% в случае стартапа скорость сжигания денег также должна войти в ответ
+
+
+
+
+
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

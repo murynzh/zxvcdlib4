@@ -1,0 +1,1338 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{pscyr}
+\usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+%\usepackage{wallpaper}
+\usepackage{pifont}
+%\usepackage{ulem}
+\usepackage{cancel}
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{comment}
+%\usepackage{background}
+%\usepackage{subcaption}
+\usepackage{tikz}
+
+\renewcommand\theequation{{\color{blue}\arabic{equation}}}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+%\def\be{\numberwithin{equation}{section}\begin{eqnarray}}
+%\def\ee{\end{eqnarray}}
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+
+\def\trademark{{\hbox{\tiny TM}}}
+\def\dim{\textmd{dim} \hskip 3 pt}
+\def\p{\partial}
+\def\R{\Rightarrow}
+\def\ph{\varphi}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{definition}
+\newtheorem{Def}[thm]{Definition}
+
+%\setcounter{section}{-1}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\cross}{\ding{55}}%
+
+
+
+
+
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][\ ]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\definecolor{backgroundcyan}{HTML}{61B1D2}     % 97, 177, 210
+\definecolor{modcyan}{HTML}{76DEF8}            % 118, 222, 248
+\definecolor{mygolden}{HTML}{F4E95D}           % 244, 233, 93
+\definecolor{mytruegolden}{HTML}{DEAA21}       % 222, 170, 33
+\definecolor{theirgolden}{HTML}{C1D68F}        % 193, 214, 143
+\definecolor{coolestblue}{HTML}{034775}        % 3, 71, 117
+\definecolor{modgreen}{HTML}{0CE6B8}           % 12, 230, 184
+\definecolor{newgolden}{HTML}{A27009}           % 162, 112, 9
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%$\sqrt[a]{b} \quad \oldsqrt[a]{b}$
+
+
+\begin{document}
+
+
+\baselineskip14pt
+\bigskip
+
+
+
+
+
+\title{Физиология человеческого поведения}
+
+
+\maketitle
+
+
+%\tableofcontents
+\bigskip
+\bigskip
+
+
+
+
+
+
+
+
+\section{О моде на нейробиологические рассуждения о психике}
+
+
+
+
+В современном обществе популярны статьи, лекции и подкасты, объясняющие всё, что человек переживает и делает, с помощью нейробиологии. Людям хочется раздобыть объяснения своих эмоций и переживаний с точки зрения работы мозга, а нейробиологические аргументы кажутся более убедительными чем психологические. Все вы видели или слышали фразы <<у меня дофамин высокий>>, <<у меня серотонин высокий>>, <<эндорфины выделились>>, <<прилив дофамина>> и подобные им. 
+
+Валидным возражением на любую из этих фраз является <<Как вы это измерили?>> (Более вежливый вариант этого возражения --- <<Почему вы так думаете?>>) Дело в том, что не существует неинвазивного способа определить концентрацию интересующей нас молекулы в интересующем нас отделе головного мозга. Знаниями физиологии мозга млекопитающих мы во многом обязаны лабораторным крысам, которых умертвили, чтобы измерять эти концентрации. Людей, разумеется, нельзя вовлекать в научные эксперименты, которые могут быть опасны для их здоровья (и тем более умертвлять). Единственный способ изучать мозг человека --- положить его в томограф (аппарат фМРТ) и наблюдать, как усиливается или ослабевает перемещение ионов по кровеносным сосудам. Если человек лежит в томографе, мы можем видеть интенсивность динамики крови в разных отделах мозга и, самое главное, изменения интенсивности этой динамики в зависимости от того, какие изображения или видео мы этому человеку показываем.
+
+Благодаря работе с нейронами в чашке Петри удалось понять особенности нейрона как клетки, а также выяснить, какую разность потенциалов нужно создать между нейроном и окружающей его средой, чтобы по нейрону пошёл электрический импульс. 
+
+Благодаря магнитно-резонансной томографии удалось установить, какие части мозга человека при каких стимулах возбуждаются. Благодаря гистологии удалось установить примерное количество нейронов в мозге человека (а также в мозге других животных, нервная система которых хорошо изучена).
+
+
+% Однако эти факты не приближают нас к пониманию причин наших эмоций, чувств и переживаний. Для достижения понимания нужно действовать по-другому.
+
+Современная наука может достаточно много сказать о том, что именно возбуждается во время каких эмоциональных переживаний. В случае голода возбуждается POMC, GRE. Во время романтического любовного переживания возбуждается. Всё, что с нами происходит --- несомненно как-то технически реализовано, кто бы сомневался. Изучение деталей технической реализации любопытно, но знание этих деталей ни на каплю не приближает нас к пониманию, почему этот механизм существует. Важно не то, как устроен механизм, делающий что-то --- он мог бы внутри быть устроен и совершенно по-другому --- а почему давление эволюционного отбора оставило только животных с этим механизмом.
+
+% В мозге есть \textit{объекты, с которыми можно взаимодействовать} — каналы (Na$^+$, K$^+$, Ca$^{2+}$, Mg$^{2+}$, Cl$^-$) и рецепторы (четыре вида опиоидных, AMPA, NMDA, иные глутаминовые рецепторы, GABA, DA, NE, 5HT, CB, ACh, Gly и все те, которые не пришли в голову), \textit{объекты, которые могут взаимодействовать} — эндогенные лиганды (опиоидные пептиды, Glu, GABA, DA, NE, 5HT, анандамид, ACh, Gly), neurotrophic factors (NGF, BDNF и менее знаменитые), окситоцин, вазопрессин, фенилэтиламины, и есть \textit{механизмы взаимодействия}: закупоривание канала (яд рыбы фугу, новокаин), агонизм/антагонизм рецептора, увеличение экзоцитоза везикул (амфетамин), связывание белков-транспортеров (антидепрессанты, кокаин), ингибирование МАО.
+
+
+
+
+\section{Эволюция механизмов принятия решений от ундулиподии до человека}
+
+Сначала ты такой вращаешь жгутиком в сторону еды и в сторону более благоприятной температуры. Потом возникли первые нейроны. Потом принимаешь те же решения за счёт нейронов червя. Потом (400 млн лет назад) образуются первые животные, мозг которых содержит центры наград --- простейшие хордовые. Большие полушария, отвечающие за мышление, существуют только у птиц и млекопитающих и появились у них 5 миллионов лет назад. В современном виде мозг человека закончил формироваться 60 тысяч лет назад.
+
+Понятие о центрах наград и системе вознаграждения.
+
+Здесь уместно перечислить виды отбора: половой отбор. 
+
+
+Эти глубокие отделы сами принимают решения, без участия и без спроса у сознания. Наш разум несёт обслуживающую функцию --- какие-то решения банит, остальные упаковывает в обёртку свободной воли и личного осознанного желания.
+
+Почему это так? Потому что отделы, отвечающие за аффективное реагирование, намного древнее и существуют у всех животных с центральной нервной системой (первые из которых появились 400 миллионов лет назад). 
+
+Аффективное реагирование крайне важно для выживания. Кора важна меньше.
+
+
+%Потому что чем древнее структура, тем больше на неё завязано. 
+
+Был эволюционный отбор в сторону избегания аверсивных стимулов (всех недостаточно тревожных сожрали хищники и они не дали потомства). Был эволюционный отбор в сторону стремления к позитивным стимулам (все получавшие недостаточное удовольствие не дали потомства). 
+
+
+
+%Неверно думать, что сознание отдаёт приказы эмоциональным реакциям. Всё прямо наоборот, это аффективное вовлечение возникает, угасает и сознание уже постфактум подгоняет объяснения.
+
+Когда человек выбирает между несколькими вариантами поведения, при прочих равных он выберет тот, который вызывает большее возбуждение в центрах наград, и в этом случае по томограмме можно предсказать конечный выбор человека (который типа «свободный и сознательный»).
+
+%(В прикладном смысле это означает, что каждое из удовольствий можно заглушить/перебить только более сильным удовольствием. Или нет?)
+
+В каждый момент времени глубокие слои мозга предлагают сознанию несколько поведенческих программ на выбор; мы выбираем, как правило, ту, которая вызывает наибольшее возбуждение в центрах наград, т.е. если человек лежит в аппарате фМРТ, то по томограмме легко предсказать, что человек выберет. При этом он искренне будет считать, что его выбор свободный и сознательный.
+
+Если предложить человеку несколько поведенческих программ на выбор, он выберет ту, которая вызывает наибольшее возбуждение в центрах наград. Т.е. если человек лежит в аппарате фМРТ, то по томограмме легко предсказать, что человек выберет. При этом он искренне будет считать, что его выбор свободный и сознательный.
+
+
+
+Эволюция сделала мозг homo sapiens таким, что:
+
+\begin{itemize}
+\item когда что-то получается, человек получает поощрение --- как следствие, хочется продолжать этим заниматься, чтобы получить новое поощрение
+\item когда что-то не получается, человек получает наказание --- как следствие, хочется прекратить этим заниматься, чтобы не получить новое наказание
+\end{itemize}
+
+
+
+
+Наборы безусловных аверсивных стимулов и безусловных позитивных стимулов одинаковы для всех homo sapiens, потому что сформированы эволюционным отбором. 
+
+Безусловные наказания и поощрения — это то, что прописано в мозге эволюционно. 
+
+
+
+
+Любое поведение любого живого существа (в том числе человека) вызвано одной из двух причин: избегание наказания, стремление к поощрению. Не бывает ситуаций, когда поведение реализуется не из-за одной из этих двух причин, а <<просто так>>. (Среди прочего, это означает, что привычек не существует.)
+
+Подчеркнём ещё раз: любое поведение любого человека вызвано либо избеганием наказания, либо стремлением к поощрению.
+
+
+Любое наказание сводится к одному или нескольким безусловным наказаниям. Любое поощрение сводится к одному или нескольким безусловным поощрениям.
+
+
+
+
+
+% You know that positive feedback stimulates the behavior, negative feedback lowers the behavior's probability.
+
+% You are aware that central nervous system is designed in the following way: positive outcome of a behavior encourages a person to repeat the behavior, negative outcome discourages from repetition of that behavior. This holds regardless of the complexity of the behavior.
+
+
+
+
+
+%Современная жизнь очень сильно отличается от того, чем занимались кроманьонцы, Homo erectus и питекантропы. Мы живём в дворцах из стекла и бетона, и ходим на работу. Вся эволюция мозга происходила в совершенно других обстоятельствах: миллионы лет мозг занимался собирательством и охотой. Наши предки не жили в среде, в которой 99\% времени не получается достичь задуманного. Им не нужно было решать задачи по математике, физике, пытаться впихнуть в себя огромное количество знаний. 
+
+
+
+
+
+% Между стимулами существует конкуренция. Результат этой конкуренции и определяет поведение.
+
+
+
+
+
+
+
+% https://www.reissmotivationprofile.com/motivation
+
+
+
+Рейсс употребляет оборот basic desire. Сразу скажу, что для меня это unconditional stimulus, и я буду употреблять термин unconditional stimulus.
+
+
+The law of effect: behaviors followed by satisfying consequences tend to be repeated and those that produce unpleasant consequences are less likely to be repeated. In short, some consequences strengthen behavior and some consequences weaken behavior. (Причина в том, что нужно поощрять те виды поведения, которые важны для выживания.)
+
+
+%Здесь важно различать удовольствие от предвкушения, от стремления к цели (желание поесть, желание добиться любовной взаимности) и наслаждение от обладания целью (наслаждение едой, наслаждение партнёром). Стремление к цели является намного более социально одобряемым действием, чем наслаждение статус-кво, поэтому в дальнейшем речь будет идти исключительно о максимизации удовольствия от стремления к цели.
+
+Безусловно, есть и чувственные удовольствия, не сформированные эволюционно --- такие как потребление веществ, тактильные удовольствия.
+
+
+\section{Полный список безусловных наказаний}
+
+Что такое приятный и неприятный стимулы? Есть ли у растения приятные стимулы? Обладают ли мухи приятными стимулами? А ланцетники? Как измерить приятность стимула --- по концентрации эндогенных опиатов количеству опиатн nucleus accumbens? А степень притягательности будем измерять по концентрации дофамина в globus pallidus? Если рыбка не может сказать нам что что-то ей приятно, означает ли это, что она не испытывает приятных стимулов? Определение: будем называть стимул приятным, если организм к нему стремится; будем называть стимул неприятным, если организм пытается его избегнуть.
+
+
+
+
+
+
+
+%(Правда ли, что для большинства позитивных стимулов можно указать соответствующий аверсивный?)
+
+
+
+
+
+
+\begin{enumerate}
+
+%\item Страх --- отбор в сторону появления этого стимула был крайне жёстким; умение быстро и по делу испугаться было критично для выживания
+
+%\item Hunger. Организмы, для которых голод не является выраженным неприятным стимулом, не так стремились к пище как их конкуренты; поэтому во все промежутки времени, когда пища не была в изобилии, их гены были вымыты из популяции естественным отбором. Трудно найти человека, для которого голод не был бы выраженным негативным стимулом.
+
+%\item Pain and other aversive bodily sensations. Pain signals cell damage. Prevents harmful behaviors.
+
+
+\item Aversion to rotten taste or smell. This stimulus is no less strong than hunger in its intensity, stopping us from eating potentially poisonous food. 
+
+\item Aversive bodily sensations: pain, thirst, hunger, itching, exhaustion, bladder fullness, rectum pressure. All of these arise in the event of a corresponding harmful behavior; these aversive stimuli will probably teach us to avoid the corresponding behaviors.
+
+\item Ostracism/social rejection. In hunter-gatherer commumities, expulsion from the community would lead to starvation and to eventual death.
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+% Примеры наказаний: <<меня выгонят из университета>>, <<меня выгонят с работы>>, <<учительница нажалуется родителям>>.
+
+% Почему мы получаем прилив сил, когда задача проста --- и обратно, упадок сил, когда задача сложна? Это тяга к поощрению/мысль о наказании.
+
+% Почему когда делаешь дела на высокой скорости, счастлив? Потому что такое возможно только если всё получается.
+
+
+% Понятно, что когда выбирается поведенческая программа, выбор делается исходя из того какая сильнее активирует центры вознаграждения. Но что насчёт ситуаций, когда не все программы — удовольствия, т.е. когда одна или несколько — избегание аверсивного стимула? Как в этом случае производится сравнение?
+
+
+\section{Полный список безусловных поощрений}
+
+
+
+
+
+% У человека имеется множество базовых мотиваций, невозможно все сводить к двум-трем. Помимо полового поведения, еще есть азарт неопределенности при выигрышах/проигрышах, оперантное научение и удовольствие от сбывшегося предсказания, страх смерти и инстинкт самосохранения.
+
+
+
+
+
+
+
+
+
+
+\begin{enumerate}
+
+\item \textit{Acceptance} is the desire for inclusion, the desire for approval by peers. Эволюционное происхождение --- гоминиды, которые не испытывали desire for acceptance, не стремились демонстрировать поведение, одобряемое окружающими; это снижало их шанс на выживание в hunter-gatherer communities, а следовательно и на передачу генов следующим поколениям и их выживанию; так их гены были вымыты эволюционным отбором.
+
+
+%признание полноправным членом группы резко повышало шансы на выживание в hunter-gatherer communities, а значит и на появление потомства и его выживание.
+
+
+
+
+
+
+
+Высокие уровни acceptance означают неуверенность в себе и желание получить моральную поддержку от близкого человека (запрос на поддержку), низкие уровни acceptance --- безразличие к мнению окружающих.
+
+
+
+
+%The desire for acceptance is evident in any group that has been stigmatized or excluded from society.
+
+
+
+
+\item \textit{Curiosity} refers to how much a person enjoys (any) new information. Эволюционное происхождение --- гоминиды, которые не испытывали desire for information, не интересовались новыми источниками пищи и потенциальными угрозами; это снижало их шанс на выживание, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for information, были постепенно вымыты эволюционным отбором. 
+
+
+% Желание разобраться в том, как что-то устроено. Потребление контента (новости, ютуб, реддит, подкасты). Поисковая активность. Узнавать что-то новое. Интересоваться. Обращать внимание. Проявлять любопытство. Неважно на что и как, это может быть искренняя заинтересованность в перипетиях жизни знакомых и близких в духе «А ты ему что? А он что? Вау! И что потом? И что думаешь теперь делать?», или это может быть интерес к каким-то совершенно абстрактным вещам, будь то история Нового времени, современные технологии индивидуального строительства, быт людей в дальних странах или что угодно. Обновлять ленты соцсетей, читать новости, заниматься иным веб-сёрфингом.
+
+%As Reiss brilliantly points out in [1], \textit{<<Truth-seeking is perhaps the purest example of curiosity. The curious person is not satisfied with the joy of intellectual activity, but feels an additional need to distinguish between truth and falsehood. Some professors who have a thirst for knowledge do not like to play bridge, chess, or other intellectual games because the games do not involve a search for truth. The search for truth can dominate a person’s life. Teachers who want to mark children for future success in academia should look for truth-seekers, because they have the motivation required to make years of sacrifice to discover something.>>}
+
+\item \textit{Eating} is the desire for food. Эволюционное происхождение --- гоминиды, которые не испытывали desire for food, обладали слабым аппетитом и за счёт этого имели меньшую жировую прослойку; это снижало их шанс на выживание в голодные годы, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for food, были постепенно вымыты эволюционным отбором. 
+
+
+
+ 
+(Desire for food and aversive stimulus of hunger are completely different stimuli.)
+
+% Потребности <<вкусно поесть>> и <<не умереть от голода>> это совершенно разные потребности; потребность <<вкусно поесть>> является базовой мотивацией номер 3 и может быть выражена сильнее или слабее; потребность <<не умереть от голода>> --- часть поддержания гомеостаза, в этом абзаце речь именно о ней.)
+
+
+
+
+\item \textit{Family} is the desire to spend time with one’s own children. Эволюционное происхождение --- гоминиды, которые не испытывали desire for family, обладали слабым интересом к передаче генов следующим поколениям и выживанию следующих поколений; так гены гоминид, не испытывавших desire for family, были постепенно вымыты эволюционным отбором.
+
+
+
+
+
+
+\item \textit{Honor} is the desire to be loyal to one’s parents and heritage, the desire for moral character. Honor is the desire to behave in accordance with the moral code of one’s parents, culture, or tribe. Честь --- потребность проявлять лояльность к традиционным и неформальным ценностям какой-либо клановой/этнической/социальной/религиозной/субкультурной группы. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала лояльность к ценностям своей группы, 
+
+The primal roots of the desire for honor may be related to the emotion of shame. Some predators do not attack animals that are part of the herd but will stare at, stalk, and attack an animal who is singled out. Since the animal who experiences shame when stared at may run back to the herd before the predator attacks, shame can have survival value.
+
+Differences in the desire for honor can be a source of conflict in a marriage. This is especially common in interfaith marriages, where the couple must resolve issues of how to raise children and observe various religious holidays. Couples with different faiths must come to grips with the sense of separateness that is created between them when each partner worships in his or her religion.
+
+
+
+\item \textit{Idealism} is the desire to improve society and promote social justice. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность социальной справедливости, .
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for justice, спокойно воспринимали injustice, т.е. нарушение сложившихся внутригрупповых правил (напомним, что понятие justice может быть любым, гоминиды очень внушаемы); группы, в которых были такие гоминиды, хуже выживали; это снижало шанс таких гоминидов на выживание, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for justice, были постепенно вымыты эволюционным отбором.
+
+
+
+
+
+Idealism, which is the desire for social justice or fairness, motivates people to get involved and contribute to the betterment of humankind. Its primal roots are unclear. Some say that idealism is related to altruistic behavior seen in animals, but others say that animals do not show true altruism except possibly in isolated examples. In human beings, idealism motivates people to join service organizations, volunteer for programs for the needy, give to charity, or work toward the improvement of their community. 
+
+Idealism motivates people to intrinsically value fairness and justice. Human beings almost universally develop a sense of fair play --- for example, in all cultures people feel some obligation to return personal favors and to keep promises. This primal sense of fairness is the psychological foundation for more complex ideas of social equality and equality under the law. Idealistic people can place so much value on social fairness that they essentially determine how important everything is by how it relates to social justice.
+
+Улучшить жизнь людей, сделать жизнь людей удобнее, помочь людям, дать денег на благотворительность, обрадовать кого-то конкретного; когда что-то, что для меня нетрудно, может принести большую пользу кому-то. Социальная справедливость. Сочувствие, сострадание, волонтёрство, уменьшение человеческих страданий. 
+
+Делать жизнь людей лучше, создавать рабочие места --- неслабая мотивация. За счёт чего она так сильна?
+
+Помогать немощным, инвалидам; альтруизм.
+
+(Это та же мотивация, благодаря которой мы готовим еду для семьи, близких или клиентов.)
+
+
+
+
+
+\item \textit{Independence} is the desire for self-reliance. 
+
+
+
+
+
+Independence, the desire for self-reliance, creates a periodic need to feel free. Its primal roots are instincts that drive animals to leave the nest and set out on their own. This gives the species a better chance of survival by increasing the territory over which food is sought. In human beings, independence prods adolescents to set out from their parents’ home and make homes of their own. Independence is what may motivate a teenager to get his own car and become “his own person;” unfortunately, it does not necessarily motivate him to get his own job, which some parents view as a defect of the evolutionary process regarding this desire.
+
+Because independence is a basic desire, there is a natural tendency for some people to resent people who help them. Helpers may mean well, but they can frustrate our desire for independence. Similarly, children resent parents who discourage them from growing up and becoming independent. This resentment is called dependent hostility, meaning anger directed at those who keep us in a state of dependency.
+
+Elderly people who are independent-minded can hate becoming residents of nursing homes, where they will be dependent on nurses and others. If they become bedridden, they must wait for an aide to get them a drink of water or to take them to the bathroom. For people who dislike being in need of others, such experiences can be humiliating. (This is also why some people hate waiters.)
+
+\item Order is the desire to organize. Систематизация, структурирование, обретение фундаментального понимания, потребность иметь организованное, упорядоченное и предсказуемое окружение. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность упорядочивать знания и своё окружение, .
+
+%Желание улучшать Википедию. Желание сформулировать мысль как можно яснее, так ясно, как это только возможно. Мотивация «сделать всё оптимально», «принимать правильные решения».
+
+Действовать грамотно и сферы, в которых можно действовать грамотно (где существует оптимальный способ действовать). 
+
+%Почему люди так любят всякую статистику и факты, которые можно установить точно? Почему люди участвуют в создании Википедии, ведут коллекции в Pinterest? Потому что мотивация 8 (систематизация, структурирование). (Или Pinterest --- это мотивация 12?)
+
+The desire for order is apparent when we organize things, make plans, make up a schedule, write down a list, set rules, and make things neat or clean. Its primal roots are in cleaning rituals, which are seen in many animal species. Dogs and cats, for example, lick themselves clean. The survival value of these rituals is apparent—they prevent disease. In human beings, order includes the enjoyment of rituals and traditions. Order gives people a sense of stability and control. The absence of order can be upsetting because it implies chaos, unpredictability, and flux.
+
+Differences in how strongly people desire order can be a major source of conflict in relationships and families.
+
+
+
+\item \textit{Physical activity} is the desire for exercise of muscles, the desire for physical strength. Потребность в физической активности. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность в физической активности, менее охотно бегали и были более лёгкой добычей. %Физическая активность в любой форме повышает личную удовлетворённость, будь то фитнес-зал, на даче по грядкам ползать или просто по городу шляться без видимой цели.
+
+%Athletics is so important to some people that it nearly dominates their lives. This is true of both men and women. When athletic-minded people are young, they spend a great deal of time working out and challenging themselves physically. They usually participate in more than one sport and feel a need for a lot of physical exercise. When these people become older, they often continue to stay fit, follow sports closely as fans, and may be attracted to coaching or to teaching sports to their children.
+
+The desire for physical activity is not the same as athletic ability. Many people enjoy playing golf even though they are not good enough to win any tournaments; similarly, many people enjoy swimming even though they lack the ability to compete in that sport.
+
+Individuals differ considerably in how much physical exercise they desire. In contrast to the athletic-minded person, some people carefully avoid physical exertion, or try hard to “pace themselves.” They prefer to drive when they can walk, and to stay home when they have little or nothing to do. They may not go to the store to buy something they want simply because they do not want to expend the energy. People who consciously pace themselves plan significant rest periods between periods of activity.
+
+
+
+\item \textit{Power} is the desire to influence others. Власть --- потребность влиять на других и навязывать свои желания и выборы. Эволюционное происхождение --- животные, центры наград которых не возбуждала потребность во власти, не могли отстоять свои права на добычу и не передали свои гены.
+
+Потребность принимать решения за окружающих.
+
+Надо сказать, что power и status не одно и то же. Бывают статусные люди, которые совсем не хотят принимать решения и влиять на других.
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for power, не могли навязать свою волю; это снижало их шанс на выживание в голодные годы, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for power, были постепенно вымыты эволюционным отбором. 
+
+
+
+
+
+Ощущение собственной всесильности или резкого расширения своих возможностей (способы это почувствовать — завести близкую дружбу с очень влиятельным человеком, переехать из Ижевска в Москву или из Москвы в Долину, понять некоторый дающий конкурентное преимущество фундаментальный факт)? Тоже мотивация 14. Почему люди любят знакомиться с новыми интересными людьми? Поэтому же.
+
+% Почему приятно, когда близкие принимают правильные решения, трезво мыслят и много зарабатывают? Почему это доставляет удовольствие? Потому, что близкая дружба с умным успешным человеком, как мы только что обсудили, это мотивация 14. 
+
+Reiss (2000a) has defined power as a desire for influence; Reiss’s motive of power does not fit well in Maslow’s categories, because power has elements of both higher motivation (as when a desire for power motivates leadership or ambition) and lower motivation (as when power motivates domination).
+
+\item Romance is the desire for sex and beauty. Любовно-сексуальная потребность. Эволюционное происхождение --- самцы, центры наград которых недостаточно возбуждала любовно-сексуальная потребность, проигрывали конкуренцию за самок самцам, которых эта потребность возбуждала сильно.
+
+Эволюционное происхождение --- приматы, которых слабо интересовало размножение, в каждом поколении оставляли меньше потомства, чем те приматы кого размножение интересовало сильно.
+
+%Дофаминергическая целеполагающая мотивация к образованию парных связей.
+
+Какими психическими механизмами реализовано чувство восхищения (красотой природы либо человеком)? Восхищение это аффект. Как и при любом аффекте, должна притупляться работа коры.
+
+По какой эволюционно сформированной причине женщина старается выбрать более доминантного партнёра? (<<Более доминантный>> претендовал на б\'{о}льшую территорию, что означало б\'{о}льшую вероятность хорошо питаться и оставить потомство.) Cтремление быть с альфа-самцом следует из желания быть с самцом который претендует на более большую территорию. 
+
+\item \textit{Saving} is the desire to collect things. Сохранение --- накопление и защита ресурса, потребность собирать и сберегать ценности (как с утилитарной целью, так и в рамках коллекционирования). Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность накапливать и защищать ресурс, в каждом поколении оставляли меньше потомства по сравнению с теми, кого эта потребность возбуждала сильно.
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for накопление и защита ресурса, не были внимательны ни к орудиям труда, ни к запасам еды; это снижало их шанс на выживание в случае неурядиц, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for накопление и защита ресурса, были постепенно вымыты эволюционным отбором. 
+
+Saving is the desire for collecting. Its primal origins are animal instincts to hoard food and materials essential for survival. In human beings, this desire motivates people to save money and to hoard items of interest. It makes frugality an intrinsic value. The value of frugality motivates us not to waste anything, not even time. Frugal people aim to save everything and throw away nothing, so long as it is possible to make any use of it at all, however trifling that use may be. They try to save money, no matter how much or little they have to live on.
+
+Collections are intrinsically valued, indicating that saving is a basic human desire.
+
+having an expensive car stolen or damaged
+
+
+
+
+\item \textit{Social contact} is the desire for companionship. Социальный контакт --- потребность в дружеских и прочих близких взаимодействиях (не сексуальных и родственных). Эволюционное происхождение --- приматы, центры наград которых недостаточно возбуждала потребность в социальном контакте, проиграли конкуренцию за еду и другие ресурсы тем, кого эта потребность возбуждала сильно.
+
+Эволюционное происхождение --- приматы, которых недостаточно возбуждала потребность в социальном контакте, хуже находили пищу и хуже выживали. в каждом поколении оставляли меньше потомства по сравнению с теми, кого эта потребность возбуждала сильно.
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for social contact, хуже других расслаблялись; это снижало их шанс на выживание в случае неурядиц, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for social contact, были постепенно вымыты эволюционным отбором. 
+
+%Ниже или выше станет ваше качество жизни, если пропадёт необходимость вступать в смолл-толки с чужими людьми в школе, в университете, в офисе?
+
+Мы эволюционировали не в тех условиях, в которых сейчас живём. Мы эволюционировали в условиях, когда мы были очень сильно зависимы от сообщества. Науке не известен ни один вид приматов, который жил бы поодиночке и не формировал хотя бы маленькие семейные группы. Обычно это большие группы из многих семей. 
+
+% Есть теория, что речь произошла от груминга (позволило резко сократить время, расходуемое на это).
+
+A desire for privacy does not necessarily indicate that a person is shy. Whereas a private person has a low desire for social contact, a shy person desires social contact but is afraid of being rejected. Although shy people actually have at least an average desire for social contact, they are also easily embarrassed (indicating a high desire for acceptance).
+
+
+
+\item \textit{Status} is the desire for social standing, the desire for respect based on high birth, wealth, or fame. Социальный статус и значимость, сравнение в свою пользу, уважение окружающих, престиж, слава. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность в сравнении в свою пользу, проиграли конкуренцию за противоположный пол и не оставили потомства. 
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for status, не могли навязать свою волю; это снижало их шанс на выживание в голодные годы, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for status, были постепенно вымыты эволюционным отбором. 
+
+
+
+Когда-то в прошлом, социальный успех почти гарантировал биологический, так что наши мозги wired максимизировать именно социальный успех. 
+
+Стоит отметить, что социальный статус в разных обществах значит разное. Например, в обществе профессиональных музыкантов социальный статус определяется твоей квалификацией как музыканта, а вовсе не количеством денег. (в большинстве обществ это <<более состоятельный>> или <<приносящий наибольшую пользу окружающим>>, но в некоторых это <<более знаменитый>>, <<более талантливый>>, <<более целеустремлённый>>, <<профессионально более успешный>>). % Не имперская мощь, так гражданская позиция. Не стразы, так Че Гевара. Не квартира для тусовок, так диплом победителя Всероса. 
+
+Мотивация <<статус>> обеспечивает немалую часть мирового ВВП: она является причиной того, что люди стараются хорошо выглядеть, много зарабатывать, умничать или выкладывать соблазнительные фотографии в соцсетях. 
+
+%Нам кажется, что людей с мотивацией 14 много, но это иллюзия, вызванная тем, что эти люди ищут публичности и внимания, а люди с низким уровнем мотивации 14 нет.
+
+Status, the desire for respect based on social standing, is associated with the joy of feeling selfimportant. Many Americans feel important when they are rich or when others pay attention to them, and they feel unimportant when they are poor or when they are ignored. Although in humans status is not a lower motive (survival need), it is doubtful if Maslow would have considered attention-seeking and wealth-seeking examples of self-actualizing tendencies.
+
+Какие есть способы социальной доминации? Знать больше, чем другие (иметь сверхдоминантой 2), иметь власть (10), иметь много денег (12), иметь популярность (14). В разных обществах статус даётся разными способами. В некоторых обществах это возраст.
+
+Status is the basic desire for prestige. In animals, it is expressed as a desire for attention. Newborn birds and other animals call attention to themselves in order to get their parents to address their needs. If the need for attention is especially strong in a baby bird, it may increase the chances for survival as compared with other members of a nest. In human beings, status also has apparent survival value because it leads to better nutrition and health care and to privilege during times of emergency.
+
+People with a high need for status are impressed by expensive homes, clothes with designer labels, and expensive cars. They are impressed by royalty, celebrities, and high society. 
+
+\item \textit{Tranquility} is the desire for emotional calm, the desire to be safe. Снятие стресса, расслабление, отдых. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность в расслаблении, пребывали в непрерывном психическом и моторном стрессе, что ослабляло их шансы на оставление потомства. Почему люди любят тем или иным способом расслабиться. Почему люди любят мемы, смешные картинки, стендап, посмеяться. Взаимодействие с животными и с природой (с обычной, речь не о потрясающе красивых местах).
+
+Tranquility is a psychological state that is defined as the absence of disturbance and turmoil, or the absence of anxiety, stress, and fear. Its primal origins are in animal instincts to flee danger and seek safety. How strongly people desire tranquility depends on how motivated they are to live a stressfree life. Some people fall apart at the first signs of stress. These people have a strong need for a tranquil, or stress-free, lifestyle. Other people can tolerate stress reasonably well even though they do not enjoy it. These people have a low need for a tranquil lifestyle.
+
+People with a strong desire for tranquility are motivated to make changes in their lives that significantly reduce stress. For example, some people have changed their careers or turned down promotions because they did not want the added stress of the new position. In contrast, people with a weak desire for tranquility can tolerate significant levels of stress. A good example is a thrill-seeker who likes to skydive or race cars for fun. Volunteer combat soldiers have a weak desire for tranquility. They show courage, not avoidance, in the face of fear.
+
+Tranquility is a psychologically significant desire partially because people spend a considerable amount of time managing anxiety. Many people regularly consume tranquilizers to manage anxiety, and they take vacations seeking relaxation and escape from stressful jobs. 
+
+Certain types of substance abuse are associated with a strong desire for tranquility. Because alcohol depresses bodily signs of stress, some drinking problems may be caused by a person’s efforts to escape from stressful experiences.
+
+The desire for tranquility is also associated with how many fears a person has. People who have many fears have a strong desire for tranquility, and those with relatively few fears have only a weak desire for tranquility.
+
+Individual variations in the desire for tranquility have a genetic basis and play a role in some drinking problems, phobias, and chronic pain reactions.
+
+
+
+\item \textit{Vengeance} is the desire to get even. Возмездие --- потребность мстить и побеждать, наказывать своих обидчиков и поощрять помощников. Эволюционное происхождение --- животные, центры наград которых недостаточно возбуждала потребность в возмездии, . соревновательность - это зарегулированная префронталкой конфликтность
+
+
+Эволюционное происхождение --- гоминиды, которые не испытывали desire for vengeance, не вступали в конфликты (как внутри своей группы, так и с гоминидами других групп), не отстаивали свои интересы; это снижало их шанс на выживание, а следовательно на передачу генов следующим поколениям и выживание следующих поколений; так гены гоминид, не испытывавших desire for vengeance, были постепенно вымыты эволюционным отбором. 
+
+
+
+
+
+
+Люди соревнуются, даже когда в этом нет прикладного смысла.
+
+The desire to get even with people who offend us is associated with feelings of anger or hatred. Its primal origin concerns an animal’s need to defend itself when attacked. In human beings, vengeance can motivate both aggression and competitiveness (one-upmanship).
+
+The desire for revenge is aroused when people are frustrated, insulted, or threatened with an attack. When people are prevented from getting what they want, or when there is a delay, they all tend to feel some degree of frustration, irritation, and hostility. Anger is a common response to
+insult. 
+
+\item Beauty. Почему люди любят музыку? Что заставляет людей ходить в театры и музеи? Высшие удовольствия (бессмертные образцы поэзии, бессмертные образцы музыки, некоторые природные пейзажи и виды из окон) --- какой мотивацией вызваны?
+
+Почему люди любят наблюдать за миром животных?
+
+Почему люди любят смотреть футбол? Созерцание красивой HD-картинки, <<сопереживание>> испытываемым трибуной эмоциям.
+
+The applied meaning of music and poetry is to look for the art you like to lift your mood up with it.
+
+
+Когда человеку нравятся красивые интерьеры, уютное обустройство дома --- это какая мотивация?
+
+Почему просмотр видео с красивой картинкой в full HD приятен? Какова матчасть, стоящая за этим?
+
+
+
+\end{enumerate}
+
+\section{Таблица соответствия desires and joys}
+
+\begin{center}
+\begin{tabular}{ |c|c| } 
+\hline
+\textit{Desire} & \textit{Pleasure} \\ 
+\hline
+desire for acceptance & joy of self-confidence \\ \hline
+desire for curiosity & joy of wonder \\ 
+\hline
+desire for eating & joy of satiation \\ 
+\hline
+desire for family & joy of love \\ 
+\hline
+desire for honor & joy of loyalty \\ 
+\hline
+desire for idealism & joy of compassion \\ 
+\hline
+desire for independence & joy of freedom \\ 
+\hline
+desire for order & joy of stability \\ 
+\hline
+desire for physical activity & joy of being fit \\ \hline
+desire for power & joy of efficacy \\ 
+\hline
+desire for status & joy of self-importance/superior social standing \\ 
+\hline
+desire for tranquility & joy of relaxation \\ 
+\hline
+desire for vengeance & joy of vindication \\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+\section{О корректности списков безусловных наказаний и поощрений}
+
+
+
+Отметим, что это утверждение не имеет научного доказательства. А именно:
+
+- эти списки ниоткуда не следуют
+
+- непонятно, как доказать, что этот список полный
+
+
+
+
+
+% (теоретически ведь людей можно засунуть в томограф и обсуждать/демонстрировать им разные стимулы, и тем самым строго научно доказать это?)
+
+
+
+Что касается базовых позитивных стимулов, мы будем исходить из модели Рейсса, согласно которой базовых позитивных стимулов 16 штук. Модель Рейсса была создана эмпирически (по итогам обработки 6000 анкет) и теоретического обоснования не имеет.
+
+
+Важной проблемой является ортогональность.
+
+
+
+
+
+
+
+
+
+\section{Where is the reward called <<money>> in this list?}
+
+
+
+
+%Как видно, среди описанных мотиваций нет денег. Почему? Потому что деньги не являются базовой мотивацией. 
+
+
+Деньги не являются эволюционно обусловленной мотивацией. Мозг человека формировался в условиях, когда денег не существовало. Эволюционный отбор происходил в условиях, когда денег не существовало. Люди хотят не денег, а накопления и защиты ресурса (мотивация 12), восхищения среди окружающих (мотивация 14), ощущения победы в соревновании (мотивация 16). Эти мотивации реально существуют. Побочным эффектом стремления к этим мотивациям являются деньги.
+
+%Интересный факт: деньги не являются безусловным поощрением, а ограничение свободы (тюрьма) не является безусловным наказанием. Почему? Потому что мозг человека формировался в условиях, когда ни денег, ни ограничения свободы не существовало. Деньги приятны из-за того, что активируют безусловное поощрение «накопление и защита еды и орудий её добычи»; люди, которые кичатся заработком, делают это ради безусловного поощрения «социальный статус и значимость».
+
+%хотят иметь возможность самореализоваться через предпринимательство или творчество (мотивация 7) и насладиться увеличением своих возможностей (мотивация 14).
+
+
+
+\section{Что такое 16-вектор}
+
+
+Итак, наборы безусловных поощрений и наказаний одинаковы для всех homo sapiens, потому что сформированы эволюционным отбором.
+
+%От одних и тех же стимулов разные люди получают разные уровни удовольствия.
+
+Однако интенсивность аффекта, вызываемого тем или иным безусловным поощрением или наказанием, у разных людей различна. У одних людей сильный аффект вызывают одни безусловные поощрения, у других --- другие. Мы постоянно наблюдаем это в быту: одних людей эмоционально вовлекают одни события, других --- другие. %Почему у одних людей сильный аффект вызывают одни безусловные поощрения, а у других другие --- вопрос непростой. Установлены лишь банальные факты: сильнее всего влияют гены, важно внутриутробное развитие и импринтинг в раннем детстве (на этапе формирования нейронных контуров), важно окружение (причём не только в детстве, а всю жизнь --- окружение значимо влияет на наши нейронные контуры). 
+
+%Будем называть последовательность, состоящую из n чисел, n-вектором. Тогда последовательность, состоящую из 16 чисел, мы можем называть 16-вектором.
+
+
+Будем называть вектором интенсивностей шестнадцати эволюционно обусловленных поощрений, или, для краткости, \textit{16-вектором} человека 16-компонентный вектор следующего вида: $$\{ a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_{10}, a_{11}, a_{12}, a_{13}, a_{14}, a_{15}, a_{16} \},$$ где $a_i$ --- интенсивность $i$-того эволюционно обусловленного поощрения человека, оценённая по шкале от $-50$ до $50$ ($50$ --- данное поощрение намного сильнее чем у среднего человека, $-50$ --- данное поощрение намного слабее чем у среднего человека (почти отсутствует), $0$ --- среднее по популяции значение). (Распределение по популяции любого численно измеримого признака --- гауссово распределение, причиной тому центральная предельная теорема. Но фраза <<я оцениваю значение этой компоненты в $45$>> проще фразы <<я оцениваю значение этой компоненты в больше чем $+3\sigma$>>, поэтому мы будем пользоваться шкалой от $-50$ до $50$.)
+
+
+
+
+
+Каждый взрослый человек знает себя достаточно хорошо, чтобы корректно выписать свой 16-вектор. Кроме того, чем лучше мы знаем кого-то из окружающих (приятеля, родственника, коллегу, клиента), тем точнее мы можем оценить 16-вектор этого человека.
+
+%В качестве примера приведу свой нынешний 16-вектор: $$\text{Alex Garkoosha} = \{ 20, 95, 60, 30, 80, 90, 90, 60, 20, 20, 80, 40, 30, 20, 80, 10 \}$$
+
+
+
+Можно ли аналогичным образом выписать вектор интенсивностей эволюционно обусловленных наказаний? Можно, но смысла в этом немного: конкуренция между безусловными наказаниями фундаментально отличается от конкуренции между безусловными поощрениями. Нетрудно представить себе ситуацию выбора между безусловными поощрениями, такого рода выборы совершаются нами постоянно. Но мы не выбираем между избавлением от наказания <<голод>>, избавлением от наказания <<боль>> и избавлением от наказания <<отвращение к тухлой пище>>, потому что каждое безусловное наказание очень интенсивно. Мы хотим избавиться от всех безусловных наказаний сразу; сложно получать удовольствие от поощрений до того как устранены все безусловные наказания.
+
+
+
+
+\section{От чего зависит 16-вектор?}
+
+
+Both on genetic inheritance (nature) and on experiences gained after conception (nurture). How do experiences shape the 16-vector will be discussed shortly. Genetic influence is measured in twin studies; in most of them heritability index typically was found to be around 40\% to 50\%. %Если в среде поощряются одни компоненты 16-вектора и наказываются другие, вероятно, ваш 16-вектор довольно сильно изменится. В то же время в отсутствие внешнего воздействия, вероятно, ваш 16-вектор постепенно сместится к наиболее естественному.
+
+
+
+%Nature versus nurture is a long-standing debate about the balance between two competing factors which determine personality: environment (nurture) and genetics (nature). Nature is what people think of as pre-wiring and is influenced by genetic inheritance and other biological factors. Nurture is generally taken as the influence of external factors after conception e.g. the product of exposure, experience and learning on an individual.
+
+
+
+%Twin studies established that there was, in many cases, a significant heritable component. These results did not, in any way, point to overwhelming contribution of heritable factors, with heritability typically ranging around 40\% to 50\%.
+
+
+
+%The variability of trait can be meaningfully spoken of as being due in certain proportions to genetic differences ("nature"), or environments ("nurture"). For highly penetrant Mendelian genetic disorders such as Huntington's disease virtually all the incidence of the disease is due to genetic differences. Huntington's animal models live much longer or shorter lives depending on how they are cared for.[38]
+
+%Вполне очевидно, что такое свойство личности, как владение некоторым языком или принадлежность к какой-то конфессии, зависит от внешней среды (воспитания) и никак не зависит от генетики (природы). Наоборот, цвет глаз или группа крови никак не зависят от воспитания. Примеры признаков, в которые вносит вклад и наследственность, и влияние среды --- вес, степень религиозности.
+
+
+
+%Can people change, or does a genetic origin of the 16 basic desires imply that our basic personalities are determined at birth? Genes are not the only important influence on basic desires and how we satisfy them. However, the genetic factors in our desires provide significant stability to our behavior. I suspect that people can change, but to a certain degree and not very easily.
+
+%As young adults, the biological desires (eating, physical exercise, romance, and vengeance) are stronger in intensity than are many of the psychological desires. With advancing age, however, the biological desires decline in intensity beginning around age 30. People become less vengeful after about age 21, and they continue to show increasingly less interest in vengeance throughout their adult years. The desires for romance and physical exercise also decline significantly, especially after about age 35 to 40. Further, we found large decreases in the intensity of the desires for power and status after ages 35 to 40. This suggests that many people become less interested in their careers as they grow older.
+
+%On the other hand, the intensity of certain psychological desires (family, honor, and idealism) increase in strength with advancing age. As people become older, they become more family-oriented, as indicated by an increase in both the desire for honor (which connects us to our parents) and the desire for family (which connects us to our children). The desire for idealism (which connects us to society) also increases with advancing age.
+
+
+
+
+\section{Does the 16-vector change with the time?}
+
+Yes, it does. В работе [1] на выборке из N человек было показано, что у большинства людей eating, romance, physical exercise, vengeance становятся менее значимы с возрастом, в то время как honor, family, and idealism для большинства людей становятся более значимы с возрастом. (Было бы удивительно, если бы результат эксперимента оказался иным.) 
+
+Когнитивно-поведенческая терапия позволяет направленно перестраивать 16-вектор --- можно сделать вектор клиента таким, каким он хочет его видеть. На практике, люди не прибегают к этой возможности, и свой 16-вектор направленно никто не перестраивает, поэтому его изменение мало. Curious children tend to become curious adolescents, who tend to become curious adults. People who have strong appetites tend to struggle with their weight all their lives. People who like to organize and plan things when they are adolescents will probably still enjoy organizing and planning things when they are adults.
+
+
+%Because our basic desires have a genetic origin, we tend to have the same basic goals throughout most of our lives. People do not change very much in what they fundamentally desire. Curious children tend to become curious adolescents, who tend to become curious adults. People who have strong appetites tend to struggle with their weight all their lives. People who like to organize and plan things when they are adolescents will probably still enjoy organizing and planning things when they are adults. The underlying genes that influence these desires do not change as we grow older.
+
+Причин здесь несколько:
+- по-видимому, есть генетическая компонента (twin studies)
+- родители социальным одобрением подкрепляют то, что похоже на их выборы (а их выборы это то, что близко им генетически)
+- люди редко попадают в такие общества, которые бы шейпили их под себя; сейчас тоталитаризм встречается редко, большинство обществ и компаний изначально исходит из того что все мы разные
+
+
+%Личность человека плавно меняется с возрастом, поэтому 16-вектор плавно меняется во времени. Более того, когнитивно-поведенческая терапия позволяет его направленно перестраивать.
+
+
+
+
+
+%An intriguing result of our research was that the desire for tranquility increased in people over the age of 56. The finding suggests that many people may be prone to become increasingly fearful as they approach old age and possible death.
+
+
+
+
+%\section{People bond to those with the same values, people separate from those with the opposite values}
+
+\section{Как мозг решает, какое удовольствие искать?}
+
+В каждый отдельно взятый момент времени есть несколько способов получить удовольствие: поизучать что-нибудь сложное, похихикать над мемами, посмотреть ютубчик, поесть, помастурбировать. То есть набор из $N$ приятных поведенческих программ. Как лимбическая система решает, к какой программе обратиться? 
+
+Алгоритм принятия решений
+
+Как происходит контроль за целеполаганием (удержание от детского аффективного реагирования на удовольствия) и выделение приоритетных мотиваций?
+
+
+
+\section{Given two persons A and B, how to predict whether they will like each other or not?}
+
+
+
+
+People bond to those with the same values, people separate from those with the opposite values. Like-minded attract and opposites repel. People bond when their desire profiles are similar. People grow apart when their desire profiles are dissimilar.
+
+Каждая точка 16-вектора, значения которой для человека A и человека B близки, вызывает взаимную симпатию. Каждая точка 16-вектора, значения которой для человека A и человека B далеки, вызывает взаимное отдаление. Исключений два --- люди с сильной потребностью в acceptance и люди с сильной потребностью в vengeance: с ними взаимное отдаление чувствуют все (такие люди не нравятся никому).
+
+
+
+%Исключений два --- the desire for acceptance. Неверно думать, что люди со слабой потребностью в acceptance нравятся людям со слабой потребностью в acceptance, а люди с сильной потребностью в acceptance нравятся людям с сильной потребностью в acceptance. Как правило, люди со слабой потребностью в acceptance не нравятся никому.
+
+%The desire for acceptance is an exception to the general rule that likemindedness attracts and opposites grow apart. Generally, a low need for acceptance increases compatibility with most partners, whereas a very high need for acceptance decreases compatibility with many partners. 
+
+%Quarrels are the most common way in which partners use relationships to satisfy their desire for vengeance (opposites grow apart). When a partner has a need to express anger, to compete, or to vanquish, he or she starts a quarrel. An argumentative partner, for example, looks for opportunities to quarrel simply because he or she has a need to compete. The person may criticize the partner, not because he dislikes the partner, but as a means of experiencing intrinsically valued, competitive feelings.
+
+
+
+%We have seen how relationships are strengthened when couples are matched for basic desire (Principle of Bonding), and how problems may arise when they are mismatched (Principle of Separation). The only important exceptions to these general principles concern people with very strong desires for acceptance or vengeance, who are mismatched to many partners.
+
+
+Когда компоненты 16-вектора существенно далеки, чем больше партнёры узнают друг друга, тем отчётливее им видна взаимная непохожесть.
+
+
+
+Although improved communication can help solve some of the problems discussed in this chapter, it may not always be enough. When desires are significantly mismatched, the more the partners communicate their true feelings, the more apparent are their differences. The main problem is not that they misunderstand each other, but rather that one enjoys a lifestyle that the other dislikes. What makes one partner happy makes the other uncomfortable, and vice versa. Improved communication can help a couple understand that the situation exists, but it does not directly lead to any solutions.
+
+%People cannot solve these problems by exerting pressure on their partners to give in to their demands or to do things their way. The partner may submit temporarily to the demands, but he or she cannot be happy doing so. It is only a matter of time before the problem reemerges.
+
+Your desire profile affects how you relate to people at work. If you have a significantly different desire profile than your boss, for example, your boss will tend to misunderstand you, and you will tend to misunderstand your boss. On the other hand, your boss will tend to appreciate you if your desire profiles are similar. The general principles in analyzing your relationship with your boss are that like-mindedness attracts, opposites repel, and the longer in time the relationship continues, the more powerful is the influence of compatibility of desire profile.
+
+Our desire profile also influences how we relate to co-workers. We tend to appreciate co-workers who have desire profiles similar to our own.
+
+%As these examples suggest, we tend to get along with people at work who have similar desire profiles, but we often misunderstand those who have dissimilar profiles. In fact, we may not even realize that some of the problems we have with people at work are related to differences in how strongly we value a basic desire. 
+
+Является ли хорошим навык уметь понравиться любому наперёд заданному человеку? В опасных для жизни ситуациях умение мимикрировать под <<своего>> полезно, но в целом это того не стоит. Мимикрируя, вы даёте человеку надежду на то, что вы с ним похожи --- в то время как чем больше времени вы проводите вместе, тем точнее он будет узнавать ваш 16-вектор.
+
+% Вы должны уметь ладить со всеми, уметь поговорить с гопником.
+
+% вы должны уметь находить общий язык (ворваться в разговор) со всеми, а для этого надо не быть ворчливым, не видеть недостатки, быть дружелюбным. Не быть как Настя Кравцова :)
+
+
+
+\section{Misunderstanding, self-hugging and everyday tyranny}
+
+В своей книге <<The 16 basic desires that define our personality>> Steven Reiss подмечает, что у непонимания есть три компоненты, которые он называет <<misunderstanding>> (<<how the other can want what I cannot stand?>>), <<self-hugging>> (<<my choices are best choices>>, <<your pleasures are inferior to mine>>), and <<everyday tyranny>> (<<you shall want what I want>>). Мне это описание кажется чрезвычайно точным.
+
+Непонимание касается отдельно каждой компоненты. Если взять двух случайных людей, скорее всего, по каким-то компонентам у них будет полное взаимопонимание, по каким-то --- непонимание.
+
+%An example of “not getting it” occurs between people who do and do not value curiosity. The intellectual looks at the non-intellectual and wonders why he or she has not discovered the joy of learning. The non-intellectual looks back at the intellectual and wonders why he or she is such a nerd. No amount of explanation can help them appreciate their differences --- both are baffled as to how the other can want what they themselves cannot stand.
+
+People who self-hug think that what is best for themselves is best for everyone else as well. They think that we have the potential to enjoy their lifestyle.
+
+%Self-hugging leads directly to miscommunication because self-huggers misread what other people want from life. They never get it --- other people pursue different goals in life, not because they have settled for inferior pleasures, but because they have different natures.
+
+The paradox of everyday tyranny is that although it doesn’t work, people keep using it as their primary method of changing others. Spouses try every day to make their partners more like they are. They may never quit, despite a lack of success. They tell their children and partners to be neater, more ambitious, more principled, more sociable, or more active. Why haven’t they realized that we are not going to change because we do not enjoy the changes they want us to make?
+
+%Everyday tyranny produces only temporary changes in behavior. It does not work over the long haul because people cannot change their basic natures. People can pressure their partners or children into complying with their wishes for short periods of time, but sooner or later their efforts fail because the individual reverts back to his or her basic values and ways of behaving. Everyday tyranny ruins relationships. It can lead to resentment, divorce, children leaving home and not coming back, and even mental illness.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Как люди вокруг нас выбрали себе образ жизни?}
+
+Бывают города и населённые пункты, в которых возможности выбрать место работы нет. Бывают ситуации, когда из-за круга общения люди просто не знают о том, какие возможности у них есть. Но, если возможность выбора есть, люди выбирают себе образ жизни в зависимости от того, что сильнее активирует их центры наград.
+
+Бизнесменами становятся те, у кого максимальной компонентой 16-вектора является 12-я либо 14-я. Полицейскими, судьями, тюремными надзирателями и политиками становятся те, у кого максимальна 10-я компонента 16-вектора. Ищут мужа и рожают в двадцать лет те, у кого максимальна 4-ая компонента. Устраивают каждую пятницу вечеринки и по поводу и без повода, зовут в гости те, у кого максимальна 13-ая компонента. В науку идут те, у кого максимальна 2-ая компонента. Выбор человеком и места работы, и набора хобби --- прямое следствие физиологии его мозга. 
+
+Вполне очевидно, что люди хотят максимизировать удовольствие и минимизировать страдание. (Каждое из животных хочет, и человек не исключение.) Минимизировать страдание, к счастью, относительно простая задача в 21 веке. Но как максимизировать удовольствие?
+
+
+
+
+
+Здесь может показаться, что ответ ясен --- выстроить жизнь так, чтобы всё время идти к двум-трём безусловным поощрениям, соответствующим максимальным компонентам твоего 16-вектора. Однако этот ответ неверен. 
+
+
+Неверно думать, что все поощрения, которые опираются на одну и ту же компоненту 16-вектора, возбуждают одинаково. Труднодоступные, малореалистичные поощрения («стать футболистом уровня сборной страны», «купить домик у моря», «доказать гипотезу Римана», «освещать социальное неравенство, коррупцию и отсутствие прав человека», «дать доступ к высококачественному образованию людям из бедных регионов») возбуждают сильнее легкодоступных, опирающихся на ту же компоненту 16-вектора.
+
+
+
+Разные поощрения возбуждают мозг в разной степени. Причины у этого явления три:
+
+\begin{itemize}
+
+\item разные поощрения могут опираться на разные компоненты 16-вектора (а значения разных компонент 16-вектора, как правило, отличаются)
+
+\item труднодоступные поощрения возбуждают сильнее легкодоступных, опирающихся на ту же компоненту 16-вектора 
+
+\item к той компоненте 16-вектора, который вам кажется единственной причиной, по которой вас возбуждает некое поощрение, могут примешиваться другие компоненты. Пример: познания и власть являются поощрением не только сами по себе, но также и потому, что они могут реализовать безусловное поощрение <<статус>> (в некоторых обществах ваш социальный статус будет выше, если вы разберётесь в строении клетки, в некоторых --- если разберётесь как семена правильно сажать, в некоторых --- если разберётесь в ракетостроении), а также безусловное поощрение <<saving>> (если вы разберётесь, как сажать семена, вы сможете сэкономить деньги). Познания также могут привести к занятию должности, которая ещё больше возвысит ваш социальный статус и также позволит реализовать поощрение <<saving>>.
+\end{itemize}
+
+На этом этапе может казаться, что верный ответ задачи о максимизации удовольствия --- всегда идти к поощрению, мысль о котором вызывает наибольшее возбуждение. На практике люди так себя не ведут, иначе бы каждый стремился стать кем-то великим --- великим учёным, выдающимся политиком, великим спортсменом. Этого не происходит, и причина в том, что путь к большим поощрениям лежит через множество наказаний. Очень упрощённо путь к малореалистичному поощрению можно описать так: мысль о поощрении, наказание, наказание, безделье, уныние, мысль о поощрении, наказание, безделье, мысль о поощрении, наказание, мысль о поощрении, победа (поощрение). При первом же наказании каждый человек задумается, не заняться ли чем-то более простым.
+
+Путь к легкодоступному поощрению выглядит иначе: мысль о поощрении, поощрение. Есть, конечно, и поощрения среднего уровня доступности.
+
+
+Заставлять себя делать то, что не реализует твои самые интенсивные базовые мотивации, неэффективно. Принуждать себя с помощью угрозы наказания можно (<<учительница нажалуется родителям>>, <<выгонят из университета>>, <<выгонят с работы>>), однако в отсутствие этой угрозы ты будешь заниматься тем, что возбуждает твои центры наград сильнее. 
+
+
+Каждые сутки мозг требует примерно одну и ту же суточную дозу поощрения, без разницы как именно. Вряд ли от этой дозы получится существенно отклониться (когда мы её недополучаем, возникает компульсивная тяга к поощрениям --- слабоконтролируемая тяга к вкусной еде, к покупкам и к другим поощрениям). Поэтому, работая над труднодоступными поощрениями и, следовательно, получая наказания, неизбежно приходится прибегать к легкодоступным поощрениям.
+
+
+
+
+Таким образом, задача о максимизации удовольствия не имеет простого ответа. Интенсивность поощрения, которое я испытаю, зависит от значения соответствующей компоненты 16-вектора (значений соответствующих компонент 16-вектора), а также от труднодоступности этого поощрения. Можно либо получать удовольствие от тяги к легкодоступным поощрениям, либо получать коктейль из наказаний и удовольствия от тяги к труднодоступным поощрениям. Большинство выбирает легкодоступные поощрения и поощрения среднего уровня доступности. Те люди, которые всё-таки идут к труднодоступным поощрениям, делают это, видимо, из-за соответствующей особенности мозга: интенсивность кайфа, или прихода, --- по-другому и не скажешь --- который они испытывают от мысли о некоторых труднодоступных поощрениях, перешибает любые мысли о наказаниях.
+
+
+
+
+
+\section{Как произвести направленное изменение своего 16-вектора?}
+
+
+
+Предположим, ваш 16-вектор выглядит так: $$\{ a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_{10}, a_{11}, a_{12}, a_{13}, a_{14}, a_{15}, a_{16} \}$$
+
+И вы хотите его превратить в следующий: $$\{ b_1, b_2, b_3, b_4, b_5, b_6, b_7, b_8, b_9, b_{10}, b_{11}, b_{12}, b_{13}, b_{14}, b_{15}, b_{16} \}$$
+
+
+
+
+Для этого можно прибегнуть к тому, что в когнитивно-поведенческой терапии называется оперантным обучением. Он основан на следующих пяти вариантах действия:
+
+\begin{itemize}
+\item положительный стимул после действия X (положительное подкрепление)
+\item избегание отрицательного стимула после действия X (отрицательное подкрепление)
+\item отрицательный стимул после действия X (положительное наказание)
+\item исчезновение положительного стимула после действия X (отрицательное наказание)
+\item отсутствие реакции на действие X, на которое раньше была реакция (исчезновение)
+
+
+
+\end{itemize}
+
+%Positive reinforcement and negative reinforcement increase the probability of a behavior that they follow, while positive punishment and negative punishment reduce the probability of behavior that they follow.
+
+
+
+%Человек это обучаемая когнитивная машина принятия решений, и эту систему можно направленно переобучать и настраивать. Рационально действующий субъект это оптимальная выигрышная стратегия. Возможно контролировать свое поведение на всю глубину и по желанию подключаться/отключаться от эмоций --- это технический навык.
+
+Пример: если внушить человеку мысль, что sex is sin, мысль о 11-ой компоненте 16-вектора будет возбуждать его слабее. Если, однако, в какой-то момент человек перестанет так думать (без внешнего стимула либо благодаря попаданию в общество которое не считает что sex is sin), то мысль о 11-ой компоненте 16-вектора начнёт возбуждать его как было.
+
+
+
+positive reinforcement is the strengthening of behavior by the occurrence of some event (e.g., praise after some behavior is performed), whereas negative reinforcement is the strengthening of behavior by the removal or avoidance of some aversive event (e.g., opening and raising an umbrella over your head on a rainy day is reinforced by the cessation of rain falling on you).
+
+
+
+
+%Classical conditioning and operant conditioning
+
+
+%Operant conditioning (also called instrumental conditioning) is a type of associative learning process through which the strength of a behavior is modified by reinforcement or punishment. 
+
+
+
+
+
+%Extinction occurs when a previously reinforced behavior is no longer reinforced with either positive or negative reinforcement. During extinction the behavior becomes less probable.
+
+Shaping is a conditioning method much used in animal training and in teaching nonverbal humans. It depends on operant variability and reinforcement, as described above. The trainer starts by identifying the desired final (or "target") behavior. Next, the trainer chooses a behavior that the animal or person already emits with some probability. The form of this behavior is then gradually changed across successive trials by reinforcing behaviors that approximate the target behavior more and more closely. When the target behavior is finally emitted, it may be strengthened and maintained by the use of a schedule of reinforcement.
+
+
+
+
+%\section{Determining someone's personality at dinners (in idle talk)}
+
+%As byproduct of goals <<what to discuss with the person>> and <<profiling with better precision>>, you show interest in the person's personality, which may be valued high.
+
+
+
+
+
+
+
+
+
+\section{The Book}
+
+% The Pleasure Principle implies that everything people do can be explained by a calculus of pleasure and pain.
+
+% Можно ли сказать, что всё, чем занимаются люди --- стремление к удовольствиям и избегание неудовольствий (боли)? Здесь надо заметить, что есть два разных вида удовольствия --- удовольствие от прогресса (продвижения) к тому, чего мы хотим, и удовольствие от получения того, чего мы хотим. 
+
+
+
+% The more I thought about this question, the more convinced I became that pleasure and pain do not drive our behavior to anywhere near the extent assumed by many psychologists. Pleasure is the byproduct of getting what we desire, it is not the aim of the desire. The goal of experiencing pleasure does not create the nurse’s desire to help patients; rather, altruism prods nurses to make sacrifices for their patients. The goal of avoiding guilt does not create the soldier’s desire to sacrifice himself for the good of his country; rather, honor motivates soldiers to make sacrifices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How can you analyze your current degree of value-based happiness? First, look at those of the 16 basic desires that are most meaningful to you and estimate generally whether or not you are satisfied with that aspect of your life. If you are dissatisfied, determine if the problem is one of excess or insufficiency, and then develop a practical plan for improvement. Would more or fewer friends make you happier? Would more or less challenge in your life make you happier? By asking yourself questions such as these, you can set goals to improve your value-based happiness. Let’s look at how satisfaction of each of the 16 desires can lead to value-based happiness.
+
+
+
+\section{How to improve your relationship (with anyone)}
+
+Из формулы <<like-minded attract, opposite-minded repel>> есть важное следствие. Дело в том, что, пользуясь этой формулой, можно улучшить отношения с любым человеком. С другом, с коллегой, с родственником, с супругом, с начальником, с подчинённым --- с любым человеком, который вам по тем или иным причинам важен.
+
+
+
+\begin{enumerate}
+\item измерить свой 16-вектор
+\item оценить 16-вектор человека, с которым хочется улучшить отношения
+\item заниматься с этим человеком только тем, что соответствует совпадающим положительным компонентам 16-вектора
+\item обсуждать с этим человеком только то, что соответствует совпадающим отрицательным компонентам 16-вектора
+
+\end{enumerate}
+
+Никогда не показывайте человеку, что у вас с ним существенное различие в какой-то из компонент 16-вектора.
+
+%The easiest and quickest way to improve a relationship is to spend more time on activities you both enjoy (to those you coincide in 16-vector) and less time on activities only one of you enjoys. You can significantly enhance your understanding of people by comparing your desire profile with theirs. 
+
+
+
+
+\section{Havercamp thesis (1998)}
+
+% Витальные потребности: безопасность, пища, вода, сон, дыхание, экономия сил и груминг
+
+% Зоосоциальные потребности: половое поведение, детско-родительское взаимодействие, иерархия ("лидеры и подчинённые"), территориальная ("собственность"), эмпатия
+
+% Потребности саморазвития: подражание, "программы свободы", игровые программы (тренинг двигательных и социальных навыков), исследовательские программы.
+
+
+% Потребность в одобрении и уважении, любопытство, забота о потомстве, пищевое поведение, клановая/субкультурная/этническая идентичность, потребность в социальной справедливости и социальной ответственности, желание проявлять свою индивидуальность и независимость, желание организовывать упорядоченную и предсказуемую среду вокруг, физические упражнения и спорт, власть и социальное доминирование, секс и романтика, собирательство и коллекционирование, потребность в горизонтальных социальных контактах и общении, мотив статуса и осознания собственной важности, безопасность и спокойствие для себя и близких, возмездие и месть (в общем смысле,- как желание наказать неправых).
+
+
+Maslow assumes that needs are arranged along a universal hierarchy of priority or potency. Needs lower on the hierarchy are prepotent and must be satisfied before needs higher on the hierarchy are triggered. In contrast, all sensitivity motives are assumed to have equal a priori potency. Under sensitivity theory, prepotency is not universal but differs across individuals.
+
+If the rate of social contact in a person’s life is less than that indicated by his or her set point, the individual is temporarily motivated to seek additional amounts of companionship (now a positive reinforcer). If the rate of companionship in one’s life is more than that indicated by one’s set point, the individual is temporarily motivated to avoid social contact (now a negative reinforcer). These set points are thought to be relatively stable across time.
+
+Sensitivity theory posits a cognitive-behavioral-genetic model of end motivation. Because of genetic variations, individuals may differ in how much they enjoy each end goal. For example, variations in genetic factors may cause some people to experience sex as more pleasurable than do others. Like McDougall and Maslow, sensitivity theory posits that motives are modified by cognition and learning.
+
+For example, both the belief that sex is sin, and past punishment of sexual behavior, should subtract from the person’s overall enjoyment of sex. The net effect is the extent to which the individual is motivated by sex relative to other people, which we call the person’s set point for sex. 
+
+If you know what a person wants, you are in a better position to predict what he or she will do.
+
+
+
+Maslow (1943) applied the distinction between lower and higher motives to five categories of needs that are structured in a hierarchy of prepotency and probability of influence. He wrote that people first satisfy their physiological needs, followed by their safety needs, and then their belonging or love needs. When these needs are satiated, they concentrate on satisfying their esteem needs and, lastly, on their needs for self-actualization. People are generally most concerned with the lowest unmet needs in the hierarchy.
+
+
+
+In Reiss’s system, order (which is associated with feelings of stability) and tranquility (which is associated with relaxation and the absence of fear) are the motives most closely associated with safety needs.
+
+
+\section{Emotional self-regulation}
+
+% https://en.wikipedia.org/wiki/Dialectical_behavior_therapy
+
+% https://en.wikipedia.org/wiki/Emotional_self-regulation
+
+% https://en.wikipedia.org/wiki/Cognitive_appraisal
+
+% https://en.wikipedia.org/wiki/Coping
+
+
+
+
+
+
+%Социальное доминирование осуществляется за счёт уверенности в своих действиях.
+
+
+
+
+
+Сoping strategies можно разделить на четыре группы: problem-focused, emotion-focused, support-seeking, and meaning-making coping. All these strategies can prove useful, but some claim that those using problem-focused coping strategies will adjust better to life.
+
+
+% Weiten has identified four types of coping strategies:[5] appraisal-focused (adaptive cognitive), problem-focused (adaptive behavioral), emotion-focused, and occupation-focused coping. Billings and Moos added avoidance coping as one of the emotion-focused coping.[6] Some scholars have questioned the psychometric validity of forced categorisation as those strategies are not independent to each other.[7] Besides, in reality, people can adopt multiple coping strategies simultaneously.
+
+
+
+
+%Furthermore, the term coping generally refers to reactive coping, i.e. the coping response which follows the stressor. This differs from proactive coping, in which a coping response aims to neutralize a future stressor. Subconscious or unconscious strategies (e.g. defense mechanisms) are generally excluded from the area of coping. 
+%(Most coping is reactive in that the coping response follows stressors. Anticipating and reacting to a future stressor is known as proactive coping or future-oriented coping.)
+% The process model also divides these emotion regulation strategies into two categories: antecedent-focused and response-focused. Antecedent-focused strategies (i.e., situation selection, situation modification, attentional deployment, and cognitive change) occur before an emotional response is fully generated. Response-focused strategies (i.e., response modulation) occur after an emotional response is fully generated.
+
+People using problem-focused strategies try to deal with the cause of their problem. They do this by finding out information on the problem and learning new skills to manage the problem. Problem-focused coping is aimed at changing or eliminating the source of the stress. The three problem-focused coping strategies identified by Folkman and Lazarus are: taking control, information seeking, and evaluating the pros and cons. However, problem-focused coping may not be necessarily adaptive, but backfire, especially in the uncontrollable case that one cannot make the problem go away.[4]
+
+
+
+The focus of this coping mechanism is to change the meaning of the stressor or transfer attention away from it.[15] For example, reappraising tries to find a more positive meaning of the cause of the stress in order to reduce the emotional component of the stressor. Avoidance of the emotional distress will distract from the negative feelings associated with the stressor. Emotion-focused coping is well suited for stressors that seem uncontrollable (ex. a terminal illness diagnosis, or the loss of a loved one).[14] Some mechanisms of emotion focused coping, such as distancing or avoidance, can have alleviating outcomes for a short period of time, however they can be detrimental when used over an extended period. Positive emotion-focused mechanisms, such as seeking social support, and positive re-appraisal, are associated with beneficial outcomes.
+
+
+
+
+
+
+
+
+%Low-effort syndrome or low-effort coping refers to the coping responses of a person refusing to work hard. For example, a student at school may learn to put in only minimal effort as they believe if they put in effort it could unveil their flaws.[34]
+
+
+The process model of emotion regulation is based upon the modal model of emotion. The modal model of emotion suggests that the emotion generation process occurs in a particular sequence over time. This sequence occurs as follows:
+
+\begin{enumerate}
+\item Situation: the sequence begins with a situation (real or imagined) that is emotionally relevant.
+
+\item Attention: attention is directed towards the emotional situation.
+
+\item Appraisal: the emotional situation is evaluated and interpreted.
+
+\item Response: an emotional response is generated, giving rise to loosely coordinated changes in experiential, behavioral, and physiological response systems.
+\end{enumerate}
+
+
+
+
+
+
+
+% In case you have maladapative beliefs that ruin your quality of life (e.g. <<I should've achieved X by the age of 15>>), these skills will help you dispel them. 
+
+
+
+\section{The implications}
+
+
+%Here's how it works. Millions of years of brain evolution made it a thing with implications <<success>> -> <<pleasure>> -> <<will to continue>>, <<no success>> -> <<dissatisfaction>> -> <<will to stop>>. Thus, no matter what X is, if you succeed in X, you experience pleasure. In particular, if you succeed in understanding something, you experience pleasure.
+
+% Thus, no matter what you do, if you reach something that your brain marks as <<success>>, you experience pleasure. %(These implications concern any action, not only the acquisition of knowledge.)
+
+
+% Generally speaking, implications <<success>> -> <<pleasure>> -> <<will to continue>>, <<no success>> -> <<dissatisfaction>> -> <<will to stop>> concern any action, not only the acquisition of knowledge. In the case of acquisition of knowledge, note out that you should restrict yourself with knowledge that is easy to get.
+
+% В течение сотен миллионов лет эволюции нервной системы у млекопитающих в мозге сформировался алгоритм <<получается>> -> <<приятно>> -> <<хочется продолжать>>, <<не получается>> -> <<неприятно>> -> <<хочется прекратить>> (касается любых действий, не только получения знания). Таким образом, узнавая штуки, можно 
+
+
+%\item абсолютно любой человек получает удовольствие от обладания знанием или получения знания, прикладная полезность знания при этом не важна. Причина в том, что в течение сотен миллионов лет эволюции нервной системы у млекопитающих в мозге сформировался алгоритм <<получается>> -> <<приятно>> -> <<хочется продолжать>> (касается любых действий, не только получения знания). Таким образом, удовлетворять любознательность приятно. Если сомневаешься, открой Википедию и несколько раз нажми кнопку <<Случайная страница>>.
+
+%\item абсолютно любой человек испытывает неприятные эмоции, пока получить знание не удаётся. Причина в том, что в течение сотен миллионов лет эволюции нервной системы у млекопитающих в мозге сформировался алгоритм <<не получается>> -> <<неприятно>> -> <<хочется прекратить>> (касается любых действий, не только получения знания). Когда человек пытается понять что-то субъективно сложное, скорее всего, у него это не получится, ему станет неприятно, и процесс захочется прекратить. Изучение субъективно сложных вещей, к сожалению, всегда сопровождается неприятными эмоциями.
+
+
+
+\section{Overcoming procrastination}
+
+
+Doing anything but what you need to be doing is called \textit{procrastination}. Typical scenario is as follows:
+
+\begin{enumerate}
+
+\item a person sits down to do a certain work, but never starts
+
+\item instead, the person does something else (e.g. does other work, reads news, talks to strangers on the Internet, plays a video game).
+
+\end{enumerate}
+
+
+Chronic procrastination greatly impairs both the performance at work and career perspectives. Those who procrastinate are fully aware of the consequences and suffer from thinking about them. 
+
+
+
+Procrastination is caused by a variety of reasons. Here are some of them together with treatment suggestions for each.
+
+\begin{itemize}
+
+
+\item \textit{task assignment error} --- you have taken on a task that requires knowledge that you don't have at the moment. E.g. you've committed to build a country house without having complete knowledge of how to do it. Or you've committed to find the center of mass of a flat detail without knowing how to calculate a double integral. Or you've committed to learn a specific topic without knowing where the topic is narrated crystal clear. Thus, you don't know how to do the task.
+
+There is only one way to handle this kind of procrastination: uncommit what you've committed to. The person who has assigned the task has made a mistake; approach this person and tell it to them.
+
+
+
+
+
+\item \textit{misplaced perfectionism} --- you spend time improving things that are already good enough, instead of working on poorly done ones.
+
+Improving almost finished work is pleasant: the fact that the work is almost finished means that you are good in it, therefore you enjoy doing it (<<success pathway>>, see \href{https://garkoosha.org/misc/why_study.pdf}{Why study} for details). On the contrary, the fact that you are not enthusiastic about a certain task means that you do not know how to move forward in it, therefore you are unwilling to start it (<<no success pathway>>).
+
+To get rid of this type of procrastination, state the end goal for each task in advance (<<I'll stop when this and that is done>>). Stop doing the task as soon as the end goal is reached.
+
+
+
+
+\item \textit{excitement or anxiety of any genesis} --- for some reason, you are unable to calmly sit down and calmly think about the task. 
+
+To treat this type, treat the underlying anxiety. See \href{https://garkoosha.org/misc/mental_health.pdf}{Mental health}, section Anxiety for the recommendations.
+
+
+
+\item \textit{you are annoyed and demotivated by something specific} --- e.g. you don't like the company mission (your company sells cigarettes, betting services, or other thing you don't like), or your boss is unpleasant, or there's unpleasant colleague in your team, or the size of your compensation frustrates you. As a result, something inside you resists working for this company. 
+
+There are four ways to end this kind of procrastination: 
+
+
+- imagining what would happen if you didn't complete the task by the deadline
+
+- removing the irritant (by moving to a team where you wouldn't have to communicate with the unpleasant person, by getting a pay raise)
+
+- shifting the focus away from the irritant. Think about why you value this job. Maybe you enjoy the process of work. Maybe this job is the decent place to get the skills you've wanted to get. Maybe at the moment you are in dire need of money and this job is the easiest way to earn it.
+
+- changing the employer. Maybe there'll be nothing irritating you at the next workplace.
+
+
+
+
+\item \textit{you got a job because you needed money, and now you're not in need financially anymore} --- money was the only reason you got this job, and when the need for money has gone, the only reason to work has gone. Salary notifications do not awake emotions in you anymore, probably due to the size of your financial safety cushion or to having no idea how to spend the money (no items in the wishlist).
+
+
+In this case, there's nothing surprising about you procrastinating: you see little value in the job. Follow the \href{https://garkoosha.org/misc/alg_for_adults.pdf}{Algorithm for adults} to get your dream job.
+
+
+
+\item \textit{unimportant task} --- you are able to forget about the task. Possible reasons are:
+
+- completing the task will not bring you closer to your goals (there is no benefit in completing the task, or the benefit is small, or the benefit is unclear) and non-completing the task will not move you further from your goals (there is no punishment in ignoring the task, or the punishment is insignificant, or the punishment is unclear). In this case, you are doing right ignoring the task: there is no sense in doing things that do not bring you closer to your goals.
+
+- you find yourself having no goals. In this case, follow the \href{https://garkoosha.org/misc/alg_for_adults.pdf}{Algorithm for adults} to regain them.
+
+
+
+\item \textit{at least one other way to spend time is irresistible} --- there is something that you compulsively reach for instead of work (e.g. a certain video game), a much more enjoyable alternative to work, a too tempting stimulus to resist.
+
+There are two ways to end this kind of procrastination: 
+
+- think of your goals. How closer to your goals will you be when you do the task? How far further from your goals will you be if you fail to complete the task in time? In case you find yourself having no goals, follow the \href{https://garkoosha.org/misc/alg_for_adults.pdf}{Algorithm for adults} to regain them.
+
+- find something annoying about the too tempting stimulus.
+
+
+Компульсивное влечение лечится не изоляцией от объекта вожделения, а другими методами (КПТ, негативным опытом от объекта вожделения). 
+
+
+
+
+
+
+
+
+
+ 
+\item \textit{no idea how to move forward} --- you're stuck, you don't know how to advance in what you're doing.
+
+
+Here are some tips that may help you to advance:
+
+- decompose the problem, <<eat an elephant one bite at a time>>, split the sophisticated task into parts
+
+- ask knowledgeable people how would they approach the problem
+
+- ask yourself binary questions related to the problem you're solving. The very wording of binary questions is uplifting and encourages to think about them, since a question that can have only two answers sounds as a simple question.
+
+- distract in one of the following ways:
+
+\begin{itemize}
+
+\item lift up your mood with any rewarding activity (subjectively simple tasks, micromanagement, scrolling through social networks and reading news, funny pics and memes, talking in messenger, listening to music, reading poetry, reading random articles on Wikipedia, playing a computer game or watching someone playing it, taking a shower, watching a movie or a video). Since you're unsuccessfully trying to proceed for some time, you mood is lowered due to <<no success pathway>> (see \href{https://garkoosha.org/misc/nsp.pdf}{No success pathway} for details). 
+
+\item move to another place --- it may be another room, it may be a busy street, it may be a park, it may be a place with picturesque view
+
+\item do a physical exercise. Elevating blood pressure enhances the speed of thinking.
+
+\item wipe away all the thoughts from your head (via meditating or taking a nap) 
+
+\item drink coffee, drink tea, eat a snack.
+
+\end{itemize}
+
+
+
+
+\end{itemize}
+
+
+\section{Sorting hat}
+
+
+Люди работают, потому что это способ получать удовольствие. Для некоторых людей это самый сильный способ получать удовольствие из физиологичных путей. Никакого другого смысла у работы в общем-то нет, а если вас мотивируют именно деньги, то у меня плохие новости для вас: когда вы скопите денег, вы потеряете мотивацию.
+
+
+
+
+%It is unlikely that anyone has any doubts that people with different personalities prefer different types of activities.
+
+Люди, получающие большое удовольствие от власти, предпочитают роль начальника; в роли подчинённого такому человеку было бы некомфортно, он бы испытывал серьёзный стресс. Люди, получающие большое удовольствие от независимости, предпочитают работать в одиночку; напротив, люди, получающие малое удовольствие от независимости, получают удовольствие от того что полагаются на других (работы в команде). 
+
+
+
+%People with a high need for power like supervisory roles but tend to dislike the role of subordinate and may even find it stressful. In contrast, people with a low need for power react in the opposite manner --- they are most comfortable being a follower at work and actually may even find it stressful to be a supervisor.
+
+%Independent workers like to do things without help from others. In contrast, interdependent people enjoy being able to rely on others for help in getting a job done. They prefer to work in teams or with colleagues who provide plenty of support and guidance.
+
+%Independent people generally are well matched to entrepreneurial jobs, owning small businesses, and some professional positions, but they are mismatched to civil service positions, positions in large corporations, or military positions. In contrast, interdependent people generally are well matched to careers in the clergy, or positions on corporate teams, but they are mismatched to entrepreneurial positions.
+
+%Stock traders are among the most independent people in the world. They play with their own money and function as their own bosses.
+
+
+
+People who have a strong desire for acceptance need jobs that expose them to relatively few evaluations and little criticism. Examples include working for oneself (e.g., owning or operating a store), working as part of a team that is friendly and supportive (e.g., working for a church, in a police force, or as a firefighter), and working alone (e.g., as a night watchman or movie projectionist).
+
+
+Приведу пример алгоритма, который Steven Reiss указывает в своей книге.
+
+\begin{enumerate}
+\item If you have not already done so, estimate your 16-vector.
+\item Make a long-list of jobs. 
+\item For each job in the list, ask yourself the following questions:
+\begin{enumerate}
+\item Does the career or job have the potential to satisfy your ambitions? \textit{(relevant only if you rated yourself high on the desire for power)}
+\item Are you comfortable with the supervision? \textit{(relevant only if you rated yourself high or low on the desire for power)}
+\item Are you comfortable with the number of hours of work that will be expected?
+\item Are you comfortable with how much work is performed independently versus as a team member? \textit{(relevant only if you rated yourself high or low on the desire for independence)}
+\item Are you satisfied with the intellectual level of the work? \textit{(relevant only if you rated yourself high or low on the desire for curiosity)}
+\item Are you comfortable with the amount of flexibility that comes with the job in terms of schedule and rules? \textit{(relevant only if you rated yourself high or low on the desire for order)}
+\item Are you comfortable with how much loyalty to the company or product will be expected of you? \textit{(relevant only if you rated yourself high or low on the desire for honor)}
+\item Are you satisfied with the ethical aspects of the job? \textit{(relevant only if you rated yourself high on the desire for honor)}
+\item Are you comfortable with the extent to which the work contributes to the betterment of society? \textit{(relevant only if you rated yourself high or low on the desire for idealism)}
+\item Are you satisfied with the opportunities to socialize and get to know your co-workers? \textit{(relevant only if you rated yourself high or low on the desire for social contact)}
+\item Is the career or job consistent with your plans for a family? \textit{(relevant only if you rated yourself high or low on the desire for family)}
+\item Are you satisfied with the prestige factor of the job, job title, and firm? \textit{(relevant only if you rated yourself high or low on the desire for status)}
+\item Are you comfortable with the degree of aggressiveness and competitiveness that will be expected of you? \textit{(relevant only if you rated yourself high or low on the desire for vengeance)}
+\item Are you comfortable with the degree of physical labor that will be expected? \textit{(relevant only if you rated yourself high or low on the desire for physical activity)}
+\item Can you easily handle the amount of stress associated with the job? \textit{(relevant only if you rated yourself high or low on the desire for tranquility)}
+
+\end{enumerate}
+
+\item Look at the list again, focusing in particular on your desire for acceptance. Eliminate from your list those jobs that would expose you to a degree of criticism or frequent or public evaluations you cannot handle.
+
+\item Eliminate from consideration any careers or job you lack the ability to perform. 
+
+\item Look at the list again, focusing in particular on your desire for social contact. Eliminate any careers or jobs that require a degree of social interaction significantly greater than or significantly greater less than your current level of interest.
+
+\item Pick one of the jobs still remaining on your list --- since they all are fulfilling, it is now okay to consider salary as a criterion for choosing.
+
+
+\end{enumerate}
+
+
+
+
+
+Проект «Набор возможностей» --- веб-сайт для школьников со списком вариантов трудоустройства (по всему миру) и скиллами которые для этого нужны.
+
+Каждый ребёнок должен пройти тестирование по шкале Рейсса. Затем алгоритм подберёт профессию, которая подходит ему в наибольшей степени. Затем будет построен optimal roadmap, позволяющий работать по этой профессии.
+
+
+
+
+Полное описание каждой профессии, со всеми плюсами и минусами. Экономика знаний.
+
+% Экономика знаний — экономика, где основными факторами развития являются знания и человеческий капитал. Процесс развития такой экономики заключен в повышении качества человеческого капитала, в повышении качества жизни, в производстве знаний высоких технологий, инноваций и высококачественных услуг.
+
+
+как создать up-to-date карту возможностей?
+
+
+
+профессия: occupation_k
+
+что нужно для трудоустройства джуниором по ней: skill_1, skill_2, skill_3
+
+где берут джуниоров по ней в вашем городе: place_1, place_2, place_3
+
+оптимальный карьерный путь, по нашему мнению: place_1 -> place_4 -> place_8
+
+
+
+
+
+
+
+
+
+
+
+
+%The desire for social contact can have significant impact on an employee’s job performance. People with a strong desire for social contact tend to socialize more than the boss thinks appropriate. They may talk too long on the phone, and frequently leave their posts to make small talk with coworkers. On the other hand, people with a weak desire for social contact may avoid socializing even to the point of giving an impression of unfriendliness. They can be abrupt with clients, co-workers, or subordinates, and their need for privacy can be misinterpreted as a lack of interest in others.
+
+Since the need for competition falls under the desire for vengeance, any job that involves a fair amount of competition can satisfy this desire. Common examples include entrepreneurial jobs, some sales positions, and professional athlete. Jobs that provide opportunities for physical aggression also satisfy this need. Examples include soldier, policeman, bouncer, and boxer. In contrast, examples of jobs where aggressive desires get people into trouble are those involving contact with young children (e.g., preschool teacher, pediatric nurse) and any job in which pleasing others is important (e.g., sales, negotiating). These latter careers are best suited for people with weak desires for vengeance and competition.
+
+In deciding whether or not to make a change, you also need to consider how a growing unhappiness with your current job can eventually affect your performance and limit your future pay raises. When people hold on to jobs that are incompatible with their desire profiles, sooner or later their performance tends to suffer.
+
+
+
+
+
+
+
+\end{document} 

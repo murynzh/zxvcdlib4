@@ -1,0 +1,547 @@
+\documentclass[11pt]{article}
+%\documentclass{report}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{pscyr}
+\usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+%\usepackage{wallpaper}
+% \usepackage{pifont}[11pt]
+%\usepackage{ulem}
+\usepackage{cancel}
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{comment}
+%\usepackage{background}
+%\usepackage{subcaption}
+\usepackage{tikz}
+
+\renewcommand\theequation{{\color{blue}\arabic{equation}}}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+%\def\be{\numberwithin{equation}{section}\begin{eqnarray}}
+%\def\ee{\end{eqnarray}}
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+
+\def\trademark{{\hbox{\tiny TM}}}
+\def\dim{\textmd{dim} \hskip 3 pt}
+\def\p{\partial}
+\def\R{\Rightarrow}
+\def\ph{\varphi}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+
+%\setcounter{section}{-1}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\cross}{\ding{55}}%
+
+
+
+
+
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][\ ]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\definecolor{backgroundcyan}{HTML}{61B1D2}     % 97, 177, 210
+\definecolor{modcyan}{HTML}{76DEF8}            % 118, 222, 248
+\definecolor{mygolden}{HTML}{F4E95D}           % 244, 233, 93
+\definecolor{mytruegolden}{HTML}{DEAA21}       % 222, 170, 33
+\definecolor{theirgolden}{HTML}{C1D68F}        % 193, 214, 143
+\definecolor{coolestblue}{HTML}{034775}        % 3, 71, 117
+\definecolor{modgreen}{HTML}{0CE6B8}           % 12, 230, 184
+\definecolor{newgolden}{HTML}{A27009}           % 162, 112, 9
+
+\def\bitcoinA{%
+  \leavevmode
+  \vtop{\offinterlineskip %\bfseries
+    \setbox0=\hbox{B}%
+    \setbox2=\hbox to\wd0{\hfil\hskip-.03em
+    \vrule height .3ex width .15ex\hskip .08em
+    \vrule height .3ex width .15ex\hfil}
+    \vbox{\copy2\box0}\box2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%$\sqrt[a]{b} \quad \oldsqrt[a]{b}$
+
+
+\begin{document}
+
+
+\baselineskip14pt
+\bigskip
+
+
+
+
+
+\title{The 26 qualities}
+
+
+
+
+\maketitle
+
+
+%\tableofcontents
+%\bigskip
+%\bigskip
+
+
+
+
+\section{No behaviors that worsen health}
+
+
+
+You do not commit anything that leads to a deterioration in somatic or mental health (you smoke almost never, you consume alcohol almost never, you do not do any of the extreme sports). When invited somewhere (for a walk together, for a coffee together, to an event etc) you do not wanna go to, or asked to do something you do not want to do, in most cases you do decline the offer (long-term doing things that you do not want to do leads to mental disorders).
+
+You always carry first aid kit with yourself which has medications with the following active substances: paracetamol, ibuprofen, rifaximin, ciprofloxacin, loperamide, activated carbon, desloratadine, clotrimazole.
+
+You have GP, dentist and psychotherapist (3 persons in total), and each of them is familiar with the following notions: evidence-based medicine, randomized controlled trials, meta-analysis.
+
+You visit your dental hygienist for professional teeth cleaning (tartar removal) at least every six months.
+
+
+
+
+\section{Personal responsibility}
+
+
+
+You acknowledge that no one is responsible for your destiny except you. 
+
+You do not blame others for decisions made by you.
+
+
+
+\section{The habit of sorting statements into four categories}
+
+
+For every statement you see, you hear or make yourselves, you automatically assess it by placing it in one of the four categories: correct easy-to-verify statement (also called fact), incorrect easy-to-verify statement, hard-to-verify statement, and unverifiable statement.
+
+
+
+
+
+
+\section{The habit of generating multiple interpretations}
+
+
+You comprehend that emotions are caused by not facts but interpretations, with every interpretation being your arbitrary choice. Depending on interpretation, the same fact may deliver you a positive, a negative, a neutral, a super positive, a super negative emotion. 
+
+Every time you make a negative interpretation, you come up with several other interpretations, including at least one positive interpretation. (Why suffer when you can not suffer?)
+
+
+
+
+
+\section{Knowing the decision-making system behind the behavior of various animals}
+
+It is hardly necessary to explain how beneficial it is to know the physiology of human behavior. As for decision-making systems of other animals, the more of them you studied the better you understand the origin of human decision-making system.
+
+
+
+
+\section{Comprehension that some goals cannot be achieved if you continue living where you live}
+
+
+
+You comprehend that some goals require you to change your permanent residence. E.g. you cannot work as surfing instructor if you live far from a sea or an ocean, you cannot start academic career without going to a university, and you cannot have a wide selection of potential partners if you live in a small village.
+
+
+
+
+\section{Charisma}
+
+
+
+
+You are charismatic person, which means your personality satisfies four following properties:
+
+\begin{itemize}
+\item you are a calm person
+\item you have a high level of intelligence (you are aware of many facts and causal relationships between them, you are able to rationally decompose sophisticated phenomena)
+\item you work (you have goals and you move towards them)
+\item you look neat in public (BMI in the range of 18-25, no unpleasant odors, clean clothes, clean body).
+\end{itemize}
+
+\section{Good knowledge of the legislation of the jurisdiction in which you intend to work}
+
+This entry is self-explanatory.
+
+
+\section{Having long-term partner requirements list written down}
+
+
+
+
+
+You do not like the idea of living alone (at least) in the elderly age.
+
+
+You comprehend that marriage is the legal agreement that determines how your property will be split in the cases of death or divorce. The richer you get, the higher the probability that this legal time bomb explodes. You comprehend that conceiving and raising kids together does not require you entering this legal agreement.
+
+You do not like the idea of having children with those with whom you argue too frequently.
+
+
+
+You have written down your <<long-term partner requirements list>>. You comprehend that without having this list written down you will live in illusion that you already know which qualities are important for you in partner and which are not. 
+
+You comprehend that this list will not deliver you the appropriate partner on its own; to meet the partner, make some assumptions (guesses, hypotheses) on where (in which online or offline places) this kind of person can be met, and take action.
+
+You comprehend that declaring your life plan helps both you and your potential partner to evaluate if it's a match.
+
+
+
+
+
+\section{The habit of organizing your life in written form}
+
+
+
+You have either a file or an online note for every area of your studies. (I prefer files, but if notes are allowed to be long enough and are backed up, there's no difference.)
+
+
+
+
+
+
+\section{Maintenance of the file called <<Therapy>>}
+
+
+
+
+
+You maintain the file called <<Therapy>> with a full list of your fearful (panicky, worrysome) thoughts. Every time you experience such a thought, you append this file with it together with a calm, rational alternative thought, as shown here: 
+
+\begin{enumerate}
+
+\item <<I committed to do a task and I don't know how to do it>> --- instead of panicking, shall I tell my boss that I have no qualification in this? btw, why did I commit to do a thing in which I have no qualification at the moment?
+
+\item <<I'm afraid to spend time with a colleague who I don't know what to say>> --- am I obliged to maintain a dialogue? what happens if I mostly listen to the colleague, or if we two stay silent? 
+
+\item <<I should achieve X and Y by the age of 25>> --- what exactly happens if I don't? 
+
+\item ...
+
+\end{enumerate}
+
+
+You may also inspect causal relationships of your thought patterns, your behavioral patterns and other people's behavioral patterns in this file. E.g.: 
+
+\textit{Thought pattern <description>. Most likely it is caused by <...>, though there's a chance it's caused by <...>. Have to ponder it.}
+
+\textit{Behavioral pattern <description>. Caused by <...>.}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Knowing your long-term life plan}
+
+
+
+
+If you want to win in the long term, you need to plan for the long term. Think about what your long-term goals are, what country you are going to retire in, when you need to buy real estate for yourself and your children, when you need to pay for your children's education, and how much.
+
+
+
+
+\section{Scientific world view}
+
+
+You understand that the burden of proof lies with the person who makes the claim.
+
+You have neither religious nor esoteric but scientific mindset. You have solid background in math, physics, chemistry and biology. You can explain most of the natural phenomena by laws of physics or chemistry.
+
+You comprehend that Universe exists for approximately 14.5 billion years, Solar system and Earth exist for 4.5 billion years, organic life exists for no less than 4 billion years, vertebrate life exists for roughly 400 million years, mammals exist for 66 million years, hominids exist for 2 million years, homo sapiens exist for 55 thousands years, in 1 billion years Earth will leave the habitable zone, in 4 billion years the Sun will explode as supernova and die, in 20 billion years the last star will explode and the Universe will drown into eternal darkness. You clearly know the place of your lifespan in this world. 
+
+
+
+
+
+
+\section{No tasks that require knowledge that you don't have at the moment} 
+
+
+You comprehend that it is better for your mental health to take on only those tasks that you know how to do in detail: unsuccessful thinking over a task leads to frustration due to the no success pathway (see <<No success pathway>> for details). Thus, you avoid taking on tasks that require knowledge that you don't have at the moment. When you learn things or ponder problems, this should never be a task, this should be a joyful activity that you do in your leisure time.
+
+You comprehend that you never know in advance whether will it be difficult or not to obtain a certain knowledge.
+
+
+
+
+
+
+
+
+\section{No false (imprecise) statements}
+
+
+
+
+You do not express your thought until you formulated it clearly. (This simple rule dramatically improves the quality of your thinking.)
+
+
+You comprehend that reading books is not even close as useful as society reckons. You comprehend that the vast majority of books establish wrong neural connections and thus shall be avoided. You only stick to the books where statements are precise and author challenges to prove the every statement.
+
+
+\section{No bragging}
+
+You never pretend that you know or are able to more than you actually do.
+
+You do not demonstrate your expertise when you are not asked to. You do not draw attention unless it is necessary for your work.
+
+If you are asked a question and you are not sure of the level of your expertise, you start your reply with indicating the level of your expertise.
+
+(Bragging is a sign of anxiety and self-doubt. Inappropriate demonstration of one's expertise, as well as overestimating the level of one's expertise are types of bragging, that is, signs of anxiety and self-doubt. You do not need to demonstrate your expertise unnecessarily, as well as pretend that you know or are able to more than you actually do.)
+
+
+
+
+
+\section{No conflicts}
+
+
+
+
+You do avoid a conflict if there is a chance that a conflict will occur.
+ 
+(Getting into conflicts is counterproductive. The fewer people are offended at you, the less likely some undesirable event will happen.) 
+
+When someone who you know is offended at you, you resolve the misunderstanding. You do it by discussing its root in a dialogue. When someone who you don't know is offended at you, you do nothing.
+
+(An unresolved misunderstanding may grow into resentment and/or into personal feud.)
+
+
+
+(An important source of resentful people is your ex-partners. This applies to ex-romantic partners, to ex-close friends and even to ex-employees. Homo sapiens always find a way to explain themselves why is it awesome that relationship between you and them is over.)
+
+
+
+You think twice before speaking about politics and social justice. These are sensitive topics that may cause anger and conflicts. You do not discuss personalities, you only discuss concepts, making statements on topics like <<what tax rate is fair>> or <<is there any sustainable UBI model>>, but you have to be serious, solve it like a mathematical problem, avoid both incorrect and imprecise statements, have no bias, be interested in finding the truth.
+
+
+
+
+
+
+
+
+\section{Gratitude to a work of others}
+
+
+You comprehend that all the products and services that we enjoy are the result of a work of other people. 
+
+You feel gratitude to those people.
+
+
+
+
+
+
+\section{Knowing your footprint}
+
+
+
+
+You comprehend that everything you've ever said, done, searched, sent, texted, posted, uploaded is prone to leaking. You have a rough understanding what data which websites, apps and browser extensions do collect. 
+
+You realize how much does your reputation affect the willingness of people to work with you or buy your services.
+
+(Violation of ethical norms or those ethical norms that arise in the future will make it impossible to occupy major positions in both business and government; in other words, every improper fact that comes up quite literally ends a person's career. Creation of digital compromising evidence and trading it will become a well-organized business with high turnover.)
+
+You know that having a criminal record may cause difficulties in entering some countries or obtaining residence permit in them.
+
+
+
+
+
+\section{Comprehension of pros and cons of fame}
+
+
+
+
+
+You perceive the following pros that fame entails:
+
+\begin{itemize}
+\item pleasure (in case you like attention)
+\item awareness does convert to sales, funding or user acquisition of your product
+\item being under the spotlight can make influential people want to get to know you
+\item being under the spotlight protects from a certain kind of troubles.
+\end{itemize}
+
+
+
+
+You perceive the following cons that fame entails: 
+
+\begin{itemize}
+\item distracting messages and meetings; old and new pseudofriends interested in using you
+\item your words and messages taken out of context being published and ruining your reputation
+\item the emergence of interest in you among competitors 
+\item the emergence of interest in you among people with criminal inclinations.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\section{Minimal knowledge in medicine and human physiology}
+
+You understand the difference between trade name and active substance(s).
+
+You know that medications can be classified into groups by their mechanism of action. You are familiar with the following groups: NSAID, coxibs, PPI, SSRI, SNRI, benzodiazepines, monoclonal antibodies.
+
+
+
+You are aware that while foods differ in appearance (color, consistency, weight etc), every food is no more than a combination of 20 aminoacids, fatty acids, monosaccharides (glucose, fructose, galactose), fiber, salt (cations and anions), water. (Nearly) all the rest does not digest and goes down the toilet bowl.
+
+You comprehend that weight regulation is entirely described by energy conservation law. If you've consumed 1800 kcal and spent 1500 kcal, the 300 kcal of surplus go to body fat, and vice versa: if you've consumed 1600 kcal and spent 2300 kcal, the lacking 700 kcal are taken from body fat. Laws of physics apply to everything, and human body is no exception.
+
+You are familiar with the following notions: evidence-based medicine, randomized controlled trials, meta-analysis.
+
+You know websites where to search for publications. You know websites where to search for meta-analyses.
+
+
+
+(Understanding human physiology is a must for work efficiency predictability. Detailed knowledge of the drug market and human physiology reduces the level of anxiety and minimizes the likelihood of illiterate decisions.)
+
+
+
+
+\section{The habit of conservatively investing your savings}
+
+
+You have your own investment portfolio and conservatively invest on your own. You do not rely on any other retirement plan (such as government pension system) except for the savings you do yourself.
+
+
+\section{The habit of backing up monthly on a certain date}
+
+
+You back up all data that you value at least once a month on a certain day (e.g. on 1st day of every month, or on 10th day of every month). 
+
+You back up the encrypted copies of your data, not the original data. (It is better to encrypt locally before sending the data elsewhere.)
+
+You have all login-password pairs you care for encrypted and then backed up. 
+
+You comprehend that the purpose of backups is to protect yourself from the following three types of threat:
+
+- unintentional or intentional deletion of data that you value (by you, by your child, by your colleague or employee, by your colleague's or employee's child)
+
+- disk failure, or loss of the disk, or theft of the disk, or encryption of the disk by ransomware 
+
+- disk failure of all disks in the room/building/district, or loss of all disks in the room/building/district (due to e.g. power surge, EMP event, fire, flood).
+
+
+You comprehend that the proper response to these three types of threat is as follows:
+
+- all backups, except for the first one, shall not be stored in the same building where the original data is stored
+
+- all backups, except for the first and second ones, shall not be stored in the same country where the original data is stored (that is, they should be cloud backups).
+
+
+You practice test restores on regular basis. You comprehend that without this practice one cannot be sure that backups are done properly.
+
+
+
+You know the answers to the following questions:
+
+\begin{itemize}
+\item how did you protect yourself in case you lose your house keys
+\item which accounts you will not be able to access in case your phone sinks
+\item what harm can an ill-wisher do to you in case your phone ended up in their hands
+\item which accounts you will not be able to access in case your laptop sinks
+\item what harm can an ill-wisher do to you in case your laptop ended up in their hands.
+\end{itemize}
+
+
+
+
+
+
+\section{Knowing how to fundraise}
+
+You understand under which conditions which amounts can be raised, where it can be done (crowdfunding platform, VC, family office, university grant, state grant --- you clearly know which projects are suitable for which), and what are the positive and negative effects each such initiative or communication entails.
+
+
+
+You know that your own investment is not required to start a business or a non-profit company. (Though it is better when a person risks their money upon starting a business.)
+
+
+\section{Awareness that your time is limited}
+
+
+
+
+
+You comprehend that the time span when you are active, good-looking and productive, is limited. 
+
+You comprehend that this also applies to every person around you (in particular, to your partner). 
+
+
+(Even if you get lucky in avoiding disastrous events --- car accident, plane crash, cancer --- there is senescence and there are age-related diseases that are currently not known how to prevent: neurodegenerations, cataract, osteoarthritis. Life when the knee cartilage is worn down is not the same as life before this. Life with anxiety disorder, or ulcerative colitis, or Crohn's disease is not the same as before it emerged. You are prone to any of it, your partner is prone to any of it.) 
+
+
+
+
+
+\section{Fluency in the lingua franca}
+
+You have achieved fluency of your writing, speaking, listening and reading in the lingua franca, which is currently English language (by being raised in an English-speaking country, regular talks to native speakers, or otherwise).
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

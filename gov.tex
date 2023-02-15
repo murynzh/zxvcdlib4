@@ -1,0 +1,3493 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english,russian]{babel}
+\usepackage{pscyr}
+\usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+%\usepackage{wallpaper}
+\usepackage{pifont}
+%\usepackage{ulem}
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{comment}
+%\usepackage{background}
+%\usepackage{subcaption}
+\usepackage{tikz}
+
+\renewcommand\theequation{{\color{blue}\arabic{equation}}}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+%\def\be{\numberwithin{equation}{section}\begin{eqnarray}}
+%\def\ee{\end{eqnarray}}
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+
+\def\trademark{{\hbox{\tiny TM}}}
+\def\dim{\textmd{dim} \hskip 3 pt}
+\def\p{\partial}
+\def\R{\Rightarrow}
+\def\ph{\varphi}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{definition}
+\newtheorem{Def}[thm]{Definition}
+
+%\setcounter{section}{-1}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\cross}{\ding{55}}%
+
+
+
+
+
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][\ ]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\definecolor{backgroundcyan}{HTML}{61B1D2}     % 97, 177, 210
+\definecolor{modcyan}{HTML}{76DEF8}            % 118, 222, 248
+\definecolor{mygolden}{HTML}{F4E95D}           % 244, 233, 93
+\definecolor{mytruegolden}{HTML}{DEAA21}       % 222, 170, 33
+\definecolor{theirgolden}{HTML}{C1D68F}        % 193, 214, 143
+\definecolor{coolestblue}{HTML}{034775}        % 3, 71, 117
+\definecolor{modgreen}{HTML}{0CE6B8}           % 12, 230, 184
+\definecolor{newgolden}{HTML}{A27009}           % 162, 112, 9
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%$\sqrt[a]{b} \quad \oldsqrt[a]{b}$
+
+
+\begin{document}
+
+
+\baselineskip14pt
+\bigskip
+
+
+
+
+\title{How many civil servants need to be hired to serve a population of $N$ people?}
+
+
+
+
+\maketitle
+
+
+%\tableofcontents
+%\bigskip
+%\bigskip
+
+
+
+This paper started with me asking myself how many civil servants need to be hired to serve a population of $N$ people. To answer the question, you have to decide on how many civil servants does each government department, agency, commission, committee, as well as each branch of government, need. To compose the full list of government departments, agencies, commissions, committees, you have to start with writing your own Constitution.
+
+
+Мне представляется важным сразу же после каждого Article пояснять, почему именно такое решение принято. Все Articles, которые мне кажутся самоочевидными и не заслуживающими комментария, вынесены в отдельную главу Конституции --- в первую главу.
+
+
+
+
+
+\section{The Constitution}
+
+
+
+
+\subsection*{Chapter 1. Articles that do not need to be commented.}
+
+
+\textcolor{blue}{Article 101.} Countryname --- правовое государство.
+
+\textcolor{blue}{Article 102.} Конституция Countryname имеет высшую юридическую силу, прямое действие и применяется на всей территории Countryname. В случае, если закон или правовой акт в чём-либо противоречит Конституции, действует норма, установленная Конституцией.
+
+
+\textcolor{blue}{Article 103.} Территория Countryname включает в себя территорию её суши, внутренние воды и территориальное море, воздушное пространство над ними.
+
+\textcolor{blue}{Article 104.} Countryname обладает суверенными правами и осуществляет юрисдикцию на континентальном шельфе и в исключительной экономической зоне нашей страны в порядке, определяемом федеральным законом и нормами международного права.
+
+\textcolor{blue}{Article 301.} Полицейские осуществляют общественно значимый труд, выполняемый с риском для жизни, по задержанию правонарушителей, преступников и бандитов. Полиция неиерархична (это одноранговая структура).
+
+\textcolor{blue}{Article 27.} Каждый вправе определять и указывать свою национальную принадлежность. Никто не может быть принуждён к определению и указанию своей национальной принадлежности. Законодательство не может содержать преференции или дискриминацию людей той или иной национальности.
+
+
+\textcolor{blue}{Article 24.} Государство гарантирует равенство прав и свобод человека и гражданина независимо от пола, расы, национальности, языка, происхождения, имущественного и должностного положения, места жительства, отношения к религии, убеждений, принадлежности к общественным объединениям, а также других обстоятельств. Запрещаются любые формы ограничения прав граждан по признакам социальной, расовой, национальной, языковой или религиозной принадлежности.
+
+\textcolor{blue}{Article 28.} Каждый имеет право на пользование родным языком, на свободный выбор языка общения, воспитания, обучения и творчества.
+
+
+\textcolor{blue}{Article 30.} Каждый может свободно выезжать за пределы Countryname, за исключением трёх следующих ситуаций:
+
+- нахождение в базе должников
+- отбывание наказания
+- уголовное преследование.
+
+
+\textcolor{blue}{Article 30.} Любой гражданин Countryname имеет право беспрепятственно в неё возвращаться.
+
+\textcolor{blue}{Article 9.} На территории Countryname не допускается установление таможенных границ, блокпостов, пошлин, сборов и каких-либо иных препятствий для свободного перемещения товаров, услуг и финансовых средств. Каждый, кто законно находится на территории Countryname, имеет право свободно передвигаться, выбирать место пребывания и жительства.
+
+
+\textcolor{blue}{Article 33.} Никто не может быть принуждён к выражению своих мнений и убеждений или отказу от них.
+
+\textbf{Article 33.} Недобровольный труд запрещён. Никто не может принуждать человека к выполнению работы, которую тот не желает выполнять.
+
+\textcolor{blue}{Article 26.} Проникновение в жилище против воли проживающих в нём лиц иначе как на основании судебного решения является уголовным преступлением.
+
+
+
+\textcolor{blue}{Article 84.} Hunting animals is a criminal offense.
+
+\textcolor{blue}{Article 102.} Domestic violence is a criminal offense. The fact that an act of violence occurred against a relative is not a mitigating or decriminalizing circumstance.
+
+
+
+\textcolor{blue}{Article 15.} Каждый житель Countryname, если он не нарушает закон, может жить так, как хочет. Никакая идеология не может устанавливаться в качестве государственной или обязательной. 
+
+%В нашей стране существует идеология: мы призываем граждан заниматься наукой, искусством, создавать и улучшать продукты (a product is anything that is made to be used by others).
+
+\textcolor{blue}{Article 31.} Каждому гарантируется свобода вероисповедания, включая право исповедовать индивидуально или совместно с другими любую религию или не исповедовать никакой, свободно выбирать, иметь и распространять религиозные убеждения и действовать в соответствии с ними.
+
+\textcolor{blue}{Article 17.} Countryname --- светское государство. Никакая религия не может устанавливаться в качестве государственной или обязательной.
+
+\textcolor{blue}{Article 18.} Религиозные объединения отделены от государства и равны перед законом.
+
+\textcolor{blue}{Article 21.} Законы и другие правовые акты не применяются, если они не опубликованы официально для всеобщего сведения.
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1003.} Права всех граждан Countryname полностью совпадают. В частности, нет никакой юридической разницы между теми, кто получил гражданство по праву рождения, и теми, кто законно приобрёл его.
+
+
+\textcolor{blue}{Article 8.} Никто не имеет права лишить гражданина Countryname его гражданства.
+
+\textcolor{blue}{Article 8.} Никто не имеет права лишить гражданина Countryname права выйти из гражданства Countryname.
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 104.} Законодательство состоит только из следующих кодексов:
+
+- Конституция
+- Technical specification единого государственного портала
+- Гражданский кодекс
+- Жилищный кодекс
+- Трудовой кодекс
+- Уголовный кодекс
+- Бюджетный кодекс
+- Земельный кодекс
+- Лесной кодекс
+- Семейный кодекс
+- Уголовно-исполнительный кодекс
+- Уголовно-процессуальный кодекс
+- Патентный кодекс
+
+% Зачем нужна законодательная власть, когда кодексы уже написаны? Кроме того, любой должен обладать правом законодательной инициативы --- это честно.
+
+
+
+\textcolor{blue}{Article 105.} Любой житель Земли, зарегистрировавшийся на портале, может внести один законопроект раз в месяц. Чтобы законопроект был принят, необходимо, чтобы более 20\% граждан (то есть обладателей электронной цифровой подписи) проголосовали за его принятие, а также чтобы число проголосовавших "за" превысило число проголосовавших "против".
+
+\color{blue}
+
+% Интенсивность исправления законодательства должна быть крайне низкой.
+
+%Зачем судьи, когда есть присяжные? Именно присяжные с помощью тайного голосования должны выбирать между точкой зрения защиты и обвинения, глядя на аргументы, предоставленные сторонами.  
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 7.} State can only own this and that. In particular, this means state cannot own or co-own a company or an organization. 
+
+Q: Почему не финансируются здания частных школ?
+
+A: вопрос о том, какое здание какая школа должна занимать --- коррупциогенный вопрос; единственное справедливое решение --- ни одна из школ не должна быть в муниципальной собственности, и вопрос с арендой помещения должна решать самостоятельно.
+
+Что касается зданий школ, как и любые здания, они находятся в частной собственности либо в собственности эндаумента.
+
+
+
+
+
+
+
+\textcolor{blue}{Article 5.} Countryname не имеет административно-территориального деления на округа, районы, области etc.
+
+\color{blue}
+
+Я не вижу никакого смысла в административно-территориальном делении страны. Такой смысл был бы, если бы мне казалось хорошей идеей существование региональных бюджетов, городских бюджетов, муниципальных бюджетов. Проблема в том, что Но расходование этих бюджетов непрозрачно, а смысл их существования сомнителен. Кажется, что в свете сказанного в Chapter 18 можно прекрасно обойтись и без региональных, и без городских, и без муниципальных бюджетов.
+
+Здесь возможен аргумент в духе Chapter 3: человек без дохода или без жизненно важного медикамента представляет угрозу только для жителей его города или посёлка или населённого пункта, поэтому выплаты ему должны идти именно из городского бюджета. Поэтому у каждого дистрикта должен быть свой districtname expenditures fund. На этот аргумент есть контраргумент: из-за отсутствия блокпостов и таможенных границ внутри государства, а также отказа от института прописки и слежки за гражданами, мы не знаем, в каком городе кто проживает. Поскольку мы не знаем, где кто проживает, мы не можем установить расходные части местных бюджетов на нужды, сформулированные в Chapter 3. Кроме того, такой нуждающийся представляет угрозу не только в городе постоянной дислокации, поскольку он может поехать совершать грабёж в более благополучный регион.
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 14.} В Countryname отсутствует муниципальная собственность.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 105.} Государственные флаг, герб и гимн Countryname, их описание и порядок официального использования устанавливаются голосованием с помощью state-forming product <<Vote>>. Голосование по этим трём вопросам может проходить не чаще чем раз в 5 лет.
+
+
+\textcolor{blue}{Article 106.} Laws are clear, unambiguous, mathematically rigorous. There shall be no mutually exclusive clauses; in case those occur, the clause that became the part of legislation earlier applies.
+
+% Some algorithm for resolving contradictions in legislation in case they occur must exist. It is not so important what this algorithm will be, but its existence is important. I propose the following algorithm: in case there are mutually exclusive clauses in legislation, the clause that has become part of legislation earlier applies.
+
+
+
+
+\textcolor{blue}{Article 200.} Договор аренды жилья не подлежит госрегистрации. 
+
+% Мы не хотим следить за тем, в какой квартире какой гражданин проживает. Выбор места жительства должен быть тайной личное дело
+
+% Мы ожидаем, что стороны составят договор аренды, будут соблюдать его, а в случае несоблюдения одной из сторон вторая подаст в суд (условия того, что происходит в случае несоблюдения, прописаны в договоре аренды).
+
+% неверно, что аренда жилья не регулируется
+
+Вы можете подписать личными ЭЦП и оставить договор аренды у себя.
+
+
+
+
+
+\subsection*{Chapter 2. State-forming products.}
+
+
+
+\textcolor{blue}{Article 201.} State-forming products are the 17 products listed in this chapter.
+
+\textcolor{blue}{Article 202.} State-forming products are implemented as both mobile apps and mobile-friendly websites, i.e. websites that are designed, developed and optimized for users on mobile devices. 
+
+
+
+\textcolor{blue}{Article 203.} All the state-forming products are open-source products, i.e. their source code is in the public domain.
+
+\color{blue}
+
+Proprietary software may have deliberately created secret functionality, i.e. undocumented features known only to developers with which they hope to influence the outcomes of some product launches. Such software cannot be used for procedures that have legal implications. Unlike proprietary software, open-source software is under public scrutiny --- the chance that observers will find both intentional and unintentional errors is high.
+
+\color{black}
+
+\textcolor{blue}{Article 204.} All the state-forming products, as well as their source codebases, are located on different domains. 
+
+\color{blue}
+
+With this design, a DDoS attack on one state-forming product will not affect the operation of other state-forming products.
+
+\color{black}
+
+\textcolor{blue}{Article 205.} Countryname citizens maintain the state-forming product called <<The entire list of state-forming products>>.
+
+\textcolor{blue}{Article 206.} Countryname citizens maintain the state-forming product called <<The IDbase>> --- находящуюся в публичном доступе базу данных с карточками граждан.
+
+Каждая Idcard содержит:
+
+- id number 
+- полное имя
+- дату рождения
+- дату смерти if applicable
+- дату выхода из гражданства if applicable
+- фотографию (redone every 5 years)
+- на территории страны человек или за её пределами.
+
+% Given an idcard, how do you get the safe digital signature?
+
+% How is idcard database stored?
+
+
+
+
+\textcolor{blue}{Article 206.} Countryname citizens maintain the state-forming product called <<The entire legislation of Countryname>>. This state-forming product is placed on $(N+1)$ domains, where $N$ is the number of languages into which legislation is officially translated. These $(N+1)$ web pages have the same look and feel, each being the list of links to the following 14 files:
+
+- земельный кодекс (pdf file)
+- земельный кодекс (tex source file)
+- трудовой кодекс (pdf file)
+- трудовой кодекс (tex source file)
+- уголовный кодекс (pdf file)
+- уголовный кодекс (tex source file)
+- уголовно-процессуальный кодекс (pdf file)
+- уголовно-процессуальный кодекс (tex source file)
+
+\color{blue}
+
+Государственное устройство должно быть простым и понятным как для граждан, так и для инвесторов.
+
+\color{black}
+
+\textcolor{blue}{Article 202.} Countryname citizens maintain the state-forming product called <<The entire arbitrage practice of Countryname>>. This state-forming product is placed on $(N+1)$ domains, where $N$ is the number of languages into which legislation is officially translated. These $(N+1)$ web pages have the same look and feel, each being the list of links to the following 7 files:
+
+- arbitrage practice on земельный кодекс
+- arbitrage practice on трудовой кодекс
+
+For every case both court decision and its justification are recorded.
+
+
+\textcolor{blue}{Article 203.} Vaccination in Countryname is voluntary. Refusal to vaccinate, as well as untimely vaccination, are not punished in any way.
+
+\color{blue}
+
+Принуждать граждан к вакцинации означало бы три вещи: 
+- разработать ответственность за несвоевременную вакцинацию либо отказ от вакцинации
+- разработать методы борьбы с фальсификацией вакцинации (постановка отметок о вакцинации без вакцинации за денежное вознаграждение)
+- реализовывать методы борьбы с фальсификацией вакцинации.
+
+Не существует способа предотвратить коррупционные преступления. Если некоторый человек хочет решить в свою пользу некоторый вопрос, решение по которому принимает некоторый госслужащий, при достаточном уровне находчивости он найдёт способ конфиденциально связаться с этим госслужащим и сделать ему предложение. Если вместо того, чтобы обратиться в полицию, госслужащий решит принять предложение, при достаточном уровне находчивости он найдёт способ сделать это так, чтобы коррупционная подоплёка вынесенного им решения была недоказуема. Поэтому эффективная борьба с фальсификацией вакцинации невозможна. Она возможна только для неграмотных участников коррупционной схемы --- грамотные сделают всё так, что информация о взятке никогда не всплывёт.
+
+The list of vaccines for children, the list of cancer screening procedures, time intervals and amounts of fines are established by state-forming products.
+
+
+Таким образом, принуждение граждан к вакцинации технически невозможно. На наш взгляд, это также и неэтично. Мы считаем, что взрослые люди сами должны принимать все решения и жить с последствиями этих решений.
+
+Родители, невакцинированные дети которых умерли от болезней, предотвратимых вакцинами, не подвергаются юридической ответственности, поскольку мы конструируем законодательство так, чтобы оно не имело пунктов, делающих коррупцию возможной (все сообразительные родители-антипрививочники смогут избегнуть любого наказания посредством коррупционной схемы по покупке сертификатов о вакцинации). Потеря ребёнка само по себе достаточное наказание.
+
+
+\color{black}
+
+\textcolor{blue}{Article 203.} Countryname citizens maintain the state-forming product called <<The schedule of vaccination>>.
+
+Мы ожидаем, что жители Countryname, глубоко изучившие вопрос иммунизации, избавят других жителей от необходимости проводить самостоятельный ресёрч с целью понять, от каких болезней в какие сроки необходимо вакцинироваться вам или вашему ребёнку.
+
+
+\textcolor{blue}{Article 203.} Countryname citizens maintain the state-forming product called <<The complete list of vaccination points>>.
+
+\color{blue}
+
+Минимальная версия этого продукта - множество строк, каждая из которых содержит следующую информацию:
+
+- торговое название вакцины
+
+- производитель вакцины
+
+- номер серии вакцины
+
+- адрес по которому доступна вакцина
+
+- стоимость вакцинации. 
+
+Мы ожидаем, что жители Countryname будут вносить сюда как точки платной, так и точки бесплатной вакцинации.
+
+Это общество без государственного покрытия детских вакцин и дорогостоящих медикаментов (в таком обществе предполагается, что первичную иммунизацию проходят только дети ответственных родителей, а все тяжелобольные сами в частном порядке собирают средства на своё лечение с благотворительных организаций или через соцсети). 
+
+ 
+\color{black}
+
+\textcolor{blue}{Article 203.} Countryname citizens maintain the state-forming product called <<The list of vaccines available for free with their locations>>.
+
+\color{blue}
+
+
+
+Производители вакцин продают их партиями. Частное лицо не может купить одну вакцину у производителя, но может закупить партию вакцин (как правило, весьма большую), что делает возможными следующие сценарии:
+
+- частное лицо закупит партию вакцин с целью открыть пункты бесплатной вакцинации в рамках благотворительности
+
+- частное лицо закупит партию вакцин с целью открыть пункты платной вакцинации для заработка.
+
+Мы ожидаем, что будет и то, и другое. Что найдутся и те, кто предложит бесплатную вакцинацию от некоторых болезней для всех желающих, и те, кто предложит услуги платной вакцинации. С учётом себестоимости производства вакцин запрос граждан на вакцинацию, скорее всего, не сможет быть удовлетворён исключительно благотворительными организациями.
+
+
+\color{black}
+
+
+
+
+
+\textcolor{blue}{Article 204.} Countryname citizens maintain the state-forming product called <<Screening guidelines>>.
+
+\color{blue}
+
+Скринингом называются процедуры для человека, у которого нет жалоб.
+
+Скринингом называются процедуры выявления заболевания на бессимптомном этапе.
+
+Имеющих доказанную Алгоритмов по раннему выявлению рака, имеющих доказанную эффективность, не так много.
+
+Все методы раннего выявления рака, эффективность которых доказана, должны всегда находиться под рукой у жителей Countryname. С помощью этих материалов граждане могут позаботиться о себе сами.
+
+Лучшее, что можно сделать для повышения онкологической грамотности населения --- это поддерживать 
+
+
+Screening refers to the application of a medical procedure or test to people who as yet have no symptoms of a particular disease, for the purpose of determining their likelihood of having the disease. The screening procedure itself does not diagnose the illness.
+
+
+Early detection methods have only been developed for some types of cancer. For all other types of cancer, early detection methods that have proven effective are currently unknown.
+
+
+Поддерживать в одном месте все методы раннего выявления рака с доказанной эффективностью --- задача несложная, а польза от такого продукта огромна. Maintaining in one place all methods of early detection of cancer with proven effectiveness is an easy task, and the benefits of such a product are enormous.
+
+
+Раннее выявление болезней, которые не имеют симптомов
+
+Профилактическое обследование состоит из тестов, проводящихся здоровым людям, у которых нет жалоб, в зависимости от их возраста, пола и факторов риска, то есть особенностей или негативного влияния среды. Тесты, которые входят в чекап, называются скринингами. Крайне важно понимать, что чекап и обследование по жалобам, которые есть у человека, какими бы мизерными они ни были, это абсолютно разные вещи. Нужно разделять скрининг и раннюю диагностику. 
+
+
+
+
+
+Как мы выбираем, может ли тот или иной тест считаться скринингом? Многие думают, что достаточно, чтобы тест распознавал с высокой точностью наличие болезни у человека, у которого нет симптомов. Но это не так. Для того чтобы тест можно было считать эффективным скринингом, нужно доказать, что если ты делаешь этот тест в конкретной популяции пациентов, то проведение этого теста приводит к снижению смертности от той болезни, на диагностику которой он намечен. А еще лучше, чтобы общая смертность снижалась.
+
+Для того чтобы доказать, что скрининг можно внедрять на уровне системы здравоохранения, нужно провести крупное исследование. Так было сделано в отношении низкодозовой компьютерной томографии легких у тех пациентов, которые курили последние 15–30 лет в течение жизни. Оказалось, что в этой популяции, если делать низкодозовое КТ легких, можно снизить смертность от рака легкого ввиду раннего назначения лечения. Было проведено несколько исследований. В американском исследовании был получен положительный результат, а в исследованиях, которые проводились в Европе с помощью того же метода, не было такого же результата. Это иллюстрация того, что даже настолько явный метод, как компьютерная томография, не во всех исследованиях показывает, что ее применение может в действительности снижать в итоге смертность.
+
+
+Сегодня стандартный чекап для взрослого человека состоит из очень ограниченного количества тестов. Их очень мало, и они, как правило, достаточно дешевые. А людям важно знать, есть у них болезнь на ранней стадии или нет. Еще им хочется выявлять и лечить болезнь не только для того, чтобы снизить смертность, но и для того, чтобы дольше поддерживать высокое качество жизни.
+
+
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 216.} Countryname citizens maintain the state-forming product called <<Referendum>>. Набор вопросов, которые можно вынести на референдум, ограничен; граждане могут голосовать лишь на следующие темы:
+
+Прямая демократия не предполагает, что любой вопрос может быть вынесен на референдум. Список того, какие вопросы можно выносить на голосование, строго детерминирован. Граждане могут голосовать лишь на следующие темы:
+
+
+
+\textcolor{blue}{Article 217.} Countryname citizens maintain the state-forming product called <<Labor market>>, который выглядит как (представляет собой) множество строк, каждая из которых содержит следующую информацию: 
+- название компании
+- relevant HR contact(s)
+- название позиции
+- зарплатная вилка на этой позиции
+- два числа записанные в виде X/Y, где X --- количество людей уже работающих в этой компании на этой позиции, Y --- количество людей которое компания хочет видеть на этой позиции
+- job requirements (что нужно уметь для прохождения собеседования на эту позицию).
+
+
+\color{blue}
+
+Во многих странах большинству граждан неизвестно, как трудоустроиться на высокооплачиваемую позицию. Часто граждане видят, как другие люди трудоустраиваются на высокооплачиваемые позиции, и понятия не имеют, что достаточно обрести определённый (конкретный) набор знаний либо навыков, чтобы успешно пройти собеседование на тот же род деятельности --- к тому же работодателю или к другому. Эта асимметричность доступа к информации создаёт мощнейшее ощущение несправедливости и классовой ненависти внутри общества. Государство, уклад которого считается некоторыми из слоёв населения несправедливым, неустойчиво, и рано или поздно прекратит своё существование. Кроме того, наличие у жителей понимания, как каждый из них может хорошо зарабатывать легально --- это вопрос уровня уличной преступности, а следовательно и личной безопасности. Кроме того, такие виды девиантного поведения как alcoholism, substance abuse, involuntary sex work, aggression, major depressive disorder, часто вызваны не генетической предрасположенностью или драматическими событиями в семье либо в личной жизни, а незнанием доступных этому человеку социальных лифтов. 
+
+Этот эффект имеет специальное название --- ловушка бедности. 
+
+Поэтому этот state-forming product настолько важен, что стоило бы ввести наказание за несвоевременное предоставление данных или предоставление ложных данных, если бы было понятно, как его администрировать без создания точек возникновения коррупции. (Нет никакого способа проверить, сколько человек на самом деле работает в компании и какие навыки используются ими в работе.) Мы ожидаем, что жители Countryname, осознавая социальные проблемы, вызванные отсутствием такого продукта, будут добросовестно его поддерживать.
+
+
+Этот эффект называется ловушка бедности. В бедных семьях рождаются дети, которые не знают, какие знания нужно приобретать, чтобы стать средним классом, а также где их можно приобрести. Их окружение тоже этого не знает.
+
+люди которые ничего не умеют, которые не видят перспектив в жизни и это вызывает у них фрустрацию. Решить эту проблему можно только одним путём — качественным образованием, нацеленным на современный рынок труда. 
+
+У бедных родителей бедные дети, у богатых родителей богатые дети, и даже не потому что богатые родители могут дать детям денег на бизнес (хотя это важно), а в первую очередь потому что богатые родители знают каким навыкам надо научиться чтобы хорошо зарабатывать, и могут транслировать это своё знание своим детям. Поэтому дети богатых родителей «знают, куда копать», а дети бедных родителей не знают.
+
+
+<<Labor market>> does not aim to interfere in hiring processes. The goal is to make everyone, including children, know what jobs are there in the country, and what knowledge and skills each of them requires.
+
+
+
+Q: Как понять, что изучать с точки зрения трудоустройства?
+
+A: State-forming product <<Labor market>> существует как раз для того, чтобы было общеизвестно, какими hard and soft skills нужно обладать, чтобы успешно пройти собеседование на ту или иную вакансию.
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 207.} Countryname citizens maintain the state-forming product called <<Sorting hat>>, which matches a personality with a set of occupations that a person with that personality is highly likely to enjoy.
+
+
+\color{blue}
+
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 208.} Government maintains the state-forming product called <<Principles of conservative investment>>, which explains the basics of financial literacy. 
+
+\textcolor{blue}{Article 209.} Government maintains the state-forming product called <<Testament of the Founding Fathers>>, which is the list of links to the following files:
+
+%- \href{https://garkoosha.org/misc/qualities.pdf}{The 24 qualities}
+
+- \href{https://garkoosha.org/misc/alg_for_adults.pdf}{The algorithm for adults}
+
+- \href{https://garkoosha.org/misc/alg_for_kids.pdf}{The algorithm for kids}
+
+- \href{https://garkoosha.org/misc/getting_hired.pdf}{Getting hired}
+
+- \href{https://garkoosha.org/misc/product_launcher.pdf}{Product launcher}
+
+- \href{https://garkoosha.org/misc/procrastination.pdf}{Procrastination}
+
+- \href{https://garkoosha.org/misc/why_study.pdf}{Why study}
+
+
+
+
+
+
+\textcolor{blue}{Article 210.} Countryname citizens maintain the state-forming product called <<The A-Z list of civil servant profiles>>. Every line in the list is clickable and leads to the profile page of the civil servant.
+
+\color{blue}
+
+
+The state shall maintain an online register of civil servants with a detailed description of the tasks of each. The list of current tasks of each of the civil servants should be publicly available. Every taxpayer should know what the working day of every civil servant looks like. Lack of transparency in the civil servants labor and the lack of connection with them. There is no online complete list of civil servants, descriptions of their working day and place of work, author's stories about their work, working hours for communication with the population. People shall understand who exactly and what for they pay.
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 211.} For each civil servant, Countryname citizens maintain their profile page. A profile page is a simple HTML page with the following information:
+
+- full name of the civil servant
+
+- size of compensation and payment dates
+
+- self-written essay on how and why they chose this job
+
+- self-written essay on how they applied for the job
+
+- self-written essay on how they won the qualification
+
+- hours of service.
+
+\color{blue}
+
+
+% 1) Должна быть абсолютная прозрачность процесса найма 2) Госслужащие должны быть открытыми для народа
+
+Желание уклониться от уплаты налогов часто вызвано отсутствием прозрачности работы госслужащих. Нет доступных онлайн полного списка госслужащих, описаний их рабочего дня и места работы, авторских рассказов о своём труде, рабочих часов для общения с населением. Люди не понимают, кому именно и за что они платят. %The desire to avoid paying taxes is sometimes caused by the lack of transparency in the civil servants labor and the lack of connection with them. There is no online complete list of civil servants, descriptions of their working day and place of work, author's stories about their work, working hours for communication with the population. People do not understand who exactly and for what they pay.
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 212.} Countryname citizens maintain the state-forming product called <<Legal entity registration wizard>>, which has 4 steps:
+
+- identity verification step 
+
+- legal entity name selection step
+
+- foreigners only step
+
+- fee payment step.
+
+Юрлицо создано сразу после того, как только эти четыре шага проделаны; ничьё согласование для создания юрлица не требуется. Органа, который обладал бы правом ликвидировать юрлицо, в Countryname не существует. Процедуры ликвидации тоже --- если юрлицо создано, оно не может быть ликвидировано. Юрлицо может быть ликвидировано только по приговору суда.
+
+
+\color{blue}
+
+% Процесс регистрации legal entity не должна зависеть от того, в какой точке страны вы проживаете. 
+
+Поскольку регистрация legal entity может быть простой и быстрой, она должна быть простой и быстрой. Необходимость fee объясняется тем, что нужно сделать дорогостоящей регистрацию огромного количества юрлиц ради шутки.
+
+%If something can be done online with no civil servants involved, it shall be done online with no civil servants involved. 
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 213.} Foreigners registering a legal entity undergo the foreigners only step. This step requires foreigner applicant to write an essay with the following information:
+
+- детальный рассказ о себе, включая города в которых он жил и в какие годы чем занимался
+
+- где заработаны деньги (каждое приращение капитала должно быть объяснено)
+
+- план работы
+
+Если хотя бы 10\% проголосовавших граждан против создания юрлица таким человеком, заявка отклоняется. 
+
+\color{blue}
+
+
+
+%Investor reputation can be barrier for external investment. Если человек заработал деньги созидательной деятельностью --- это одна история, если нет --- другая. Для иностранца процедура регистрации юрлица должна быть на один шаг дольше из-за того, что мы не хотим разрешать в нашей стране вести бизнес людям, которые деньги заработали не (путём принесения пользы окружающим) созидательной деятельностью --- к примеру, наркотрафиком или политическими связями. 
+
+
+%Необходим механизм, который запрещает открывать в нашей стране юрлица иностранцам, происхождение капитала которых вызывает у граждан большие вопросы.
+
+Иностранцы, капиталы которых, по мнению наших граждан, заработаны с грубым нарушением этических норм, не должны иметь возможность открыть юрлицо в нашей стране. %К примеру, номинальные держатели общака, принадлежащего международной преступной группировке, не должны иметь возможности открыть банковский счёт в нашей стране.
+
+
+% --- к примеру, номинальные держатели общака, принадлежащего международной преступной группировке --- 
+
+
+%Есть два подхода. Первый --- включить в Конституцию механизм ограничения въезда, механизм ограничения возможности создания юрлиц, механизм ограничения возможности открытия банковских счетов "нежелательным" иностранцам. Второй --- не иметь подобных механизмов, полагаясь на уголовное преследование.
+
+%Лучший выход --- не иметь подобных превентивных механизмов, однако в случае обнаружения фактов уголовных правонарушений на родине, которые также являются преступлениями по законодательству Countryname, по которым не истёк срок давности по законодательству Countryname и на которые родина закрыла глаза, выдворять. (Интересно, что фальсификация выборов, на которую родина закрыла глаза, не является преступлениями по законодательству Countryname, так как нет выборов.) % нас не интересуют уголовные преступления уровня "выеба"
+
+
+
+
+
+
+
+
+\color{black}
+
+
+
+
+\textcolor{blue}{Article 212.} Countryname citizens maintain the state-forming product called <<Единый реестр юридических лиц>>. Для всех компаний, кроме public companies, список учредителей и состав долей акционеров хранится в реестре в зашифрованном виде. Расшифровать эти данные могут только акционеры.
+
+% Следует ли юрлицам раскрывать состав долей государству --- или им следует договариваться приватно?
+
+% Следует ли делать состав долей публичным? 
+
+
+%Любой желающий может посмотреть, кому принадлежит какое юрлицо и в каких долях.
+
+\textcolor{blue}{Article 212.} Countryname citizens maintain the state-forming product called <<Единый реестр недвижимой и земельной собственности>>. Список владельцев недвижимой и земельной собственности поддерживается, но зашифрован. Он доступен только владельцам.
+
+\color{blue}
+
+%Любой желающий может посмотреть, кому принадлежит какой объект недвижимости и в каких долях.
+
+Существуют общества, в которых можно бесплатно либо за небольшую плату узнать, собственником каких объектов недвижимости является конкретный человек (какие объекты недвижимости находятся в собственности у конкретного человека). В таких обществах real estate assets каждого человека публично известны, что подстёгивает действия криминального характера по отношению к собственникам. Поэтому из соображений личной безопасности свидетельство о собственности может быть получено только по публичному ключу собственника.
+
+
+\color{black}
+
+\textcolor{blue}{Article 214.} Countryname citizens maintain the state-forming product called <<Trial>>.
+
+\color{blue}
+
+% How does the court work?
+
+\color{black}
+
+
+\textcolor{blue}{Article 215.} Countryname citizens maintain the state-forming product called <<Hiring and dismissing civil servants>>
+
+
+
+
+
+\textcolor{blue}{Article 216.} Countryname citizens maintain the state-forming product <<Report a crime>>, which allows any person to anonymously report a crime committed in Countryname and attach relevant media files. 
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 216.} Countryname citizens maintain the state-forming product called <<Countryname official>>, which is the media that through various distribution channels promotes these and only these narratives:
+
+- труд каждого важен, all the products and services that we enjoy are the result of a work of other people (сюжет, показывающий как выглядит рабочий день случайного человека)
+
+- как попасть на госслужбу (истории конкретных госслужащих, интервью с ними)
+
+- чем занимается каждый конкретный госслужащий (как выглядит рабочий день) и какая у него структура дохода
+
+- как живут заключённые
+
+уважение ко всем людям, в том числе к конкурентам, и фокус на собственном перформансе
+
+
+нужно не превосходить оппонента, не сравнивать себя с другими, а заниматься созиданием
+
+национальная идея - заниматься созиданием тогда когда хочется заниматься созиданием, и отдыхать тогда когда хочется отдыхать
+
+
+\color{blue}
+
+Убеждения, которые имеют люди, оказывают громадное влияние на их поведение, а следовательно и на качество их жизни. Некоторые убеждения делают качество жизни низким, некоторые --- высоким. Возможно, с точки зрения влияния на качество жизни это самый важный из state-forming products.
+
+Countryname должны формировать законченную систему убеждений. Эти убеждения формулируются на этапе создания конституции и не могут быть изменены в дальнейшем.
+
+СМИ это исключительно влиятельная часть общества. Именно то, как СМИ преподносят любую тему, формирует отношение к ней подавляющего большинства наших граждан. Меньшинство будет искать источники на других языках или сопоставлять увиденную либо услышанную информацию со своими профессиональными знаниями --- большинство не тратит время на это и доверяет СМИ.
+
+СМИ могут сделать из человека яростного сторонника чего угодно. СМИ формируют представления о добре и зле, формируют представления о том, какие поступки хорошие а какие нет. Важно осознавать исключительную важность СМИ в части формирования у граждан представлений о том, что такое хорошо и что такое плохо. 
+
+
+%Есть люди, которые считают, что никакая идеология не может устанавливаться в качестве государственной или обязательной. Я считаю, что это лицемерие, потому что на самом деле у каждого общества есть идеология (стереотипы, транслируемые вовне, в другие страны). По определению, идеология --- это образ жизни, к чему нужно стремиться, который считается конвенционально хорошим. Если мы не займём умы людей идеологией, их умы будут заняты другой идеологией. Представления о том что социально одобряется нужно формировать, общество нужно воспитывать.
+
+%Идеология нужна, иначе умы будут забиты коммунизмом или исламом. Наша идеология --- получение удовольствия, создание полезных продуктов для окружающих, улучшение качества жизни себя и других людей.
+
+Идеология что такое хорошо и что такое плохо.
+
+безопасность, комфорт
+
+\color{black}
+
+
+
+
+
+
+\textcolor{blue}{Article 217.} Countryname citizens maintain the state-forming product called <<Retraining aid>>, which allows one to apply for a certain amount of money, the purpose of which is to enable a person to get the desired professional skills without being distracted by having to earn a living. This product comes with the following restrictions:
+- only Countryname citizens can apply
+- those who are under arrest or incarcerated cannot apply
+- applying for an amount less than the threshold amount is not allowed; the threshold amount is set by referendum.
+
+
+The applicant must fill the following fields:
+
+- какую квалификацию (какую специальность) он хочет получить
+- как именно он планирует её получить
+- сколько месяцев уйдёт на получение нужной квалификации и трудоустройство
+- сколько составляют его месячные расходы
+- <<о себе>>
+- контакты (способы связаться)
+
+
+
+\color{blue}
+
+
+
+Какие специальности востребованы работодателями Countryname, можно узнать с помощью state-forming product <<Labor market>>. 
+
+Есть мнение, что от UBI нужно отказаться в пользу таргетированной помощи --- нужно исключить случаи, когда люди, не нуждающиеся в UBI, получают UBI. Проблема таргетированной помощи в том, что она создаёт целый класс чиновников, измеряющих, валидна или нет. Чиновники, принимающие решения --- проблема даже не в том что это коррупциегенные решения, а в том, что они непрозрачные для стороннего наблюдателя. UBI --- полностью прозрачная система. Что касается подачи людьми, не нуждающимися, заявок на UBI, мы думаем, что необходимость публиковать свои данные, отобьёт поток желающих подаваться на UBI просто так.
+
+
+\color{black}
+
+\textcolor{blue}{Article 217.} Countryname citizens maintain the state-forming product called <<Dream aid>>, which allows citizens (including kids) to post wishes and allows other citizens to fund those wishes. Only costly and financial wishes are allowed. (<<Resurrect my grandma>> is an example of non-financial wish.)
+
+\color{blue}
+
+Это добрый способ перераспределения денег от . Доброта --- залог счастливой жизни жителей Countryname.
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 218.} Список лиц, когда-либо получавших retraining aid либо medical aid, в формате <<person ID, funding size дата начала получения пособия, дата конца получения пособия>>, is published on the state-forming product <<List of aid receivers>>.
+
+\color{blue}
+
+Эта мера необходима, чтобы люди, которые в пособии по безработице не нуждаются, за ним не обращались.
+
+\color{black}
+
+
+
+
+
+\textcolor{blue}{Article 206.} Countryname citizens maintain the state-forming product called <<Symptom checker>>, which is the user-friendly diagnostic tool based on latest diagnostic guidelines together with the user-friendly latest therapy guidelines for each disease and disorder. Each medical statement in <<Symptom checker>> ends with a link to the meta-analysis or guideline where it was made. 
+
+\color{blue}
+
+С точки зрения потребителя, врач-терапевт --- это человек, который на вход принимает три параметра [personality of the patient (age, weight, anxiety level, smoker/non-smoker etc), health complaints, anamnesis], а на выходе выдаёт четыре параметра [compassion, list of possible diagnoses with probabilities for each, treatment algorithm, reassurance]. Плохой врач-терапевт это человек, который руководствуется собственным опытом и/или опытом коллег и/или опытом старших товарищей (<<we have been prescribing XYZ in this situation for the last 25 years, and it works!>>). Хороший врач-терапевт это человек, который следует так называемым guidelines --- алгоритмам диагностики и терапии, составленным в соответствии с последними научными данными. Последние научные данные в медицине --- это совокупность всех мета-анализов. Мета-анализом называется обзор всех качественно сделанных двойных слепых рандомизированных клинических испытаний по некоторому вопросу, сопровождённый итоговым выводом. Современный врач обязан лечить в соответствии с последними научными данными, в противном случае он шарлатан.
+
+Thus, in addition to such important components as compassion and reassurance, a good therapist simply voices what is written in the guidelines. But why pay a therapist when you can read the same thing in the guidelines for free instead?
+
+
+
+Admittedly, online products such as <<Symptom checker>> are not for everyone. In life-threatening diseases, as well as in medical conditions that cause distress, even <<Symptom checker>>-trusting patients are likely to seek for other opinions. There are patients who prefer a doctor because doctors are legally responsible, unlike the state-forming product run by volunteers. There are patients who find it easier and more pleasant to learn by listening. Such patients will go to a private clinic. 
+
+
+
+
+
+\color{black}
+
+
+
+
+\textcolor{blue}{Article 206.} Countryname citizens maintain the state-forming product called <<Medical aid>>, 
+which allows one to apply for medical expenses coverage. <<Medical aid>> does not allow to apply for an amount less than the threshold amount; the threshold amount is set by referendum. To apply, one fills the five following fields:
+- medical history of the patient
+- what exactly is the money for
+- amount needed
+- <<about the patient>>
+- patient's or patient trustee's contacts (ways to contact)
+
+
+\color{blue}
+
+There are five types of medical needs that people may have:
+- консультация врача
+- взятие анализа (анализ крови, эндоскопическое исследование, ультразвуковое исследование)
+- проведение хирургической операции
+- проведение реанимационных мероприятий
+- получение дорогостоящего медикамента.
+
+The introduction of a threshold amount is intended to prevent joke fundraising campaigns, e.g. situations when people fundraise for affording paracetamol or a blood test.
+
+<<Medical aid>> is targeted at people who cannot afford their needs. When a person can pay for their medical needs themselves, we kindly ask such person to pay for their needs on their own.
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 207.} Законодательство в вопросах здравоохранения полностью исчерпывается сказанным в статьях Articles 204-206, а также в статьях XYZ. Иные пункты, посвящённые регулированию здравоохранения, не могут быть внесены в законодательство. %Вовлечение государства в вопросы здравоохранения полностью исчерпывается сказанным в статьях Articles 204-206. Иное участие (вовлечение) государства в вопросах здравоохранения недопустимо. %In particular, state cannot fund, own, or co-own healthcare institutions, e.g. hospitals, clinics. (well, state cannot fund anything, cause there's no state money) (well, state cannot own anything, since .)
+
+
+
+
+\color{blue}
+
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 208.} Государственные и негосударственные пенсионные системы отсутствуют. 
+
+
+\color{blue}
+
+
+
+В некоторых странах реализована следующая конструкция пенсионного обеспечения: на протяжении всей жизни вы принудительно отчисляете в бюджет государства некоторый процент от своих доходов, а взамен государство обязуется начиная с определённого возраста выплачивать вам пенсию, размер которой вычисляется по хитроумной математической формуле, устанавливаемой текущей исполнительной властью. Это очень странная конструкция: нет никакой связи между тем, сколько денег с поправкой на инфляцию государство получило от вас в виде налогов, и тем, сколько денег с поправкой на инфляцию оно вам обязуется выплатить. К тому же нет никаких гарантий, что эта формула к моменту вашего выхода на пенсию не будет изменена той или иной исполнительной властью.
+
+В других странах реализована другая конструкция: на протяжении всей жизни вы отчисляете некоторый процент от своих доходов на специальный банковский счёт, снимать деньги с которого до наступления определённого возраста вы не можете. В нашей стране эту конструкцию нельзя реализовать потому, что государство считает получение информации о том, какие у вас доходы, угрозой вашей личной безопасности.
+
+
+We encourage everyone to save for retirement on their own; we have created the state-forming product <<Principles of conservative investment>> that explains in simple terms how to do it right. The more you saved for retirement, the higher your quality of life will likely be. However, we understand that there will be those who, on the verge of old age, will find themselves having squandered their retirement savings; not everyone is rational. To help such people, the state-forming product <<Fund the old>> was created (see the Article X for description).
+
+
+Необходимость запрета негосударственных пенсионных фондов есть необходимость защитить граждан от употребления этих слов в рекламе. Не существует негосударственных пенсионных фондов, отличных от инвестиционных фондов, инвестирующих в консервативные инструменты.
+
+Это общество без государственной поддержки пенсионеров (в таком обществе предполагается, что пенсионеры будут жить на накопления, сделанные ими в результате инвестирования в течение всей жизни --- а если человек не инвестировал и промотал накопления, финансироваться их детьми или благотворительными организациями). 
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 213.} Countryname citizens maintain the state-forming product called <<Principles of conservative investment>>, представляющий собой консервативную инвестиционную рекомендацию для ритейл-инвестора, не содержащую рекламу конкретных инвестиционных продуктов. 
+
+\color{blue}
+
+
+
+\color{black}
+
+\textcolor{blue}{Article 214.} Countryname citizens maintain the state-forming product called <<Myths about the world we live in>>, ставящие своей целью минимизировать решения, способные поставить под угрозу благополучие граждан.
+
+\textcolor{blue}{Article 215.} Countryname citizens maintain the state-forming product called <<List of links on quality sources of academic information>>, which ставящий своей целью помочь вам освоить любую сферу знаний
+
+
+\textcolor{blue}{Article 216.} Countryname citizens maintain the state-forming product called <<Center for continuous education>>, which 
+
+
+
+
+\textcolor{blue}{Article 217.} Ни на что другое из образования и повышения квалификации, помимо перечисленного в Articles 210-216, государство тратить деньги не может. В частности, государство не несёт расходы ни на содержание школ, ни на содержание университетов, ни на школьное, ни на университетское образование, ни на составление и проведение госэкзаменов. State cannot fund, own, or co-own education institutions, including schools, colleges, universities. In Countryname, государство не содержит оффлайн-учебные заведения и не обязывает граждан посещать их.
+
+\color{blue}
+
+
+
+
+
+The state-forming product called <<Center for continuous education>> позволяет любому жителю нашей страны бесплатно получить образование высокого качества. В этих условиях нет смысла в содержании сети школ и университетов по всей стране. 
+
+
+
+
+Проблема <<если нет школы, то с кем мне оставить ребёнка, когда я ухожу на работу>> к образовательному процессу (процессу получения знаний) отношения не имеет. Оставьте ребёнка одного дома (что именно с ним может случиться?), оставьте его дома с няней или родственниками, отведите его к няне или родственникам, отведите его в частную школу.
+
+
+Проблема <<если нет школы, то как научить ребёнка коммуницировать с широким кругом людей не являющихся родственниками>> также не имеет отношения к образовательному процессу (процессу получения знаний).
+
+
+Проблема <<в школах и университетах есть чёткая учебная программа, а здесь что? откуда я знаю, что и в каком порядке мне изучать?>> решается с помощью следующего алгоритма:
+
+\begin{enumerate}
+
+\item воспользуйся state-forming product <<Sorting hat>>, чтобы выбрать несколько работ, которыми тебе будет приятно заниматься
+\item воспользуйся state-forming product <<Labor market>>, чтобы узнать, какие hard and soft skills нужно освоить, чтобы успешно пройти собеседование на интересующие вас вакансии.
+
+\end{enumerate}
+
+Ну и, разумеется, не отказывайте себе в удовольствии от изучения других приятных для вас сфер знаний.
+
+
+
+
+
+
+
+Проблема <<дома мой ребёнок будет отвлекаться на мессенджеры и компьютерные игры, а в классе, когда идёт урок и все смотрят на учителя, возможности отвлечься очень ограничены, и волей-неволей приходится вникать в то что говорит учитель либо в поставленные им задачи>> решается изучением первопричин прокрастинации (как детской, так и взрослой). Причины прокрастинации --- не та тема, которую можно объяснить в двух словах. See the state-forming product <<Overcoming procrastination>> to learn about the eight different causes that lead to procrastination. See the state-forming product <<Why study>> to learn about the four different causes of why people study. 
+
+
+Первопричина проста --- мозг каждого человека стремится провести время наиболее приятным способом из возможных. Если учёба --- наиболее приятный способ провести время из доступных, в отсутствие внешнего принуждения либо угрозы человек будет стремиться к учёбе. Если нечто иное --- наиболее приятный способ провести время из доступных, в отсутствие внешнего принуждения либо угрозы человек будет стремиться к этому иному. Люди выбирают "не учёбу" (компьютерную либо мобильную игру, общение в соцсетях и мессенджерах, чтение новостей) поверх изучения темы Х, если "не учёба" выглядит привлекательнее учёбы. Людям приятна учёба когда она легко даётся, и неприятна когда даётся сложно (see <<success pathway>>). Психика человека так устроена, что человек с удовольствием делает то что у него получается и избегает предметов, которые не получаются.
+
+Лучший способ решить эту проблему --- не иметь ситуаций, когда учёба даётся сложно (и, следовательно, неприятна). Для этого <<Center for continuous education>> должен быть источником информации, где она изложена предельно ясно. Тема будет освоена человеком хорошо, если у него есть текст, где она изложена кристально ясно, и не будет освоена хорошо, если такой текст ему не удалось найти.
+
+
+
+
+
+
+
+
+Отсутствие госэкзаменов в Countryname вызвано тем, что лучшим экзаменом является ваша востребованность на рынке труда, если вы наёмный работник, и востребованность ваших товаров и услуг, если вы предприниматель.
+
+
+
+
+
+
+
+
+\color{black}
+
+
+
+\subsection*{Chapter 3. Civil service.}
+
+
+
+
+\textcolor{blue}{Article 301.} In Countryname, there are no government officials or civil service positions other than the following ones:
+
+- полицейский
+
+- судебный пристав
+
+- член комитета обороны
+
+- служащий центра изготовления travel passport
+
+- сотрудник временного изолятора
+
+- сотрудник службы исполнения наказаний
+
+- сотрудник центрального банка
+
+- сотрудник пограничного контроля.
+
+
+In particular, there are no president, no prime minister, no ministers, no tax agency workers, no judges and no parliament members in Countryname.
+
+
+
+
+\color{blue}
+
+
+
+There's no need for visionary, which is traditional role for president, since the role of visionary is held by the text of the present Constitution.
+
+Regarding tax agency workers, judges, we have already explained why the Countryname will live without them.
+
+How exactly Countryname обошлась без tax agency workers, изложено в чаптере 5. How exactly Countryname обошлась без judges, изложено в чаптере 6. 
+
+
+
+\color{black}
+
+
+
+
+
+
+
+\textcolor{blue}{Article 302.} Существует только один способ попасть на госслужбу --- подать заявку с помощью state-forming product <<Civil service>>. Подать заявку на то, чтобы стать госслужащим, может любой гражданин, не находящийся под арестом или в местах лишения свободы. Нет системы предварительной фильтрации кандидатов.
+
+\textcolor{blue}{Article 303.} Конкурсный отбор на госслужбу проходит 30 сентября каждого года с помощью state-forming product <<Referendum>>. Конкурсный отбор на госслужбу проходит электронно, бумажные голосования не допускаются. Госслужащие избираются сроком на календарный год. Полномочия свежеизбранного госслужащего длятся с 1 января следующего года по 31 декабря следующего года --- таким образом, свежеизбранный госслужащий приступает к работе спустя три месяца после избрания. 
+
+\textcolor{blue}{Article 304.} Процедуру конкурсного отбора проходят все госслужащие, в том числе её заново проходят действующие госслужащие.
+
+\textcolor{blue}{Article 305.} Каждый госслужащий может быть избран неограниченное количество раз. Госслужащим не может быть избран человек, не достигший 18 лет. Верхняя планка возрастного ценза отсутствует.
+
+\color{blue}
+
+При частоте конкурентных выборов 1 раз в год то, что госслужащий может быть переизбран неограниченное количество раз, не является минусом.
+
+\color{black}
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 306.} Каждый гражданин может как публично, так и анонимно инициировать процедуру увольнения каждого госслужащего с помощью state-forming product <<Referendum>>. Сторона обвинения (заявитель) должна прикрепить обоснование (в том числе содержащее медиаматериалы) необходимости уволить госслужащего, а сторона защиты (госслужащий) может прикрепить свои медиаматериалы. Голосование held by the state-forming product <<Referendum>> длится 5 дней. Госслужащий уволен, если за увольнение проголосовало не менее 90\% участников голосования. День увольнения госслужащего также является днём прекращения его полномочий.
+
+\color{blue}
+
+Ясно, что процедура увольнения (то есть досрочного прекращения полномочий) неугодных гражданам госслужащих должна существовать. Причина, по которой госслужащий стал вдруг неугоден гражданам, юридического значения не имеет --- важен лишь факт того, что граждане не ходят больше видеть этого госслужащего в этой должности.
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 306.} Полномочия госслужащего прекращены досрочно, если он уволен либо добровольно ушёл в отставку. Голосование об увольнении некоторого госслужащего не может быть инициировано более одного раза за календарный месяц. В случае досрочного прекращения полномочий госслужащего ровно через 7 дней проходит процедура конкурсного отбора на место уволенного госслужащего, в котором тот принимать участие не имеет права.
+
+
+
+\textcolor{blue}{Article 306.} Полномочия госслужащего прекращаются лишь в трёх случаях:
+
+- наступило 31 декабря и госслужащий не переизбран, то есть с 1 января его полномочиями обладает другой человек (в этом случае днём прекращения полномочий считается 31 декабря)
+
+- импичментом завершено пятидневное голосование об импичменте в отношении госслужащего
+
+- госслужащий добровольно сложил полномочия.
+
+Иных способов прекратить полномочия госслужащего нет. В частности, смерть госслужащего а равно прекращение выполнения им всякой работы не прекращают его полномочия.
+
+
+
+\textcolor{blue}{Article 306.} Выплата зарплаты госслужащим производится 2 раза в месяц в размере половины месячной зарплаты 10 и 25 числа каждого месяца. В день прекращения полномочий происходит финальный расчёт с госслужащим --- госслужащему выплачивается половина месячной зарплаты, если в эту половину месяца она ещё не была выплачена, и не выплачивается ничего, если она была выплачена. (Половинами месяца здесь называются два периода: период с первого дня месяца включительно по 15 день месяца включительно, и период с 16 дня месяца включительно по последний день месяца включительно.)
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 306.} То, сколько мест госслужащих какого job title какому населённому пункту разыгрывается на выборах 30 сентября, решается ровно за два месяца до этого, т.е. 30 июля с помощью state-forming product <<Multiple choice voting>>.
+
+\color{blue}
+
+
+Для каждого из job titles количество госслужащих, необходимое и достаточное для обслуживания жителей некоторого населённого пункта, зависит от динамики населения этого населённого пункта. Поэтому каждый год нужно заново голосовать по количеству госслужащих для каждого из job titles каждого из населённых пунктов.
+
+\color{black}
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 306.} Размер зарплат определяется голосованием граждан, причём граждане стимулированы попасть между 45 и 55 перцентилем. Из всех зарплат, предложенных таким образом гражданами, итоговой зарплатой госслужащего на позиции Х выбирается медианная. У всех госслужащих, которые в один и тот же календарный год работают на одной и той же позиции, зарплата одинакова и не зависит от населённого пункта.
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1200.} В Countryname отсутствует парламент. Все граждане Countryname, достигшие 18 лет, обладают правом законодательной инициативы. Гражданин не может вносить на голосование более одного законопроекта в календарный месяц. Голосование за законопроект происходит с помощью state-forming product <<Referendum>>. Законопроект принят, если за него проголосовало 95\% голосовавших. 
+
+
+\color{blue}
+
+
+
+
+
+С точки зрения инвесторов и талантов, лёгкость внесения изменений в законодательство это серьёзный риск (stay away caveat). Каждый из рисков негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Поэтому внесение изменений в законодательство умышленно сделано трудновыполнимым.
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 1200.} The legislation of Countryname has no such notion as <<political party>>.
+
+\color{blue}
+
+
+
+Что касается отсутствия термина "политическая партия" в законодательстве, то здесь всё просто --- в отсутствие парламента мы не видим смысла в этом термине. It is worth mentioning that while unable to officially register a political party, people can gather in unofficial political parties, unions and associations. 
+
+
+
+\color{black}
+
+
+
+
+\subsection*{Chapter 4. Полиция.}
+
+
+
+
+\textcolor{blue}{Article 302.} Полицейский имеет право находиться в униформе в общественном месте только в трёх случаях: если едет на задержание, если задерживает человека, если доставляет задержанного в отделение. В остальное время полицейский либо находится в отделении, либо находится в общественных местах в штатском.
+
+\color{blue}
+
+Не должно быть ситуаций, когда полицейский в униформе прогуливается в общественном месте --- такой <<напряжённый труд>> будет вызывать раздражение у граждан, роняя уважение к труду полицейских. 
+
+\color{black}
+
+\textcolor{blue}{Article 303.} Государство гарантирует следующие способы вызвать полицию: через веб-сайт, через мобильное приложение, через чатбота, звонком в дежурную часть.
+
+\textcolor{blue}{Article 304.} Полицейский не имеет права задерживать человека для установления личности более чем на 5 минут.
+
+\textcolor{blue}{Article 305.} Форма полицейского закупается государством и содержит:
+
+- видеорегистратор установленный на шлеме на уровне глаз, видео с которого публично доступны всем желающим в сети интернет
+
+- оружие
+
+- спецсредства.
+
+
+\textcolor{blue}{Article 306.} Работа полицейского оплачивается пропорционально количеству вызовов, на которые он приехал. 
+
+\color{blue}
+
+Это означает, что если вызовов ноль, то и доход ноль. Поэтому большинство полицейских будут иметь основную работу, а служба в полиции для них будет чем-то вроде хобби.
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 307.} Деньги, получаемые сотрудниками полиции за отработку вызова, взыскиваются в судебном порядке с совершившего правонарушение. В случае отсутствия правонарушения та же сумма взыскивается в судебном порядке с совершившего вызов полиции. 
+
+Стоимость задержания и доставки удерживается у виновника (правонарушителя).
+
+\textcolor{blue}{Article 308.} Задержание людей, оказавших сопротивление, и не оказавших сопротивления, оплачивается по-разному.
+
+\color{blue}
+
+Если не оплачивать задержание людей, оказавших сопротивление, и не оказавших сопротивления, по-разному --- сложно будет найти людей на опасный выезд.
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Chapter 5. Следствие и судебная власть.} 
+
+Investigators are donated for spectacular investigations (just like media). Investigators work becomes part of entertainment industry (just as all civil service in our state)
+
+% постановление об аресте выносится онлайн-голосованием на основе доказательств 
+
+% постановление об обыске тоже выносится онлайн-голосованием на основе доказательств 
+
+% следователь должен стримить обыск --- иначе хз откуда возникли доказательства
+
+- следователь (лицо, публикующее результаты расследования и ходатайствующее о мере пресечения --- это необязательно следователь, это может быть и потерпевший, если на руках есть все доказательства вины) (предварительным следствием может заниматься кто угодно)
+
+
+
+Проблема со следователями в том, что чем больше следователей нанять, тем больше преступлений будет раскрыто.
+
+
+
+\textcolor{blue}{Article 401.} Правосудие в нашей стране осуществляется только судом. 
+
+\textcolor{blue}{Article 402.} Суд реализован через state-forming product <<Multiple choice>>. Судебное решение принимается в интернете, а не в физическом пространстве.
+
+\textcolor{blue}{Article 402.} Любой житель Земли, имеющий выход в интернет, может наблюдать за ходом любого судебного процесса через state-forming product.
+
+\textcolor{blue}{Article 403.} Любой житель Земли, зарегистрировавшийся на портале, может оставить один комментарий по поводу любого судебного разбирательства. Автор комментария может неограниченное число раз его редактировать. Комментарий теряет прозрачность (opacity), становится светло-серым, если более трёх граждан помечают его как не относящийся к делу.
+
+\textcolor{blue}{Article 404.} Следователи работают на безвозмездной основе. Однако каждое законченное следствие содержит функционал приёма доната.
+
+\textcolor{blue}{Article 405.} Профессии "судья" не существует. Функционал судьи выполняет население, сравнивая аргументы обвинения и защиты.
+
+
+
+сначала определяется виновен/невиновен. Деяние, в котором нет вины человека --- не преступление и не правонарушение.
+
+
+Прокурор предлагает не одно наказание, а несколько. Люди выбирают не из двух вариантов, а из нескольких.
+
+
+\textcolor{blue}{Article 148.} Судопроизводство осуществляется на основе состязательности и равноправия сторон.
+
+\textcolor{blue}{Article 149.} В случаях, предусмотренных федеральным законом, судопроизводство осуществляется с участием присяжных заседателей.
+
+
+
+
+\textcolor{blue}{Article 153.} Правоприменительная практика не является избирательной. 
+
+
+
+\textcolor{blue}{Article 401.} В Countryname отсутствует городской бюджет.
+
+\color{blue} 
+
+Вот список причин:
+
+1) люди должны полностью понимать, на что он расходуется. Для этого они должны конкурентные рынки канализации etc
+2) если нужно залатать дорогу, этим занимается тот, кому это надо --- а потом принимает донаты
+3) если будет городской бюджет, это значит, что бюджет города А будут частично покрывать жители других городов. Это из-за того, что мы не хотим следить, в каком городе кто живёт. Это будет стимулировать жителей каждого города завышать расходную часть бюджета --- мол, она всё равно будет покрыта неместными.
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Chapter 6. Citizenship, immigration policy, visa policy, foreign policy, ID issuance.}
+
+
+
+\textbf{Axiom 1001.} Civil servants of Countryname have no authority to decide on the admission of refugees to the country. Every Countryname citizen who is at least 18 years of age has the right to invite no more than one refugee. If a citizen uses this right, all expenses of the refugee are covered by such a citizen.
+
+
+\textbf{Axiom 1001.} Civil servants of Countryname have no authority to decide on granting political asylum. Мы не предоставляем политическое убежище никому. 
+
+\textbf{Axiom 1001.} Каждый раз, когда некоторая страна запрашивает у Countryname выдачу некоторого лица, находящегося на территории Countryname, в случае если деяние, которое вменяют лицу, является преступлением по законам Countryname, решение о выдаче либо невыдаче этого лица принимается судом Countryname, т.е. доказательства, предоставленные обвинением, должны быть сочтены судом Countryname убедительными для положительного решения. В случае если деяние, которое вменяют лицу, не является преступлением по законам Countryname, выдача такого лица невозможна и суд не инициируется.
+
+
+
+
+\textcolor{blue}{Article 1001.} Countryname has no ministry of foreign affairs, no official diplomatic position on any of the issues, no consulates, no consuls, no embassies, no ambassadors, no diplomatic missions in other countries. Other countries may open and operate embassies and consulates on the territory of Countryname if they do it at their own expense. Whenever a Countryname citizen expresses a position or an opinion or a view, this is not the position or opinion or view of Countryname. Whenever a Countryname citizen funds an organization or an armed force, this is not the position of Countryname. 
+
+
+
+\color{blue}
+
+Нет никакой рациональной причины тратить деньги граждан Countryname на содержание консулов, послов, консульств и посольств. Если, находясь за границей, вы попали в трудную ситуацию и вам нужна помощь (например, вас задержали и поместили в тюрьму под надуманным предлогом), огласите свою ситуацию в СМИ --- крупный бизнес Countryname может временно ограничить торговлю с такой страной и призвать к этому своих торговых партнёров из других стран, и это не менее эффективно, чем ходатайства консула.
+
+
+Если вы живёте за границей и вам нужно обновить загранпаспорт (эта потребность появляется раз в 10 лет), просто съездите в Countryname. 
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1004.} Anyone who has legally been on the territory of Countryname for a certain number of days in total may file for Countryname citizenship. The number of days is established by referendum. Any time a person has legally been at least part of the day local time on the territory of Countryname, this day counts as spent in Countryname. 
+
+
+
+
+
+\color{blue}
+
+Конструкция <<certain number of years>> плоха тем, что непонятно, как считать годы. Если человек в некоторый календарный год провёл на территории Countryname 200 дней, это нужно засчитывать как целый год? Если человек в некоторый календарный год провёл на территории Countryname 150 или 100 дней, это нужно зачитывать как будто он здесь не был? Именно поэтому выбрана конструкция <<certain number of days in total>>. 
+
+\color{black}
+
+
+\textbf{Article 1005.} In Countryname, the only basis for acquiring citizenship is the number of days spent in the country. There is no other basis for acquiring Countryname citizenship except for Article 1004.
+
+\color{blue}
+
+Получение гражданства в обмен на инвестиции в страну не является хорошей практикой вне зависимости от размера инвестиций. Чтобы стать гражданином Countryname, вы должны именно прожить некоторое время на этой территории и впитать в себя её политическую и иную культуру.
+
+
+\color{black}
+
+
+\textbf{Article 1006.} Child gets Countryname citizenship at birth only if both parents are citizens. If at least one of the parents is not a citizen, the child does not get citizenship at birth. 
+
+\color{blue}
+
+Ребёнок, оба родителя которого граждане Countryname, с большой вероятностью впитает культуру, характерную для граждан Countryname --- в том числе политическую культуру. Такому ребёнку можно давать гражданство по праву рождения. 
+
+Ребёнку, лишь один родитель которого является гражданином Countryname, не нужно давать гражданство при рождении, потому что мы не хотим тратить деньги на такой непрозрачный, а также коррупциогенный орган, как госслужащие, задачей которых было бы вникать, с обоими ли родителями он живёт (если с обоими, то какой родитель влияет сильнее?), или родители разошлись и ребёнок живёт с одним из родителей (с каким родителем из двух он живёт --- с иностранцем или с гражданином Countryname?). Такой ребёнок может позже получить гражданство Countryname на общих основаниях (see Article 1004 for requirements; if the child is not in the Countryname, see Article 1010 for requirements to legally enter Countryname). As any person, such a child can acquire the citizenship in accordance with Article 1004. 
+
+Ребёнок, ни один из родителей которого не является гражданином Countryname, вряд ли будет воспитан в культуре Countryname и поэтому гражданство при рождении такому ребёнку давать нельзя. That is why there is no jus soli in Countryname. 
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1004.} Граждане Countryname получают право на референдум о закрытии границ на въезд граждан некоторой страны в любом из трёх следующих случаев:
+
+- в случае военного вторжения из этой страны на территорию Countryname
+- в случае ракетных обстрелов территории Countryname с территории этой страны
+- в случае неоднократных террористических атак, совершённых гражданами этой страны на территории Countryname. 
+
+Если ни одно из этих трёх условий не выполнено, граждане Countryname не имеют права на референдум о закрытии границ на въезд граждан некоторых стран. 
+
+
+
+
+
+\color{blue}
+
+Требование неоднократности террористических атак вызвано тем, что в случае неоднократности это госполитика.
+
+
+
+Законодательство Countryname должно защищать от гипотетической ситуации, когда граждане некоторой страны, находясь под воздействием её пропаганды, один за другим въезжают на территорию Countryname и совершают здесь теракты с помощью легкодоступных и не вызывающих подозрений средств. 
+ 
+
+\color{black}
+
+
+
+
+
+
+
+
+Если же договор между странами существует, то экстрадиция работает примерно так:
+
+Страна, которая преследует человека, запрашивает экстрадицию;
+Суд страны, где человек находится, рассматривает запрос;
+Если суд удовлетворяет запрос, то он передает его исполнительной власти (в зависимости от страны это может быть министр юстиции, премьер-министр, министр иностранных дел);
+Исполнительная власть решает, выдать запрашиваемое лицо или нет. 
+
+
+\textcolor{blue}{Article 1004.} Граждане Countryname получают право на референдум о запрете въезда некоторого иностранца на территорию Countryname, замораживании всех его активов находящихся в юрисдикции Countryname, конфискации этих активов спустя 365 суток после замораживания, продаже их на аукционе и передаче выручки в равной пропорции всем пострадавшим от деятельности этого иностранца, в любом из четырёх следующих случаев:
+
+- в случае, если этот иностранец является организатором либо исполнителем террористического акта, произошедшего в любой точке планеты Земля
+- в случае, если этот иностранец является организатором либо исполнителем акта геноцида, произошедшего в любой точке планеты Земля
+- в случае, если этот иностранец является организатором либо исполнителем военного преступления, произошедшего в любой точке планеты Земля
+- в случае, если этот иностранец является организатором либо исполнителем преступления против человечности, произошедшего в любой точке планеты Земля.
+
+
+Если ни одно из этих четырёх условий не выполнено, граждане Countryname не имеют права на такой референдум. Для вступления указанных санкций в силу 80\% проголосовавших граждан должны проголосовать за указанные санкции.
+
+Список пострадавших от действий такого иностранца определяется референдумом, который проходит спустя год в ту же дату, в которую граждане Countryname проголосовали за эти санкции.
+
+
+
+Любому гражданину Countryname разрешён въезд в Countryname. Гражданину Countryname не может быть запрещён въезд в Countryname. 
+
+
+\color{blue}
+
+Иностранные организаторы и исполнители террористических актов, а равно иностранцы, виновные в геноциде, а равно иностранцы, виновные в военных преступлениях, а равно иностранцы, виновные в преступлениях против человечности, не должны иметь права въезда в Countryname, а их активы должны быть заморожены и спустя некоторое не слишком большое и не слишком малое время (например 365 дней) проданы прозрачным образом по максимально возможной цене с целью передать выручку пострадавшим. Передача выручки от продажи активов производится всем, кого граждане Countryname сочтут пострадавшими, в равной пропорции в целях упрощения процесса. Виновность в данном случае устанавливается не такими медленными процедурами как международные уголовные суды либо трибуналы, а референдумом граждан Countryname.
+
+Выдача граждан Countryname, подозреваемых в совершении указанных деяний на территории других стран, в эти страны регулируется Article X. Судебный процесс над гражданами Countryname, подозреваемыми в совершении указанных деяний на территории Countryname, производится в обычном порядке.
+
+
+Что касается лиц, допустивших public expression of hatred, or public call for discrimination, or public statement of discrimination, or public call for violence towards everyone who hold Countryname citizenship, нет смысла запрещать им въезд в Countryname. Наоборот, нужно требовать их выдачи, поскольку в соответствии с Article 44 любое из этих деяний является felony.
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 164.} Countryname может подавать заявки на проведение международных мероприятий только после того, как инициаторы этой заявки (физическое либо юридическое лицо, являющееся инициатором этой заявки) положили на специальный эскроу-счёт, текущий баланс которого и любое движение средств по которому находится в публичном доступе, всю сумму, необходимую для проведения мероприятия. Расходы на проведение любого из международных мероприятий (саммитов лидеров стран, спортивных соревнований) на территории Countryname могут быть оплачены только с этого эскроу-счёта. Организаторы мероприятия должны помнить, что въезд каждого иностранца в Countryname регулируется Article 165, 1004, 1005.
+
+\color{blue}
+
+
+
+Расходы на проведение мероприятий на территории Countryname должны нести только те, кто самостоятельно пополнил своими личными деньгами предназначенный для оплаты этих расходов счёт. В некоторых странах, к сожалению, это правило не соблюдается и на международные мероприятия тратятся деньги всех граждан поголовно (с помощью механизма налогов). 
+
+
+
+
+Публичность баланса и движений средств по эскроу-счёту нужна для того, чтобы деньги на мероприятие, заявка на которое была подана от имени страны, не кончились внезапно (либо было известно, по чьей вине они кончились внезапно).
+
+
+
+Часто траты на некоторые международные мероприятия (олимпийские игры, чемпионаты мира) оправдываются вложениями в инфраструктуру. Хорошо известно, что происходит со спортивными объектами, построенными специально к некоторому международному спортивному соревнованию --- по окончании соревнования оказывается, что их содержание убыточно. Если бы эксплуатация такого объекта была прибыльной, он был бы построен не к международному спортивному соревнованию с помощью бюджетных денег, а вне всякой связи с международным спортивным соревнованием с помощью частных денег. 
+
+
+
+
+
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 165.} Countryname не выпускает никаких виз. Любому иностранцу разрешён въезд в Countryname, если выполнены следующие три условия:
+
+- этот иностранец не использует поддельные документы при въезде
+- право на въезд этого иностранца не ограничено by Articles 1004 and 1005
+- в любом из лицензированных банков Countryname на имя этого иностранца открыт спецсчёт, остаток по которому превышает так называемую foreigner admission threshold. Размер foreigner admission threshold един для всех иностранцев и устанавливается референдумом. 
+
+Если хотя бы одно из этих трёх условий не выполнено, такой иностранец получает отказ во въезде в Countryname.
+
+
+
+
+
+
+Иностранец, легально въехавший на территорию Countryname, может неограниченно долго оставаться на территории Countryname, а также неограниченно долго работать по найму в местных и зарубежных компаниях и организациях, а также неограниченно долго заниматься предпринимательством на территории Countryname, причём никаких государственных разрешений для этого получать не нужно. В законодательстве Countryname отсутствуют понятия <<разрешение на работу>>, <<разрешение на временное проживание>>, <<временная регистрация>>, <<постоянная регистрация>>, <<вид на жительство>>. 
+
+
+
+
+\color{blue}
+
+
+
+Полное отсутствие ограничений на въезд иностранцев приведёт к трём негативным последствиям:
+
+(1) полное исчезновение неквалифицированных рабочих мест для граждан (за рубежом всегда найдутся люди, готовые выполнять неквалифицированный труд за меньшие деньги, чем граждане)
+(2) наводнение страны людьми, имеющими культурный код, отличный от культурного кода жителей Countryname
+(3) наводнение страны людьми, не выросшими в культуре законопослушания, и последующий рост преступности.
+
+
+Наша 
+
+
+%Чтобы этих последствий не было, въезд в страну должен быть ограничен. Разные страны вводят эти ограничения по-разному.
+
+%Чтобы этих последствий не было, некоторые категории иностранцев не должны иметь возможности въехать в страну.
+
+%Разберём типичные ограничения
+
+Есть подход <<those non-citizens who can prove that their income is higher than a certain threshold are allowed to stay in the country for the whole time their income is higher than the threshold>>, а также похожий на него <<companies are allowed to hire only those non-citizens whom they offer a contract with compensation higher than a certain threshold>>. Эти подходы не годятся по двум причинам:
+
+
+
+- введение нормы о незаконности проживания в стране иностранцев, месячный доход которых is lower than the threshold, порождает выбор --- либо создать бюрократическую организацию призванную заниматься обнаружением таких иностранцев (see commentary to Article о том, чем на самом деле занимаются бюрократические организации, официальной задачей которых является борьба с некоторым явлением), либо не создать её и не отслеживать такие нарушения закона, которые безусловно будут массовыми из-за спроса предпринимателей на дешёвую рабочую силу (see commentary to Article 44 о последствиях незаконопослушности мышления)
+
+- такая норма не позволяет обеспеченным людям не имеющим дохода (в частности совершеннолетним детям состоятельных людей) находиться в стране в течении долгого времени, хотя ничего плохого в проживании на нашей территории обеспеченных людей не имеющих дохода нет.
+
+
+
+Есть подход <<companies are allowed to hire non-citizens only for certain professions>>. Он плох по одной причине: введение нормы о незаконности работы мигрантов на иных профессиях порождает выбор --- либо создавать бюрократическую организацию призванную заниматься обнаружением таких мигрантов (see commentary to Article о том, чем на самом деле занимаются бюрократические организации, официальной задачей которых является борьба с некоторым явлением), либо не создать её и не отслеживать такие нарушения закона, которые безусловно будут массовыми из-за спроса предпринимателей на дешёвую рабочую силу (see commentary to Article 44 о последствиях незаконопослушности мышления).
+
+Есть подход <<companies are allowed to hire only those non-citizens who have graduated from certain universities with at least certain degree in certain subjects>>. 
+
+
+
+Есть подход <<citizens of countries with street crime rate lower than a certain threshold may travel visa-free to our country>>. Чтобы этот подход работал так, как задумано, нужно иметь достоверные reliable сведения on street crime rate во всех странах. Намеренное либо ненамеренное занижение данных о street crime rate какой-либо из бедных стран приведёт к тому, что все её граждане получат возможность въехать в Countryname; оказавшись на территории Countryname, неквалифицированные работники найдут способ остаться здесь нелегально на долгий срок, ведь местный бизнес заинтересован в не знающих своих прав согласных на любую оплату и любые бытовые условия неквалифицированных работниках. 
+
+
+Есть подход <<the decision to approve or deny a visa is made during an interview at the consulate>>. Он плох тем, что:
+
+- это безграмотный расход человеческих талантов (сотрудник консульства занят работой, которая по силам алгоритму)
+
+- поскольку решение об одобрении визы или отказе в визе принимается не по общеизвестному алгоритму, а человеком, появляется точка непрозрачности. 
+
+
+
+Алгоритм регулирования миграции, изложенный в Article, позволяет избежать негативных последствий 1, 2 и 3, не вызывая новых негативных последствий.
+
+
+Foreigner admission threshold должен быть суммой, позволяющей безбедно жить на территории Countryname не менее полугода. Большой депозит --- гарантия того, что:
+
+- иностранец не станет конкурировать с гражданами Countryname за неквалифицированные рабочие места
+
+- на территорию Countryname не въедет много иностранцев и <<наводнения>> страны людьми другой культуры не случится
+
+- иностранец не будет совершать street crime по причине бедности.
+
+Благодаря наличию чёткого критерия о том, каким иностранцам разрешён въезд на территорию Countryname а каким нет, работа пограничника Countryname лишена точек непрозрачности.
+
+
+
+
+
+
+
+
+
+\color{black}
+
+
+\textbf{Article 166.} Сумма, которую иностранцу разрешено снять или безналичным образом потратить со спецсчёта за календарный месяц, ограничена так называемым foreigner monthly expenditures threshold. Размер foreigner monthly expenditures threshold един для всех иностранцев и устанавливается референдумом. Foreigner monthly expenditures threshold одинаков для всех двенадцати календарных месяцев. Иностранцы могут тратить сколько угодно средств с других своих счетов --- ограничению подлежит лишь размер трат со спецсчёта. 
+
+Баланс спецсчёта иностранца не может опуститься ниже deportation threshold. Транзакции, которые пытаются опустить баланс спецсчёта иностранца ниже deportation threshold, отклоняются. В случае наступления ивента депортации расходы на депортацию оплачиваются со спецсчёта депортируемого. Размер deportation threshold един для всех иностранцев и устанавливается референдумом.
+
+Спецсчёт не может быть закрыт, пока иностранец находится на территории Countryname.
+
+
+\color{blue}
+
+Существование foreigner monthly expenditures threshold продиктовано желанием сделать невозможной следующую схему:
+
+- иностранец берёт в долг сумму, незначительно превышающую foreigner admission threshold, открывает спецсчёт и вносит на спецсчёт взятую в долг сумму
+- иностранец легально въезжает на территорию Countryname
+- иностранец возвращает занятую сумму займодавцу и остаётся на территории Countryname с крайне малым количеством денежных средств.
+
+
+Смысл существования deportation threshold, равно как и запрета на закрытие спецсчёта пока иностранец находится на территории Countryname, в том, чтобы на спецсчёте всегда была сумма, способная полностью покрыть все расходы на депортацию иностранца.
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1005.} Speaking of rights and obligations, there are only three differences between Countryname citizens and foreigners who legally entered the territory of Countryname:
+
+
+- citizens can become civil servants, while foreigners with residence permit cannot
+
+- citizens can serve the army (see Chapter 12), while foreigners cannot
+
+- citizens can vote and participate in referendums, while foreigners cannot.
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 170.} При необходимости установить личность гражданина или иностранца это делается по данным, находящимся в IDBase --- таким образом, установление личности не требует наличия у гражданина или иностранца какого-либо бумажного документа. Данные о том, владеет ли гражданин driver license и до какой даты она действует, хранятся в IDBase, бумажный документ <<driver license>> не выпускается. Travel passport is the only paper identity document issued by Countryname. Countryname does not issue any paper identity documents other than travel passport. 
+
+\color{blue}
+
+Бумажные документы подделываемы, утериваемы, а также требуют расходов на изготовление. База данных IDBase лишена этих недостатков.
+
+Единственный бумажный документ, заменить который электронным аналогом на данный момент невозможно из-за позиции других стран --- это travel passport.
+
+\color{black}
+
+\textcolor{blue}{Article 170.} Любой гражданин, не находящийся в СИЗО, ИВС либо МЛС, может с помощью state-forming product <<Travel passport issuance>> онлайн подать на загранпаспорт для себя и своих несовершеннолетних детей. Плата за выпуск загранпаспорта устанавливается референдумом и идёт в бюджетный фонд <<Travel passport issuance>>, то есть она может быть потрачена только на зарплаты сотрудников паспортного стола и материалы для изготовления загранпаспортов.
+
+\color{blue}
+
+Госслужащий заинтересован в том, чтобы не затягивать с изготовлением загранпаспортов --- если сроки изготовления загранпаспортов будут вызывать раздражение у граждан, шанс на то, что процедура его отстранения (see Article 306) будет кем-либо из граждан инициирована и большинством граждан поддержана, велик. Поэтому предельный срок изготовления загранпаспорта не устанавливается законом или референдумом.
+
+
+
+
+\color{black}
+
+
+
+
+
+
+\subsection*{Chapter 11. Other provisions.}
+
+
+
+
+
+
+
+\textcolor{blue}{Article 207.} Ассортимент медикаментов, которые могут находиться в розничной продаже на территории Countryname, не регулируется ничем, кроме Articles 71-74.
+
+\color{blue}
+
+Причин у этого решения две:
+
+- если появился инновационный действительно работающий медикамент, никаких ограничений на поставку его в страну не должно быть (получение разрешений это всегда время)
+
+- любой запрет порождает коррупционные пути обхода запрета (<<мы закроем глаза на то, что только что ты совершил сделку по продаже Х, если ты заплатишь нам>>), в то время как наша цель --- минимизировать количество коррупциогенных пунктов законодательства.
+
+\color{black}
+
+\textcolor{blue}{Article 207.} Перевода с летнего время на зимнее, а также с зимнего времени на летнее, не производится. Часовые пояса городам присваиваются референдумом 5-летней кратности.
+
+\color{blue}
+
+Перевод времени на час вперёд либо назад в связи со сменой сезона не несёт никакой пользы и несёт лишь путаницу. Что касается выбора часовых поясов для городов Countryname, нет более прозрачного механизма, чем референдум. 5-летняя кратность введена как механизм пересмотра решения по выбору часовых поясов для городов Countryname (механизм пересмотра решения должен существовать, возможность пересмотра решения не должна быть частой).
+
+\color{black}
+
+
+\textcolor{blue}{Article 2300.} Минимальный размер оплаты труда не регулируется законодательством Countryname. Размер и порядок оплаты труда является результатом (в большинстве случаев письменного) взаимного добровольного согласия двух сторон --- работника и лица, его нанимающего.
+
+\color{blue}
+
+
+
+%У стороннего наблюдателя нет никаких способов установить, какова настоящая сумма оплаты труда. 
+
+Ввести минимальный размер оплаты труда означает ввести норму, нарушение которой невозможно установить и которая, следовательно, будет нарушаться. Это приведёт к восприятию нарушения закона как чего-то нормального. По двум причинам, описанным в пункте а) пояснения к Article 44, незаконопослушность граждан отпугивает инвесторов и таланты, а следовательно вредит разнообразию рабочих мест (именно инвесторы создают рабочие места), количеству талантов которые занимаются созиданием в нашей стране, количеству интересных собеседников в нашей стране, и уровню заработка среднего человека (именно конкуренция предпринимателей за труд приводит к росту зарплат).
+
+
+
+
+
+Сторонники минимального размера оплаты труда обычно апеллируют к тому, что есть ситуации, в которых работнику приходится соглашаться на крайне низкий уровень оплаты труда, предлагаемый работодателем. Примеры таких ситуаций:
+
+- других работодателей в этом городе или населённом пункте нет
+
+- других работодателей, нанимающих людей моей профессии, в этом городе или населённом пункте нет
+
+- другие работники этой профессии в этом городе или населённом пункте согласны на этот уровень оплаты труда.
+
+
+Однако в каждой из ситуаций предлагаемая работодателем зарплата зависит от баланса спроса и предложения. Если вы и ваши коллеги откажетесь работать за предлагаемую работодателем зарплату (с помощью забастовки либо без неё), работодателю ничего не останется, кроме как предложить более высокую зарплату. Beyond the strike, you can change the employee or change the occupation. Thanks to the Internet, even in a depressive region you can learn new skills, get another profession and work remotely.
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 250.} Ни одна компания не может занимать долю рынка больше, чем 40\%. 
+
+Antitrust regulation касается только следующих рынков:
+
+- 
+
+\color{blue}
+
+Decreasing competition leads to low service quality and high pricing.
+
+
+Единственный рецепт высокого качества продукта/сервиса и невысокой цены --- конкуренция с другими компаниями. Никакого другого рецепта нет.
+
+
+Мы должны стремиться поддерживать высокий уровень конкуренции между компаниями, так как только высокая конкуренция ведёт .  худшее что можно сделать --- 
+
+Монополии . Напротив, олигополии --- то, к чему надо стремиться. 
+
+%Заметим, что Antitrust regulation не касается рынка интернет-поисковиков (мы не можем "заставить" людей меньше пользоваться иностранным поисковиком).
+
+%Antitrust regulation касается commodities, но не касается рынка интернет-продуктов. Например, antitrust regulation не касается рынка компьютерных игр.
+
+\color{black}
+
+
+\textcolor{blue}{Article 250.} Creating, or advertising, or operating, or working for any of the following <<businesses>> is felony:
+
+- slot machines
+- roulette
+- betting service
+- card games for money
+- binary options
+- trading with leverage more than 3.
+
+
+
+\color{blue}
+
+
+
+
+
+
+
+Патологический гэмблинг (десятая редакция Международной классификации болезней  код болезни F63.0) это не только букмекерские ставки, а гэмблинг в целом. 
+
+
+
+
+
+Продавцы гэмблинг-услуг продвигают нарратив, что мы продаём такой же товар, как и производители иных потребительских товаров; наш товар --- эмоция, и в этом ставка схожа с билетом на концерт, в театр или на аттракцион в парке. Однако билет на концерт или в аквапарк не могут обойтись вам больше чем в некоторую небольшую сумму, а также не может привести вас к зависимости от неопределённости. Гэмблинг может привести к разорению, потере всех сбережений, влезанию в долги, разводу, потере всех социальных связей.
+
+Иной нарратив, который продвигают продавцы гэмблинг-услуг --- что если ты не способен вовремя останавливаться, то виноват не тот кто предоставляет тебе возможности для игры, а ты сам. Это безусловно верно, ответственность лежит на самих людях, но к пониманию этого они приходят через долгие годы кошмара и окончательного банкротства. Потратьте некоторое время на чтение форумов лудоманов. Серьёзно, сделайте это.
+
+Поскольку в Countryname отсутствует система цензуры интернет-контента, жители Countryname смогут найти зарубежных продавцов гэмблинг-услуг и воспользоваться ими. Это неизбежно: в странах, где система цензуры интернет-контента есть, благодаря сервисам обхода блокировок желающие всё равно находят нужные им гэмблинг-услуги. Технической возможности целиком оградить человека от гэмблинга не существует. Однако уголовной ответственности за оффлайн-гэмблинг на территории Countryname и детального описания химических процессов, происходящих в мозгу зависимого, приведённых здесь в Конституции, достаточно для того, чтобы люди берегли своё ментальное здоровье и не связывались с гэмблингом.
+
+Проблема даже не столько в том что вы можете проиграть все деньги, а в том, что в вашем мозгу формируется сильнейшая зависимость уровня опиатной. Все остальные способы получения удовольствия меркнут, и вся жизнь начинает крутиться вокруг этого вида удовольствия. Лудоманы играют не ради денег, а ради эмоций. На этапе патологии не важно, выиграл ты или проиграл. Гэмблинг формирует сильнейшую психологическую зависимость и должен быть запрещен, как опиаты или по крайней мере ограничен, как алкоголь.
+
+
+
+
+
+
+Этот закон убирает всю оффлайн-рекламу беттинга на территории Countryname, а также онлайн-рекламу беттинга нашими юрлицами. Если бы мы пожелали избавиться также от онлайн-рекламы беттинга зарубежными юрлицами, нам пришлось бы вводить цензуру в интернете и систему блокировок, на что мы не можем пойти. 
+
+
+Коренное отличие ставок от билета на концерт или в аквапарк --- в стоимости. Ставки могут обойтись в 1000 раз дороже аквапарка или концерта. Концерт и аквапарк не могут стоить больше некоторой суммы, ставки --- могут. Концерт и аквапарк не могут разрушить вашу жизнь, ставки --- могут.
+
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+\textcolor{blue}{Article 250.} Sex work is legal.
+
+\color{blue}
+
+
+Some people believe that sex work and prostitution are one and the same, which is incorrect; sex work is a broader concept that includes all kinds of earning on erotic attraction. It could be meeting clients in person, it could be working for an online webcam service, it could be selling used underwear, it could be selling self-filmed audiovisual content, it could be other erotic service.
+
+
+
+There are individuals who feel that they belong to showing off their beauty and/or to giving warmth and affection and getting paid and worshipped for that. For such individuals, this job does not affect mental health in any negative manner and is perfectly fine. The problem arises when sex work is done by those who dislike doing it, or even hate doing it: any job that one dislikes or hates causes regular repetitive distresses, which are known to damage both mental and somatic health. К счастью, в Countryname существование не любящих свою работу sex workers крайне маловероятно: благодаря state-forming product <<List of jobs>> все карьерные возможности общеизвестны (нет шансов, что человек выбрал стал секс-работником из-за отсутствия полноты информации о других способах зарабатывать), а state-forming product <<Retraining aid>> позволяет получить необходимую для трудоустройства квалификацию в любой сфере, не отвлекаясь на подработки. 
+
+%That is why we urge every citizen to start taking care of their health by quitting any distressing job and not consider earning opportunities that cause distress. To help citizens in that, there is the state-forming product <<List of jobs>> where one can see all Countryname-based job positions that currently exist and requirements to pass the interview for each of them.
+
+%Обычно проблема sex work в том, что в неё идут люди от безысходности, ненавидя эту работу, но не зная, как ещё можно заработать. 
+
+
+
+
+
+
+
+
+
+
+\color{black}
+
+\textcolor{blue}{Article 209.} Unless you are policeman, having a gun is a crime. Огнестрельное оружие в принципе не выдаётся никому. Полиция не имеет права носить огнестрельное оружие или дубинку, за исключением экстренных ситуаций.
+
+\textcolor{blue}{Article 250.} Having gun at home is a crime.
+
+% Аргументы сторонников свободной продажи огнестрельного оружия:
+
+- зная, что у законопослушных граждан оружия нет, бандит с большей вероятностью совершит нападение (у бандита оружие всегда есть) 
+-
+
+% Аргументы противников свободной продажи огнестрельного оружия:
+
+- в жизни бывают разные моменты, в том числе моменты психического упадка; в эти моменты, имея под боком оружие, можно застрелить себя или застрелить другого человека, чем сломать себе жизнь
+
+Multiple studies show that where people have easy access to firearms, gun-related deaths tend to be more frequent, including by suicide, homicide and unintentional injuries.
+
+
+\textcolor{blue}{Article 300.} Abortion is legal.
+
+
+\color{blue}
+
+Аргумента здесь два:
+
+- женщина сама вольна решать, как ей жить жизнь: хочет она ребёнка от этого мужчины или не хочет; хочет она беременность в этом возрасте или у неё другие планы. Убийство 2-месячного зародыша отличается от убийства новорождённого ребёнка тем, что зародышу не больно: нервная трубка начинает формироваться на 3-й месяц беременности
+
+- you cannot ban abortion, you can only ban safe abortion. Запрет абортов всегда приведёт к протыканию в домашних условиях матки лучиной, вязальным крючком, иглой. Всегда приведёт к 16ти летним трупам девочек, наевшихся таблеток, чтобы вызвать выкидыш. К инвалидам, от которых не получилось избавиться и к несчастным детям, которых не любят.
+
+
+
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 304.} CCTV regulation.
+
+\color{blue}
+
+Возможны только такие камеры наблюдения, которые не стрёмно открыть всем желающим. В частности, запрещены камеры наблюдения, направленные на двери подъездов --- человек имеет право скрывать своё место жительства.
+
+
+automatic face-detection to blur all faces
+
+Shall taxpayers buy CCTVs? How many? Shall these CCTVs be equipped with face recognition technology?
+
+Every street camera should have owner ID on it and the website where anyone can watch the live broadcast. If this live broadcast is down,
+
+If someone installs the camera
+
+State has no such right. But activists can buy any cameras at their discretion.
+
+Any video surveillance in public places is prohibited by the Constitution. To capture a moment of crime, there are mobile phone cameras.
+
+On the contrary, the Constitution allows property owners to install cameras in any property their own, e.g. in apartments, restaurants, manufactures, hotels, cars. 
+
+(CCTV cameras in public places are typically justified with such good things as searching for missing children, or fighting against crime, including terrorism. However, in practice it is used for illegal surveillance, persecution of political opposition, blackmailing people and for the sake of personal data trafficking.)
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 99.} Вне зависимости от того, что написано в кредитном договоре, кредитные организации не могут потребовать с клиента сумму, превышающую полуторакратный размер займа.
+
+\color{blue}
+
+We do not want to see predatory lending in Countryname. 
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 99.} In Countryname, monuments are allowed only to those who satisfy the following three conditions:
+
+1) не были признаны судом виновными в совершении публичного высказывания, нарушающего Article 44
+2) не были признаны судом виновными в нарушении уголовного кодекса
+3) труженикам, в течении всей жизни повышавшим качество жизни окружающих своим трудом.
+
+Процедура принятия решения об установке любого из монументов определяется референдумом.
+
+Монумент человеку не может быть установлен раньше, чем спустя 10 лет после смерти этого человека.
+
+\color{blue}
+
+
+
+It is wrong to restrict monuments only to certain categories of citizens, such as scientists-discoverers or engineers-inventors. The products and services we enjoy are created by people from all walks of life. Any professional whose work has been improving the quality of life of others for many decades deserves a monument.
+
+
+Note that this Article does not allow the monuments to non-professionals who, at the risk of their own lives, saved the lives of others. The reason is that the unparalleled personal courage of a layman in an extreme situation is not something to be glorified. Glorifying the heroic deeds of unskilled people, we increase the number of events when a person who does not have the necessary qualifications, skills and protective equipment, risks their life trying to save someone, and dies along with those whom they tried to save.
+
+
+
+Requirements 1) and 2) are introduced due to the fact that a monument to a person whose guilt in any of these acts is proven splits the society.
+
+
+
+\color{black}
+
+
+
+
+\textcolor{blue}{Article 306.} В общественных местах запрещено: спать, дурно пахнуть, заниматься попрошайничеством. 
+
+\textcolor{blue}{Article 306.} There are no national holidays in Countryname.
+
+\color{blue}
+
+The so-called national holidays are nothing more than tools for instilling ideology and stimulating consumption. Neither officials, nor traditions, nor society has the right to tell a person when to work, when to rest, what to celebrate and whom to congratulate on what.
+
+
+
+
+\color{black}
+
+
+
+
+\textcolor{blue}{Article 1181.} Институт прописки отсутствует. Учёт фактического места жительства граждан Countryname не ведётся.
+
+\color{blue}
+
+
+Существование базы данных с адресами фактического проживания граждан нарушает личную безопасность каждого из граждан. Нет никакой гарантии, что таковая база не утечёт в свободный доступ или не будет выставлена в даркнете на продажу. Нет никакой гарантии, что госслужащие, имеющие к ней доступ, не будут продавать или разглашать эти сведения в частном порядке, а также пользоваться ей для собственных нужд.
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 1501.} Регистрация юрлица в Countryname происходит только через state-forming product <<Legal entity registration wizard>>. Регистрация юрлица является платной; стоимость регистрации юрлица устанавливается федеральным законом. 
+
+\color{blue}
+
+Госпошлина необходима не потому что государство нуждается в доходах, а как способ защиты от создания ста тысяч юрлиц одним человеком. 
+
+\color{black}
+
+\textcolor{blue}{Article 1502.} Только физлицо может учредить юрлицо в Countryname или стать совладельцем юрлица. Юридическое лицо не может учредить юрлицо в Countryname или стать совладельцем юрлица. Иностранное правительство, как и наше правительство, не может учредить юрлицо в Countryname или стать совладельцем юрлица.
+
+\color{blue}
+
+Это необходимо для невозможности создания матрёшек из юрлиц.
+
+\color{black}
+
+
+Заключённые могут работать онлайн. ГосСМИ освещают работу и быт заключённых.
+
+Насильственные преступления караются очень большими сроками.
+
+
+%Изоляция от общества несёт три функции:
+
+%- защита общества от повторных преступлений
+%- наказание за совершённое преступление
+%- перевоспитание и реинтеграция в общество если есть уверенность что повторных преступлений не будет.
+
+% в тюрьме должно быть хуже чем на свободе, иначе люди будут совершать преступления, чтобы попасть в тюрьму
+
+\textcolor{blue}{Article 1702.} В тюрьме есть современные компьютеры, оснащённые доступом в интернет.
+
+\textcolor{blue}{Article 1703.} Заключённые, которые хотя бы раз были осуждены за насильственное преступление, содержатся в камерах-одиночках.
+
+% Отсутствие живого общения, остракизм --- сильнейшее наказание.
+
+% Есть такая точка зрения, что ненасильственные преступления не должны караться тюремным заключением. На мой взгляд, некоторые ненасильственные преступления --- должны.
+
+\textcolor{blue}{Article 1704.} Prisons can be freely visited by any citizen. 
+
+% Граждане должны иметь возможность получить достоверное знание о том, как устроен быт каждого заключённого.
+
+
+
+Общаться с адвокатом каждый заключённый может хоть каждый день.
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1003.} Industrial facilities that harm the health of workers or the environment cannot operate in Countryname.
+
+\color{blue}
+
+
+The health of the inhabitants of Countryname is far more important than any manufactured product and any extracted natural resource.
+
+
+\color{black}
+
+\textbf{Article 1200.} In Countryname, there is no civil service agency for fighting natural disasters or mitigating their consequences.
+
+\color{blue}
+
+Бюрократическая структура, которая призвана с чем-то бороться, едва ли станет устранять корень проблемы. Более вероятно, что она будет незаметно стимулировать то, что должна уничтожить. Только так она сможет расширять свое влияние и финансирование.
+
+\color{black}
+
+
+
+
+
+\subsection*{Chapter 12. Army and defense.}
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1201.} Countryname citizens maintain civil service agency called <<Countryname defense intelligence>>, в обязанности которого входит:
+
+- изучение военных конфликтов по всему миру, проявивших там себя образцов военной техники, а также best practices управления войсками
+
+- оценка военных возможностей потенциальных агрессоров
+
+- оценка намерений потенциальных агрессоров
+
+- оценка количества и номенклатуры военной техники, необходимой для быстрого отражения военной агрессии
+
+- оценка того, сколько подразделений какой структуры необходимо для быстрого отражения военной агрессии (структурой подразделения называется множество пар вида <<название военной специальности, количество квалифицированных человек этой военной специальности в этом подразделении>>) 
+
+- рекомендации по созданию и обеспечению защищённой связи для подразделений нашей армии
+
+- рекомендации по созданию информационного превосходства над противником
+
+- принятие решений о том, какие подразделения сформировать, в какие сроки обучить людей на какие специальности и кто будет этим обучением заниматься
+
+- аренда помещений и полигонов для своей деятельности
+
+- бесплатное обучение всех желающих граждан любой из военных специальностей
+
+
+\color{blue}
+
+
+Способность страны отразить военную агрессию зависит от наличия think tank, состоящего из людей исключительной квалификации в военном деле, в обязанности которых входит принятие решений об организации обороны. Квалификация работников этого think tank обеспечена регулярностью процедуры найма и её прозрачностью. %Найм людей в <<Countryname defense intelligence>> лишён точек непрозрачности благодаря тому, что он совпадает с алгоритмом найма на любую другую госслужбу.
+
+
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+\textbf{Article 1202.} In Countryname, there is no army conscription both in peacetime and in wartime. 
+
+\color{blue}
+
+Article 33 прямо запрещает принуждение человека к выполнению работы, которую тот не желает выполнять. Кроме того, в таком принуждении, даже если бы оно не было запрещено Конституцией, нет прикладной пользы: те, кто не хочет защищать страну от захватчиков, качественно эту работу не выполнят, и те, кто обучается военному делу недобровольно, хорошо (на необходимом уровне) (на хорошем уровне) свою военную специальность не освоят.
+
+\color{black}
+
+\textbf{Article 1203.} Except for those working for Countryname defense intelligence, zero people are employed by Countryname in army or defense.
+
+\color{blue}
+
+В отсутствие военного вторжения в нашу страну нет смысла в существовании армии, но есть смысл в:
+
+- существовании Countryname defense intelligence с регулярным конкурсным отбором в этот орган
+
+- бесплатном обучении всех желающих граждан Countryname военному делу специалистами Countryname defense intelligence.
+
+
+\color{black}
+
+
+
+
+
+
+\textbf{Article 1204.} В случае вооружённого вторжения на территорию Countryname Countryname defense intelligence формирует подразделения, необходимые для отражения вооружённого вторжения. Служба в этих подразделениях оплачивается, размер оплаты устанавливается референдумом.
+
+\color{blue}
+
+За достойную оплату достаточное число граждан согласятся участвовать в отражении военной агрессии. Если граждане нашего государства не способны профинансировать отражение военнослужащими военной агрессии --- значит, такое государство не заслуживает отстоять свои международно признанные границы.
+
+
+\color{black}
+
+
+\textbf{Article 1205.} Любой гражданин Countryname имеет право посещать проводимые Countryname defense intelligence мероприятия, посвящённые бесплатному обучению любой из военных специальностей.
+
+\color{blue}
+
+
+Article 1201 обязывает Countryname defense intelligence, среди прочего, обучать личный состав. Это обучение производится на добровольной основе в помещениях, арендуемых Countryname defense intelligence.
+
+
+Не должно быть стипендий, грантов и иных форм финансового стимулирования обучающихся военному делу --- иначе мы получаем:
+- коррупционный риск (риск того, что гранты будут получать учащиеся, аффилированные с теми кто принимает решение)
+- смещённую мотивацию --- будут приходить те, кто хочет подзаработать, а не те, кто хочет научиться военному делу.
+
+В то же время обучение военному делу не должно быть и платным, иначе мы получаем смещённую мотивацию --- будут приходить те люди, которые хотят купить услуги по активному отдыху, а не те, кто хочет научиться военному делу.
+
+\color{black}
+
+
+
+
+
+
+
+\textbf{Article 1206.} Экспорт произведённой в Countryname военной техники, а также произведённого в Countryname оборудования двойного назначения, в некоторые страны может быть запрещён референдумом. 
+
+\color{blue}
+
+
+
+Многие из наших граждан сочли бы возмутительной поставку военной техники режиму, творящему atrocities. Вместе с тем, поставка военной техники режиму, творящему чудовищные вещи --- прибыльная работа для отдельно взятой фирмы. Между деньгами и этически правильными поступками предприниматели часто выбирают деньги --- в том числе потому, что потеря крупных заказов может означать увольнение части костяка команды или даже закрытие бизнеса. Референдум --- лишённый точек непрозрачности способ принять решение о том, в какие страны разрешено поставлять военную технику а в какие нет.
+
+\color{black}
+
+
+
+
+\textbf{Article 1207.} The question of whether Countryname shall be a part of a military alliance or not is determined via referendum.
+
+\color{blue}
+
+
+
+Ясно, что наличие или отсутствие потребности быть частью военного альянса зависит от того, есть ли в регионе угрожающий вам сосед и способны ли вы в случае его нападения защитить себя без помощи других стран. Это не тот вопрос, который можно решить раз и навсегда на старте государственности --- military capabilities of surrounding countries are subject to change, the set of military alliances available is subject to change as well. Единственный лишённый точек непрозрачности способ принимать это решение --- референдум.
+
+
+
+\color{black}
+
+
+\textbf{Article 1208.} В случае вооружённого вторжения на территорию Countryname в отдельных регионах Countryname могут быть установлены следующие ограничения прав граждан:
+
+- комендантский час
+
+- блокпост на дороге.
+
+Решение об установлении или неустановлении этих ограничений принимается большинством голосов Countryname defense intelligence.
+
+\color{blue}
+
+Ограничение <<комендантский час>>, введённое сразу после освобождения города, позволяет выявить тех, кому негде ночевать, то есть военнослужащих армии вторжения. Ограничение <<блокпост на дороге>> позволяет выявить военнослужащих армии вторжения, пытающихся (с оружием либо без) под видом гражданина проникнуть вглубь страны.
+
+
+\color{black}
+
+\textbf{Article 1209.} В Countryname отсутствуют воинские звания.
+
+\color{blue}
+
+
+
+Воинское звание не всегда адекватно отражает квалификацию военнослужащего (фактический уровень владения им своей специальностью). Иными словами, воинское звание военнослужащего может вводить в заблуждение о его квалификации, а значит лучше совсем не прибегать к делению военнослужащих по воинским званиям.
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Article 71.} In Countryname, regulation of media is exactly the same as regulation of citizen speech, namely the Article 44.
+
+
+\color{blue}
+
+
+
+Неясно, зачем делать так, чтобы для СМИ был один список недопустимых высказываний, а для частных лиц другой. Кроме того, регулировать высказывания СМИ иначе, чем регулируются публичные высказывания частных лиц, сложно из-за того, что любой человек, у которого есть аккаунт в социальной сети или на стриминговой платформе или на видеохостинге или подкаст или блог --- СМИ. Если предложить считать СМИ только людей, публикации которых набирают в среднем больше чем некоторое пороговое число просмотров либо которые имеют больше чем некоторое пороговое число подписчиков, то нет никакого естественного способа выбрать эти пороговые числа. Создать специальный комитет который будет говорить кто СМИ а кто нет означает создать классическую точку непрозрачности с чиновниками и коррупционными рисками.
+
+Некоторые страны также тестируют практику запрета крупному бизнесу финансировать СМИ. Countryname так не делает по двум причинам. Во-первых, благодаря отсутствию политиков и отсутствию у кого-либо возможности принимать регуляторные решения в Countryname сломан следующий механизм, из-за которого финансирование СМИ выгодно крупному бизнесу: крупные СМИ влияют на общественное мнение, а следовательно на политиков, кои под этим давлением более склонны принимать выгодные владельцам этих СМИ правила регулирования целевой отрасли. Во-вторых, из-за невозможности реализовать такой запрет: сторонний наблюдатель не имеет способа проконтролировать, что редакция некоторого СМИ либо главный редактор не получает вознаграждение за пристрастное освещение отдельных тем, например, наличкой в иностранной валюте, или в виде анонимного онлайн-доната на содержание редакции. 
+
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 71.} The whitelist of medications.
+
+% В нашей стране действует whitelist of medications. Медикаменты и бады, не находящиеся в вайтлисте, не могут быть ввезены в товарных количествах на территорию Countryname. Небольшие объёмы (для личного пользования или для родственника) ввозить можно. Отличие больших объёмов от небольших --- на усмотрение пограничника (всё равно как будто прозрачным это нельзя сделать).
+
+
+
+\textcolor{blue}{Article 71.} The whitelist of psychoactive substances that are legal and can be sold in grocery or pharmacy stores is set by federal law. This whitelist system means that every substance not included into whitelist is banned. Any product containing a substance from the whitelist must have a large-print label that says: <<Using substances does not solve your problems and will not change your life for the better. Please see a therapist.>> 
+
+
+
+
+
+
+
+
+В целом подход к рекреационно потребляемым веществам разный. Есть два полюса --- <<разрешить все вещества>> и <<запретить все рекреационно потребляемые вещества>>. Подавляющее большинство людей не разделяют ни одну из этих pole positions и считают, что оптимальный подход где-то посередине. Действительно, жить в обществе, где героин в свободной продаже, мало кому хочется (мне люди с такой позицией неизвестны). Но и жить в обществе, в котором запрещены такие рекреационно потребляемые вещества, как кофеин и алкоголь, тоже мало кому хочется. Запрета на кофеин нет ни в одной стране мира.
+
+В большинстве обществ разрешены кофеин, табак, никотин, сахар, и запрещены все остальные рекреационно потребляемые вещества. В последнее время некоторые юрисдикции также легализовывают марихуану и кетамин.
+
+Можно ли сформулировать критерий, указывающий, какие вещества должны быть запрещены, а какие --- легальны? Думаю, что да. Таким критерием является опасность, которую потребитель рекреационных веществ представляет для окружающих.
+
+Ясно, что потребители опиоидов, не имеющие денег на покупку новой дозы, представляют опасность для окружающих. Потребители психостимуляторов, особенно солей, представляют такую опасность. Потребители никотина, курящие в одном помещении с детьми или беременными женщинами, представляют такую опасность. На этом, пожалуй, всё. Многие справедливо заметят, что потребители алкоголя также представляют опасность для окружающих, однако вряд ли эти люди хотели бы жить в стране, где алкоголь запрещён.
+
+
+
+\textcolor{blue}{Article 73.} Having any amount of prohibited substances with yourself (e.g. in your bag or in your place) is not the crime. Change of ownership (selling or gifting) is not the crime. %Только те, кто являются частью цепочки до наркопотребителя, do crime.
+
+Ничего не crime, но тем не менее вещества эти изымаются и утилизируются.
+
+
+Ни один из нас не защищён от уголовного преследования, вызванного подбросом наркотиков. Любой человек в любой момент может отправиться на долгие годы в тюрьму этим способом --- каждый из нас время от времени теряет из виду свою сумку или куртку, например оставляя её на рабочем месте, или вешая на крючок в ресторане. Особенно это легко сделать в самолёте, если вы сдали багаж, либо если вы оформили багаж как ручную кладь, но уснули в полёте, а ваш багаж не закрыт на кодовый замок. То же касается и купли-продажи запрещённых веществ: вы на самом деле не знаете, что в карманах или что вшито в ту сумку, которую вы покупаете с рук через Craigslist.
+
+Незащищённость от риска многолетнего тюремного срока из-за чьей-то провокации либо интриги --- не то, что хочется постоянно испытывать. Поэтому нужно принять непопулярное решение: ни хранение, ни перевозка, ни купля-продажа рекреационно потребляемых веществ не должны быть уголовно наказуемыми. В том числе опасных веществ, таких как опиоиды, а также ядовитых и сильнодействующих веществ.
+
+Здесь легко возразить: постойте, это ведь означает, что с падением риска тюремного заключения в страну пойдёт вал наркотиков, оружия, ядовитых и сильнодействующих веществ. На это я бы возразил так: даже если бы наркотики, оружие, ядовитые и сильнодействующие вещества были бы доступны мне в полном объёме, я бы не заинтересовался ими. Если в нашей стране есть интерес к наркотикам, оружию, ядовитым и сильнодействующим веществам --- либо UBI недостаточно высок, либо СМИ плохо выполняют работу по освещению социальных лифтов.
+
+Разумеется, наркотики, оружие, ядовитые и сильнодействующие вещества подлежат немедленной конфискации и уничтожению при обнаружении. Для этого существуют следствие и полиция.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Chapter 18. Commodities.}
+
+\textcolor{blue}{Article 1801.} Следующие восемь рынков являются конкурентными рынками:
+
+- рынок отопления
+- рынок электричества
+- рынок водоснабжения
+- рынок очистных сооружений
+- рынок ритуальных услуг
+- рынок наземного городского транспорта
+- рынок подземного городского транспорта
+- рынок создания и ремонта междугородних автодорог
+- рынок создания и ремонта междугородних железных дорог
+- рынок создания и ремонта внутригородских дорог
+- рынок авиаперевозок
+- рынок уборки мусора
+- рынок переработки мусора
+- рынок мобильной связи
+- рынок домашнего интернета.
+
+
+%Необходимость того, чтобы даже канализация и очистные сооружения стали не закрытыми объектами, а рынком, вызвана тем, что население должно вникать в то как всё устроено. Это и детям, получающим обазование, полезно.
+
+\textcolor{blue}{Article 1802.} Дорога может быть платной в первые 10 лет после её постройки. По истечении 10 лет она является бесплатной.
+
+
+Приватизировать всё, кроме природных ресурсов и естественных монополий.
+
+
+Shall transport companies be owned by the state?
+
+State cannot own or co-own a company.
+
+Конечно. Частные компании и прозрачная конкуренция между ними.
+
+Если строительство жилья может осуществляться руками частных компаний, то почему строительство метро не может? Точно так же, как частные строительные компании конкурируют за землю и возможность строить на этой земле и продавать результат, частные компании могут конкурировать за возможность построить новый маршрут метро и заработать на этом.
+
+% Если речь идёт о том, что несколько коммерческих компаний конкурируют за возможность строительства новой линии метро, то конечно.
+
+Старое метро (то, которое уже построено), должно быть приватизировано. % оформлено как некоммерческая организация. Оно должно быть платным ровно настолько, чтобы покрывать свои расходы. Государство не имеет права вмешиваться в работу публичного транспорта.
+
+% Как сейчас платные дороги монетизируются?
+
+
+Shall companies who mine natural resources be owned by the state?
+
+State cannot own or co-own a company.
+
+Shall there be official state media that are funded by taxes?
+
+State cannot own or co-own a company.
+
+
+
+
+Здесь есть такое возражение, что, мол, если публиковать устройство всех инфраструктурных объектов, то все интересующиеся будут знать, как эффективно сделать диверсию. Однако на это есть контраргументы:
+
+- публиковать устройство всех инфраструктурных объектов не означает публиковать данные о численности охраны; в узких местах можно выставить охрану
+
+- публикация устройства инфраструктурных объектов приведёт к массе инженерных предложений о том, как эти объекты сделать более эффективными
+
+
+
+
+\subsection*{Chapter 19. Central bank, regulation of banks and monetary policy.}
+
+\textcolor{blue}{Article 1901.} Сферой ответственности и исключительных полномочий Центрального банка являются:
+
+- темпы инфляции
+- устойчивость банковской системы
+- кредитные ставки и депозитные ставки (через ключевую ставку).
+
+Темпы роста экономики и валютный курс не являются сферой ответственности Центрального банка.
+
+\color{blue}
+
+
+
+
+\color{black}
+
+\subsection*{Chapter 20. Family issues.}
+
+
+
+
+
+
+\textcolor{blue}{Article 1101.} Countryname does not register marriages and divorces. You cannot be legally married or divorced in Countryname. Marriage ceremonies have no legal effect.
+
+\color{blue}
+
+
+
+В большинстве государств мира прикладная польза от госрегистрации брака состоит из 3 компонент:
+
+- статус официального супруга существенно облегчает допуск к своему партнёру в тюрьму, СИЗО, ИВС или реанимацию
+
+- статус официального супруга означает наследование имущества партнёра в случае его смерти, если партнёр предварительно не написал завещание, устанавливающее иное правило наследования имущества
+
+- статус официального супруга позволяет получить половину совместно нажитого имущества в результате развода.
+
+
+Что касается допуска в тюрьму, СИЗО или ИВС, в Countryname свидания разрешены не только с близкими родственниками, а с любыми людьми, на встречи с которыми заключённый хочет потратить право на свидание. Решение о том, кого допускать в палату реанимации а кого нет, в Countryname принимается медиками, осуществляющими реанимацию. Объяснение того, почему в Countryname по умолчанию (в случае отсутствия завещания) партнёр не наследует имущество умершего, можно прочесть в комментарии к Article 1102. Объяснение того, почему в Countryname нельзя в результате развода получить часть имущества, заработанного партнёром при совместной жизни, можно прочесть в комментарии к Article 1103. 
+
+
+
+Таким образом, в силу особенностей регулирования даже если бы Countryname регистрировал браки и разводы, прикладной пользы никому из вступающих в брак это не несло бы. Поэтому и принято решение не вести учёт этой информации. 
+
+
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 1102.} Если гражданин Countryname оставил завещание в котором указан порядок раздела его имущества, раздел имущества происходит в соответствии с тем что сказано в завещании и автоматическое наследование имущества не применяется.
+
+Если гражданин Countryname не оставил завещание в котором указан порядок раздела его имущества, следующий собственник его имущества устанавливается по следующему правилу:
+
+- если биологическая мать жива, она становится собственником имущества
+- если биологическая мать мертва но биологический отец жив, он становится собственником имущества
+- если оба биологических родителя мертвы и жив один биологический ребёнок, он становится собственником имущества, притом продать унаследованную недвижимость он может не раньше достижения возраста 30 лет
+- если оба биологических родителя мертвы и живо более одного биологического ребёнка, имущество становится совместной собственностью детей, которые владеют им в равной пропорции, притом продать унаследованную недвижимость дети могут не раньше достижения возраста 30 лет
+- если оба биологических родителя мертвы, а детей либо никогда не было либо все из них мертвы, имущество продаётся на аукционе с помощью state-forming product <<Auction>>; деньги, вырученные с продажи, идут во все 6 бюджетных фондов в равной пропорции. 
+
+
+\color{blue}
+
+Здесь есть (этот Article содержит) лишь один необычный момент: покуда в завещании не указано обратное, а равно при отсутствии завещания, имущество скончавшегося человека не наследуется его партнёром. Такое решение принято потому, что далеко не каждый сожитель --- близкий умершему человек. Нередки случаи, когда люди, живущие (поселившиеся) вместе, с течением времени осознают, что они совершенно чужие друг другу люди, но финансовой возможности разъехаться (жить порознь) нет. Есть случаи, когда люди образуют пару от скуки --- мол, вдвоём веселее, а более интересных потенциальных партнёров в том месте где я живу всё равно нет. Возможен и сценарий, когда оба в паре прекрасно понимают, что единственное, что их удерживает как пару --- взаимное физиологическое притяжение.
+
+
+
+
+
+
+
+
+
+\color{black}
+
+\textcolor{blue}{Article 1103.} В Countryname ни один из партнёров не имеет возможности в результате окончания совместной жизни претендовать на долю имущества, заработанного партнёром при совместной жизни.
+
+
+
+
+\color{blue}
+
+%Not many comprehend they are likely to lose no less than half of their assets by marrying and divorcing, especially if minor children are involved. 
+
+%Люди, вступая в брак, особенно в юном возрасте, часто не понимают, что при падении социального статуса (в том числе плановом падении, таком как завершение карьеры спортсмена или спад в творческой активности музыканта) у них просто отберут половину имущества и всё. Это может произойти даже неумышленно, если партнёр не понял, что возбуждается в первую очередь на социальный статус, и вот теперь этот социальный статус вынули.
+
+В большинстве стран развод сопровождается разделом совместно нажитого имущества. Практика эта далека от справедливости: в ситуации, когда один из партнёров занимался бизнесом либо был высокооплачиваемым спортсменом или актёром или моделью, а другой партнёр его "вдохновлял", совершенно неясно, почему при разводе "вдохновлявшему" должно хоть что-то достаться. Это никакой не совместный заработок, это заработок одного конкретного человека. 
+
+
+Поскольку эякуляция внутрь влечёт за собой значимые финансовые потери для женщины, она должна влечь за собой их и для мужчины. В отсутствие алиментов многие мужчины будут склонны эякулировать внутрь, ведь дальнейшее --- не их проблемы.
+
+
+
+Средства автоматически удерживаются и переводятся на счёт primary родителя.
+
+
+Есть редкие ситуации, когда ребёнок даёт буст заработку матери или отца --- например, когда ребёнок становится героем социальных сетей. В подавляющем большинстве случаев это не так, т.е. ребёнок ограничивает карьерные перспективы обоих родителей, и гораздо сильнее он ограничивает карьерные перспективы матери. 
+
+Мать теряет в заработке, приобретает в пролактиновом удовольствии, приобретает в тревожности за своё финансовое будущее, тревожится за ребёнка.
+
+
+
+
+
+
+
+
+Чего мы точно не хотим --- чтобы мать чувствовала незащищённость. Поэтому в обязательном порядке
+
+
+Безусловно, биологическая мать в большей степени, чем биологический отец
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 1104.} Marriage contracts have no legal effect in Countryname.
+
+\color{blue}
+
+Условия развода не должны определяться тем, что вы выдали своему партнёру за справедливость, или что вам партнёр впарил под видом справедливости. Истинно справедливый раздел имущества совместно проживавших лиц is provided via Article 1103. 
+
+
+
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 1103.} Ни одна сексуальная ориентация не лучше и не хуже другой.
+
+\color{blue}
+
+Люди имеют право жить так как они хотят. Если они не хотят детей --- это их дело.
+
+
+\color{black}
+
+\textcolor{blue}{Article 1103.} В Countryname не могут быть приняты законы, ограничивающие распространение информации о том, что люди могут иметь разную сексуальную ориентацию.
+
+\color{blue}
+
+То, что некоторые люди имеют одну сексуальную ориентацию, а некоторые другую --- наблюдаемый факт, наблюдаемое явление природы. Скрывать это от кого-либо, в том числе от детей --- всё равно что скрывать любой другой наблюдаемый факт, например теорему Пифагора или тот факт, что все живые организмы состоят из клеток. 
+
+
+Что касается критики либо дискриминации людей по признаку "сексуальная ориентация" --- это преследуется по закону, см. Article 44.
+
+\color{black}
+
+
+
+
+
+Алименты бывают двух видов --- на содержание супруга ребёнка возрастом меньше 3 лет, а также на содержание ребёнка возрастом меньше 18 лет. Первый вид алиментов называется spouse alimony, второй вид алиментов называется child alimony.
+
+\textcolor{blue}{Article 1103.} От теста на родительство нельзя отказаться. Заставить кого-то сдать тест на родительство --- услуга платная. Стоимость её устанавливается федеральным законом. 
+
+\color{blue}
+
+От теста на родительство не должно быть возможности отказаться, так как самый простой способ избежать уплаты алиментов --- отказаться от теста на родительство.
+
+Если она будет бесплатная или дешёвая, люди начнут заставлять друг друга сдавать этот тест в рамках троллинга.
+
+\color{black}
+
+\textcolor{blue}{Article 1103.} Человек, родительство которого установлено и в адрес которого поступило заявление об уплате алиментов, обязан их платить. Размер алиментов является фиксированной суммой, которая устанавливается правительством. Размер алиментов не зависит от уровня доходов второго родителя.
+
+\textcolor{blue}{Article 1106.} По умолчанию ребёнок остаётся с мамой. По взаимному согласию матери и отца ребёнок может жить с отцом. Если отец платит алименты, он имеет право видеться с ребёнком не реже 2 раз в неделю, если живёт в том же городе.
+
+С кем должен жить ребёнок?
+
+\textcolor{blue}{Article 1107.} По умолчанию ребёнок живёт с мамой, однако отец может подать в суд и предъявить аргументы в пользу того, почему ребёнок должен жить с ним. Мама приводит встречные контраргументы. Если не менее 80\% проголосовавших за переселение ребёнка к отцу, ребёнок переселяется к отцу.
+
+Какая частота встреч с ребёнком разрешена второму родителю?
+
+По умолчанию основной родитель должен обеспечить побочному родителю право видеться с ребёнком не реже 2 раз в неделю. В большинстве случаев основному родителю будет это удобно как возможность отдохнуть от ухода за ребёнком. В некоторых случаях побочный родитель не будет пользоваться этим правом в силу отсутствия интереса к ребёнку. Тем не менее, будут случаи, когда личность побочного родителя такова, что лучше минимизировать контакты ребёнка с ним. В таких случаях основной родитель должен вынести соответствующие факты на голосование; если не менее 80\% проголосовавших за запрет на личные встречи, запрет на личные встречи вступает в силу. Запрет на личные встречи не может быть длиннее чем на полгода. По истечении полугода голосовать нужно заново, причём основной родитель должен будет предъявить факты, что побочный родитель не изменился.
+
+
+
+
+
+
+
+
+Решение о том, сдать ли ребёнка в ПНИ, принимают родители (опекуны).
+
+Родители могут быть лишены родительских прав в случаях, когда натворили что-то такое, против чего всё население. Процедура следующая:
+1) (кем угодно, в т.ч. журналистом-расследователем) открывается кейс, приводятся аргументы
+2) родители приводят свои аргументы
+3) если 90\% дважды голосуют за лишение родительских прав, оно считается принятым.
+
+
+\textcolor{blue}{Article 1802.} В Countryname отсутствуют государственные психоневрологические интернаты.
+
+
+\textcolor{blue}{Article 1802.} В Countryname отсутствуют государственные детские дома.
+
+Нельзя судом признать человека недееспособным. Однако человек может выбрать себе опекуна.
+
+\textcolor{blue}{Article 1802.} В Countryname можно судом признать человека недееспособным.
+
+
+\textcolor{blue}{Article 1802.} В Countryname отсутствуют государственные дома престарелых. Вопрос о том, где доживает человек --- в обычном жилище ли, в доме престарелых ли, в учреждении паллиативного ухода ли --- решает сам этот человек. Родственники или другие лица не могут сдать человека в специализированное учреждение против его воли.
+
+\color{blue}
+
+
+
+Совершенно точно будут люди, которые хотят умирать у себя дома. Совершенно точно будут родственники, которые предпочли бы сдать родственника в дом престарелых (особенно это касается родственников с деменцией). Как будто в каждом конкретном случае это должно решаться отдельно.
+
+\color{black}
+
+\subsection*{Chapter 22. Taxation.}
+
+
+
+
+\textbf{Article 2201.} There are no taxes in Countryname. There is no tax collecting agency in Countryname. There is no agency for monitoring citizens incomes in Countryname. In Countryname, no one has to disclose or declare their incomes or assets. 
+
+\color{blue}
+
+
+
+
+У налогообложения пять проблем, делающие налогообложение неприемлемой практикой (делающие эту практику неприемлемой):
+
+- threat to personal safety. Сотрудники tax collecting agency имеют доступ к сведениям о том, какое юрлицо сколько зарабатывает. Даже если сотрудники tax collecting agency не планируют использовать эти сведения в преступных целях, эти сведения могут оказаться в руках третьих лиц, а также в открытом доступе, via a bribe, via a social engineering attack or via a hacker attack. Утечка данных о том, какое юрлицо сколько зарабатывает, не добавляет безопасности бенефициару. Структура собственности (информация о бенефициарах) большинства юрлиц есть в открытом доступе.
+
+- threat to relationships. Сотрудники tax collecting agency имеют доступ к сведениям о том, какое юрлицо сколько зарабатывает. Даже если сотрудники tax collecting agency не планируют использовать эти сведения в преступных целях, эти сведения могут оказаться в руках третьих лиц, а также в открытом доступе, via a bribe, via a social engineering attack or via a hacker attack. People refrain from telling others about their earnings and assets for a reason --- they do not want to be perceived as a purse with legs. Структура собственности (информация о бенефициарах) большинства юрлиц есть в открытом доступе.
+
+- threat to business existence. Сотрудники tax collecting agency имеют доступ к сведениям о том, как выглядит бизнес-модель каждого юрлица и кто является его контрагентами. Даже если сотрудники tax collecting agency не планируют использовать эти сведения в преступных целях, эти сведения могут оказаться в руках третьих лиц, а также в открытом доступе, via a bribe, via a social engineering attack or via a hacker attack. Обладая этой информацией, можно разными, в том числе криминальными методами давить на контрагентов некоторого юрлица с целью принудить их к отказу от сотрудничества с этим юрлицом. Очевидный пример того, кто может этим заниматься --- фирма-конкурент.
+
+- если существует механизм мониторинга доходов жителей и налоговая нагрузка на каждого жителя равна например 1\% его доходов, то что сдерживает чиновников от того чтобы подготовить общественное мнение к необходимости повышения налога до 5\%, 20\%, 50\%? Чиновникам выгодно создание новых ведомств и раздутие штата существующих ведомств. Сам факт существования механизма мониторинга доходов граждан провоцирует этот сценарий. If you doubt it, study the history of taxation in any country that has existed for a long enough time.
+
+- с каждого налогоплательщика принудительно взимают деньги в том числе на те госрасходы, пользы в которых он не видит, плодами которых он не пользуется и которые он предпочёл бы не финансировать.
+
+
+
+In Countryname вместо принудительного налогообложения используется другая конструкция --- приём донатов шестью бюджетными фондами. Она лишена каждого из указанных пяти недостатков.
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Article 2202.} Countryname does not have a single government budget. Instead, there are six budgetary funds in Countryname with the following names: 
+
+- бюджетный фонд зарплат следователей
+- бюджетный фонд зарплат пограничников
+- бюджетный фонд детской вакцинации
+- бюджетный фонд скрининга онкологических заболеваний
+
+
+
+
+Каждый из этих бюджетных фондов наполняется только за счёт добровольных пожертвований (donations) любых жителей Земли. Отправитель любого из донатов может сделать донат как раскрыв своё имя, так и анонимно. Если таргет некоторого бюджетного фонда на некоторый календарный год не собран --- услуга не оказывается вплоть до достижения таргета.
+
+
+Донат, направленный в некоторый бюджетный фонд, не может быть потрачен не по назначению. В частности, он не может быть потрачен на потребности другого бюджетного фонда.
+
+Каждый может увидеть, чьи деньги получил конкретный госслужащий (но плательщик может отменить эту опцию). 
+
+
+
+\color{blue}
+
+Единый бюджет как плавильный котёл --- отличное решение для заинтересованных в том, чтобы затруднить понимание структуры государственных расходов. И очень плохое, если мы хотим, чтобы расходование бюджетных средств было crystal clear для любого стороннего наблюдателя.
+
+
+Решение о прозрачности принято потому, что прозрачность --- ключевой принцип данной Конституции. К счастью, прозрачность также увеличивает количество привлечённых средств: люди более склонны донатить, когда без усилий имеют возможность отследить, на что именно уходит любой донат. 
+
+
+Донаты абсолютно добровольны. Таким образом, если жители недостаточно скинутся на вакцины --- вакцины не будут закуплены, что приведёт к детской смертности. Если жители недостаточно скинутся на пограничников --- произойдёт border service shutdown и пограничники перестанут работать. Жители имеют полное право вести себя безответственно и face the consequences. Самое главное, что жители видят прямую связь между своим донатом на конкретный госсервис и функционированием либо нефункционированием ровно того же госсервиса. 
+
+Почему нужно приостанавливать услугу, если таргет на следующий календарный год не собран? Причина в том, что люди, принимая решение, апплаиться ли на госслужбу на следующий год, в немалой степени обращают внимание на то, собраны ли деньги на их будущие зарплаты. Понятно, что выжидая задонатят или нет вряд ли кто-то захочет работать.
+
+
+
+Почему число бюджетных фондов ограничено, то есть почему гражданам не разрешено создавать новые бюджетные фонды? Казалось бы, это не должно доставить никому неудобств, ведь всё равно деньги платят только те, кому тема интересна. Ответ такой: из-за риска абьюза. Из-за него число бюджетных фондов должно быть жёстко задано на самом старте и не расти. Абстрактно было бы здорово позволить всем рэйзить на госплатформе, но нет.
+
+
+Почему множество бюджетных фондов именно таково, т.е. почему принято решение использовать наш государственный сервис для сбора средств именно на эти цели, а не на иные? Критерий включения сервиса --- это должен быть сервис, отсутствие которого грозит ясными тяжёлыми последствиями для каждого из жителей. То есть сервис, без которого нельзя обойтись. Если сервис не таков, то он по сути не является необходимостью, а является увлечением определённой группы граждан, собирать деньги на которое они в состоянии на сторонних платформах. Примеры сервисов, отсутствие которых не грозит ясными тяжёлыми последствиями для каждого из жителей и собирать деньги на которые они в состоянии на сторонних платформах --- clergy, national sport team, scientific research.
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Article 25.} There is no such punishment as the death penalty in the Countryname Penal Code.
+
+\color{blue}
+
+It is unclear which punishment is more severe --- the death penalty, or life imprisonment in the conditions in which those sentenced to life imprisonment are held. However, life imprisonment has an advantage over the death penalty: in the case of a false positive error, that is, a situation where the convict did not commit a crime in which they were found guilty, it is possible to correct the error made by the investigation and the court, that is, release the innocent person.
+
+
+
+\color{black}
+
+
+
+
+
+\textbf{Article 25.} In Countryname, street crime is serious offense.
+
+\color{blue}
+
+
+
+In Countryname, any non-loafer who has financial difficulties can ask fellow citizens for money with the help of <<Retraining aid>> and learn about the open vacancies with the help of the <<Labor market>>. Therefore, in Countryname it is unlikely that a non-loafer tries to find a job, is unable to do so, and after some time, due to extreme need, resorts to street crime. It is much more likely that a person who has robbed a stranger either does not want to work but wants to earn by robbery, or has committed the assault due to a mental disorder. In any of these two cases, such a person is dangerous to society, which means the person shall be isolated from the society for a long time.
+
+
+Public places shall be absolute safe zone at any time of day or night in the entirety of the country.
+ 
+
+ 
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 34.} Secession, that is, the withdrawal from Countryname of some of its territory, is legal and occurs whenever 75\% of those whose birthplace belong to that territory vote <<yes>> via the state-forming product <<Referendum>> on the question <<Do you want to stop the territory with the border [image file of the border] being part of Countryname and become the new independent state named [name] governed via the following Constitution [link to it, link to its source file, hash of the source file]?>>
+
+
+
+
+
+\color{blue}
+
+
+
+The fact that one's right to vote for secession depends on whether one was born in the region but not on whether one lives in the region, is due to the fact that Countryname does not track the actual places of residence of people (see Article for more on this subject).
+
+
+
+Ситуация, в которой одни нации обладают государственностью, а другие нации де-факто лишены возможности (а другим нациям де-факто отказано в возможности) обрести государственность путём мирного референдума об отделении --- имплементация нацизма, то есть учения о превосходстве одних наций над другими. Люди, отказывающие любой из наций в праве на сецессию и собственную государственность --- нацисты. Люди, считающие, что некоторые нации не имеют права на сецессию и собственную государственность --- нацисты. Удержание народа в составе своего государства против его воли --- поведение ничуть не более этичное, чем апартеид. 
+
+
+
+
+Возможна такая критика права на сецессию: в случае, если новообразованное государство окажется автократией с обширным репрессивным аппаратом, сецессия приведёт к резкому падению уровня жизни среднего жителя этой территории. Действительно, весьма вероятно, что властолюбивые и предприимчивые уроженцы некоторой территории, обещая свободу, равенство и братство при агитации за сецессию, (безотносительно того что они обещают) (вне зависимости от того что они обещают и о чём они заявляют) (безотносительно того какой риторики придерживаются) (вне зависимости от того, что декларируется) будут стремиться создать в новообразованном государстве строй, в котором они смогут занять высокие позиции в исполнительной власти и удерживать их до самой смерти, а также ввести любые налоги по своему усмотрению и сделать госрасходы непрозрачными, а также ввести любые репрессии по своему усмотрению по отношению к несогласным, а также ввести любой вид слежки за гражданами, а также ликвидировать все СМИ кроме подконтрольных. Шанс на такое развитие событий есть и он зависит в первую очередь от того, как быстро в новообразованном государстве будут ликвидированы все СМИ кроме подконтрольных новообразованной исполнительной власти. Тем не менее, отказ в праве на референдум об отделении с формулировкой <<есть риск, что без нас вы будете failed state>> --- издевательство и нацизм. Человек имеет право на паспорт своего национального государства. Человек имеет право быть гражданином государства, название которого совпадает с названием его нации. 
+
+
+
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 35.} Любая процедура сецессии, отличная от описанной в Article 34, является не волеизъявлением граждан, а тяжким преступлением под названием <<насильственный захват власти или насильственное удержание власти>>, за которым следует контртеррористическая операция.
+
+\color{blue}
+
+
+
+Соблазн провести сецессию путём вооружённого захвата территории понятен --- зачем инициировать референдум о правилах конкурсного отбора в исполнительную власть нового государства (референдум о Конституции есть референдум в том числе о структуре исполнительной власти и правилах отбора в неё), когда можно не вступая ни с кем в диалог получить всю полноту власти прямо сейчас. Однако описанная в Article X долгая процедура референдума не просто так разработана (не случайно выглядит именно так) (не случайно такова какова есть) (не случайно устроена так как устроена) --- она позволяет вовлечь всех уроженцев некоторой территории в обсуждение того, стоит ли отделяться и если да, то имплементация какой Конституции новообразованного государства приведёт к наиболее высокому качеству жизни среднего человека. 
+
+
+
+ 
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 100.} Гражданин Countryname может быть выдан в страну, где он обвиняется в преступлении, если по законам Countryname это тоже преступление. Решение о выдаче определяется результатами голосования по этому вопросу с помощью state-forming product <<Referendum>>.
+
+\color{blue}
+
+Введение нормы о невыдаче своих граждан означало бы, что гражданин Countryname может совершить на территории другой страны деяние, являющееся преступлением и по законам этой страны и по законам Countryname, и не понести за это деяние наказания в случае быстрого возвращения в Countryname. То есть это означало бы не наказывать граждан за деяния, являющиеся преступлением по законам Countryname.
+
+
+\color{black}
+
+
+
+
+
+\textcolor{blue}{Article 100.} Территория Countryname не может быть расширена. Новые территории не могут быть присоединены к Countryname никаким способом --- ни путём референдума, ни путём вооружённого захвата территории.
+
+
+
+\color{blue}
+
+
+
+
+
+
+
+Присоединять территории другого государства невыгодно. Даже если аннексия территории некоторого государства либо всего этого государства произошла мирно, будучи одобренной текущим правительством другого государства и/или проведённым в нём общенациональным референдумом, часть населения аннексированных территорий будет ненавидеть Countryname, не считать Countryname своей родиной, не уважать законы и конституцию Countryname как законы и конституцию страны отнявшей у них родину, а также периодически публично выражать несогласие с аннексией. Незаконопослушность граждан отпугивает инвесторов и таланты (see the commentary to the Article 44 to learn why), а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Кроме того, есть риск, что страна, чьи территории аннексированы, либо проживающие на аннексированной территории люди, могут через некоторое время (например, после смены правительства) инициировать вооружённый конфликт, ставящий своей целью возвращение территорий. Это воспринимается инвесторами и талантами как риск вооружённого конфликта на территории Countryname с возможной конфискацией активов инвесторов в тех населённых пунктах которые удалось захватить повстанцам, а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). 
+
+
+
+Если правительствам других стран нравится политическое устройство Countryname или отдельные его элементы, они могут самостоятельно копировать те элементы, которые им нравятся и реализовывать их у себя так, как посчитают нужным. 
+
+
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 100.} Наёмничество, то есть участие гражданина Countryname в боевых действиях на стороне любого из государств или частных вооружённых формирований, а также пребывание гражданина Countryname в зоне боевых действий, не являются преступлением в случаях когда эти боевые действия ведутся за пределами территории Countryname.
+
+
+\color{blue}
+
+
+
+Неправильно запрещать зрелым людям делать то, что они считают своим долгом делать --- в том числе это касается пребывания в зоне боевых действий. На аргумент о том, что помогать той стороне, которой вы симпатизируете, можно по-разному, и для этого необязательно ездить в зону боевых действий, есть четыре контраргумента:
+
+- без личного знакомства с бойцами не знаешь что у них в дефиците
+- без личного знакомства с бойцами не знаешь как передать гуманитарную помощь так чтобы её не перепродали или не воспользовались ей иным нецелевым образом
+- не находясь в зоне боевых действий не получится выполнять работу журналиста-репортёра
+- не находясь в зоне боевых действий не получится оказывать первичную помощь раненым.
+
+
+
+
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 1204.} In Countryname, ввод войск на территорию внешних государств разрешён только после неоднократных ракетных атак по территории Countryname и только с целью предотвращения дальнейших ракетных атак.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textcolor{blue}{Article 207.} Import duties are prohibited. Setting an import duty is crime.
+
+\color{blue}
+
+Import duties lower the level of competition, hence, the quality of all products affected is also lowered. The only market is world market. If you cannot win the competition --- do not compete.
+
+Decreasing competition negatively affects both quality and prices of goods manufactured by our companies.
+
+\color{black}
+
+
+\textcolor{blue}{Article 208.} Export duties.
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Article 3.} Any act of discrimination on gender, age, skin color, sexual orientation, race, if it is openly declared that people are denied in service or  the act of discrimination based  is a crime if there is proof that not professional qualities but one of these grounds was the reason for the discrimination, is a crime.
+
+Any public declaration that people of certain gender, skin color, sexual orientation, race, are denied in service, is a crime.
+
+
+
+
+\textbf{Article 101.} Ситуации, при которых персональные данные попадают в открытый доступ, влекут за собой штрафы в отношении виновных юрлиц. Размер штрафов устанавливается референдумом и линейно зависит от количества человек, чьи данные попали в открытый доступ.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Chapter 99. Constitutional amendments and revision of the Constitution.}
+
+
+\textcolor{blue}{Article 9901.} No article of present Constitution may be amended, edited, or revised. No new articles may be introduced into present Constitution.
+
+\color{blue}
+
+
+This Constitution is carefully thought out and not a single article of it needs to be amended, edited, or revised due to fluctuations in public opinion. The introduction of new articles is not needed for the same reason.
+
+The immutability of the Constitution is not a disadvantage, but an advantage.
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 9902.} There is only one way how present Constitution can become legally null and void: both present Constitution becomes legally null and void and name of our state changes whenever 90\% vote <<yes>> via the state-forming product <<Referendum>> on the question <<Do you accept the new Constitution [link to it, link to its source file, hash of the source file] and the new name of our state instead of Countryname?>>. The new Constitution referendum proposal cannot lack new name of our state or propose Countryname as the <<new>> name of our state. 
+
+
+\color{blue}
+
+
+
+The purpose of changing the name of the country upon every replacement of the Constitution is to make every replacement of political system noticeable to all citizens and all foreigners.
+
+
+
+
+\color{black}
+
+
+\textcolor{blue}{Article 9903.} There is no Constitutional court in Countryname.
+
+\color{blue}
+
+Конституционный Суд --- это орган, отвечающий за то, как правильно трактовать ту или иную статью Конституции. Если такой орган добавить к описанным в Chapter 3 органам, нетрудно заметить, что его судьи получат всю полноту власти, подобно тому, как в теократических режимах вся полнота власти оказывается у верховного духовенства, ответственного за трактовку религиозных текстов. Добавление Конституционного Суда сделало бы Countryname диктаторским государством, всей полнотой власти в котором обладают судьи Конституционного Суда.
+
+Fortunately, the Constitution is written in a clear language that does not allow ambiguity. It does not need an official or a group of officials who will have the authority to interpret it.
+
+
+
+
+\color{black}
+
+
+
+
+\textcolor{blue}{Article 1102.} Концерты, спектакли и иные выступления не могут быть отменены под давлением "обеспокоенной общественности".
+
+\color{blue}
+
+Свобода слова исполнителя ограничена только и исключительно статьёй 44. Если вы считаете некий аспект некоторого перформанса возмутительным (тексты песен, сценический образ, политические взгляды, ), просто не приходите на такой перформанс. Помните, что никто не обязан иметь такие же вкусы как вы, и рядом с вами живут люди, которым этот перформанс нравится.
+
+Не нравятся тексты песен исполнителя, политическая позиция исполнителя или сценический образ исполнителя --- не ходите, не поддерживайте такого музыканта рублём. 
+
+
+\color{black}
+
+
+
+\textcolor{blue}{Article 1102.} В случае пандемии не вводится никаких ограничений на перемещение граждан.
+
+\color{blue}
+
+Во-первых, их некому накладывать. Непонятно, как избирать людей в орган, который сможет их накладывать, и не злоупотребят ли они полученной властью.
+
+
+\color{black}
+
+
+
+
+
+
+\textcolor{blue}{Article 36.} Not servicing for belonging to a certain group (by ethnic, racial, religious, gender, sexual orientation, Tampa Bay Lightning fans) is crime. For that charge, there must be evidence that there's the policy of discriminating the certain group (there's nothing wrong in securities taking you out of a night club because you don't fit in the party). 
+
+Any act of discrimination based on gender, age, skin color, sexual orientation, race is a crime if there is proof that not professional qualities but one of these grounds was the reason for the discrimination, is a crime.
+
+
+
+
+\textcolor{blue}{Article 44.} The following eight types of freedom of speech are felony:
+
+\begin{itemize}
+
+\item[a)] public call to commit an offense not mentioned in this Article
+\item[b)] threat of murder or bodily harm towards a person (both public and private)
+\item[c)] public call for violence towards those who commit or have committed an unethical act
+\item[d)] public expression of hatred, or public call for discrimination, or public statement of discrimination, or public call for violence towards people of a certain height, or weight, or age, or ethnicity, or citizenship, or race, or skin color, or occupation, or religion, or disability, or gender, or sexual orientation; public expression of hatred, or public call for discrimination towards a certain skin color, or religion, or language
+\item[e)] public statement of superiority of a certain ethnicity, or race, or religion, or gender, or sexual orientation, or language (a statement that a person of a certain ethnicity, or race, or religion, or gender, or sexual orientation, or language has won a competition is not a statement of superiority) (a statement that people of a certain ethnicity, or race, or religion, or gender, or sexual orientation, or language generally perform better than others in some activity is not a statement of superiority) (a statement that people of a certain ethnicity, or race, or religion, or gender, or sexual orientation, or language, are great is not a statement of superiority)
+\item[f)] public call for changing the Constitution in a different way than described in Chapter 99
+\item[g)] public call for invading another country
+\item[h)] public denial or doubt of facts regarding war crimes or crimes against humanity if these facts are established by an international criminal court or an international tribunal.
+
+\end{itemize}
+
+The following four types of freedom of speech are misdemeanor:
+
+\begin{itemize}
+
+\item[i)] advertising or public advice of a drug or a dietary supplement 
+\item[j)] public post of a treatment that is not included in the <<Countryname treatment guidelines>> state-forming product
+\item[k)] public denial of the danger posed by a deadly or disabling disease, or public call not to vaccinate anyone from a certain disease
+\item[l)] public statement of a danger posed by a vaccine recommended by the <<Immunization schedule>> state-forming product other than the entire safety assessment provided in the <<Immunization schedule>> (if the safety assessment provided in the <<Immunization schedule>> is not cited in its entirety, it is misdemeanor), or public call not to vaccinate anyone with a vaccine from <<Immunization schedule>>
+
+
+
+\end{itemize}
+
+
+Every type of freedom of speech that does not fall in any of these twelve categories is legal. In other words, freedom of speech in Countryname is limited by these twelve restrictions.
+
+
+
+\color{blue}
+
+
+Прежде всего, заметим, что в нашей стране никак не наказывается клевета. Ресурсы государства не должны тратиться на то, чтобы устанавливать, совершало ли некоторое физлицо или юрлицо законные, но порочащие их репутацию действия. Каждый, кому это интересно, вполне может сам сформировать мнение, убедительные ли аргументы привела обвиняющая сторона, и убедительные ли аргументы привела сторона, которую обвиняют. 
+
+Также заметим, что в нашей стране никак не наказывается публичное обсуждение причин, побудивших организаторов и участников на теракт либо геноцид либо военное преступление либо преступление против человечности. Обнаружение и валидация причинно-следственных связей --- полезные занятия, их можно только приветствовать.
+
+Также заметим, что в Countryname разрешена демонстрация любой символики.
+
+
+Законодательство Countryname запрещает public expression of hatred, or public call for discrimination, or public statement of discrimination, or public call for violence towards people of a certain religion. Однако законодательство Countryname не запрещает высмеивать приверженцев какой-либо конфессии, шутить над героями их религии и иными составными частями культа, ибо это высмеивание безграмотности и невежества. Сверхъестественных магических существ, по воле которых происходят события, не существует; любое из событий полностью описывается законами физики, химии, биологии и медицины, а не волей сверхъестественных магических существ. Единственная причина религиозности --- некачественное естественнонаучное образование индивида.
+
+
+
+
+
+
+
+a) Проблема публичных призывов к несоблюдению закона в том, что каждый такой призыв делает общество менее законопослушным. Законопослушность приятна во-первых крайне низким уровнем краж, грабежей и других бытовых преступлений (бытовых и уличных преступлений), а во-вторых более высокой средней квалификацией специалистов. Дело в том, что законопослушные люди (здесь и далее предполагается отсутствие пассивного дохода у человека) рассчитывают только на заработок от продажи своих умений либо товаров либо услуг. Поскольку незаконопослушные люди иногда могут обеспечить свои потребности незаконными заработками, их мотивация тратить свободное время на повышение качества продаваемых умений либо товаров либо услуг не так высока, как у людей, не рассматривающих возможность незаконного заработка. Посему логично ожидать, что квалификация специалистов в незаконопослушных обществах в среднем ниже. По этим двум причинам незаконопослушность граждан отпугивает инвесторов и таланты, а следовательно вредит разнообразию рабочих мест (именно инвесторы создают рабочие места), количеству талантов которые занимаются созиданием в нашей стране, количеству интересных собеседников в нашей стране, и уровню заработка среднего человека (именно конкуренция предпринимателей за труд приводит к росту зарплат). Криминализация --- хороший способ минимизировать число таких призывов.
+
+Незаконопослушность часто вызвана непониманием мотивов, стоящих за существованием этой юридической нормы. Чтобы непонимания мотивов не возникало, в законодательстве нашей страны за всякой юридической нормой следует \textit{обоснование} --- текст, исчерпывающе объясняющий мотивы принятия этой юридической нормы. 
+
+
+Если в законодательстве есть недочёт, т.е. нечто зарегулировано неправильно и нечестно, нужно предложить поправки в эту юридическую норму, а не предлагать способы её несоблюдения. 
+
+
+
+
+
+
+b) Угрозы насилием резко снижают качество жизни жертвы и заставляют жертву вместо созидания терять время на проверку реальности угрозы. Поэтому чем меньше угроз насилием в обществе (в стране) в год, тем лучше. Криминализация --- хороший способ минимизировать число угроз насилием.
+
+
+
+
+
+c) Негодование в адрес those who commit or have committed an unethical act объяснимо. Public expression of hatred, or public call for discrimination в адрес такого лица не нужно наказывать --- напротив, для многих страх общественного осуждения является главным механизмом, удерживающим от неэтичных поступков. 
+
+
+Проблема публичных призывов к насилию над those who commit or have committed an unethical act в том же, в чём проблема любых призывов к насилию --- каждый следующий такой призыв делает угрозу насилия всё более и более вероятной. Угроза насилия резко снижает качество жизни жертвы и заставляет жертву вместо созидания терять время на проверку реальности угрозы. Поэтому чем меньше угроз насилием в обществе (в стране) в год, тем лучше. Криминализация --- хороший способ минимизировать число угроз насилием.
+
+
+Наиболее полезным действием из возможных здесь является обсуждение поправок в законодательство, которые бы предусматривали наказание за это неэтичное поведение. (Как и любые поправки в законодательство Countryname, эти поправки могут быть рассмотрены только в том случае если они не нарушают Article -3, т.е. не создают точек непрозрачности.) 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+d) Любое такое публичное высказывание отпугивает инвесторов и таланты (особенно тех, которые принадлежат группе, в адрес которой сделано высказывание), а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Криминализация --- хороший способ минимизировать число таких высказываний.
+
+
+
+Public use of words that are derogatory nicknames of people of a certain height, or weight, or age, or ethnicity, or citizenship, or race, or occupation, or religion, or disability, or gender, or sexual orientation, is public expression of hatred.
+
+
+
+
+
+
+
+e) Если разрешить высказывания, культивирующие чувство превосходства некоторой группы, это неизбежно приведёт к появлению лиц, регулярно высказывающихся в таком духе (людям свойственно восхищаться спикерами, которые говорят то что приятно слышать, поэтому любой искатель социального статуса захочет таковым спикером стать). Если достаточно долго говорить о превосходстве некоторой группы, в конечном счёте эта эмоция выльется в акты ненависти по отношению к другим группам --- либо путём организованной военной агрессии, либо путём спорадических расправ, совершаемых одиночками или небольшими группами. Поэтому разрешение на высказывания, культивирующие чувство превосходства некоторой группы, в среднесрочной перспективе резко снижает личную безопасность всех, кто к этой группе не относится. Именно поэтому every public statement of superiority отпугивает инвесторов и таланты, а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Криминализация --- хороший способ уменьшить число таких высказываний.
+
+
+
+%Чувство превосходства, чувство единения с могучей многочисленной силой, которая любит и защищит тебя --- чувство, дающее эйфорию на уровне опиоидных препаратов, ведь это чувство защищённости. 
+
+
+
+
+
+
+
+
+
+
+
+
+f) Публичная дискуссия о пересмотре Конституции не предусмотренным путём в неустановленный срок воспринимается любым инвестором и талантом как серьёзный риск (stay away caveat), а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Криминализация этой публичной дискуссии --- хороший способ её предотвратить.
+
+
+
+g) Публичная дискуссия о возможном военном конфликте воспринимается любым инвестором и талантом как серьёзный риск (stay away caveat), а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат). Надо понимать, что в случае успеха военной агрессии новые границы всё равно не будут признаны развитыми странами (признать означало бы публично легитимизировать военную агрессию как способ решения разногласий), а в случае неуспеха придётся выплатить репарации. Криминализация этой публичной дискуссии --- хороший способ её предотвратить.
+
+
+
+h) Разрешить людям безнаказанно публично отрицать или ставить под сомнение факты преступлений, установленные международным уголовным судом или международным трибуналом означало бы разрешить:
+- героизацию преступников, делание из них невинно осужденных мучеников
+- глумление над потомками жертв
+- распространение заведомо ложной информации о детально (скрупулёзно, тщательно) изученных событиях.
+
+Отрицание геноцида --- верный путь к следующему раунду геноцида.
+
+
+
+
+
+
+
+
+
+i) Реклама медикаментов и БАДов провоцирует покупку и приём рекламируемого средства, но решение о приёме (об употреблении) лекарства или БАДа следует принимать не на основе рекламы, а на основе state-forming product <<Countryname treatment guidelines>>. Принимать медикамент из-за услышанного, увиденного, прочитанного, сказанного в рекламном материале или в нерекламной публикации, не являющейся <<Countryname treatment guidelines>>, опасно для здоровья. 
+
+
+
+
+
+j) Методы лечения, не указанные в state-forming product <<Countryname treatment guidelines>>, являются либо устаревшими либо изначально антинаучными (шарлатанскими). Следовательно, такие методы лечения опасны для жизни и здоровья. Криминализация публичного распространения этих утверждений --- способ минимизировать число случаев публичного распространения. 
+
+
+
+k) Публично доступные ложные утверждения о безобидности некоторого смертельного или инвалидизирующего заболевания опасны для жизни и здоровья. Криминализация публичного распространения этих утверждений --- способ минимизировать число случаев публичного распространения. 
+
+
+l) Оценки опасности вакцин из <<Vaccination calendar>>, не являющиеся точной копией текста safety assessment, являются публично доступными ложными утверждениями, опасными для жизни и здоровья. Призывы к бойкоту любой из вакцин из списка также опасны для жизни и здоровья. Криминализация этих оценок и призывов --- хороший способ предотвратить их.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\color{black}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%Axiom 72. Selling following substances is the crime:
+
+
+%\begin{itemize}
+%\item opioids that can be used as recreational drug (heroin, morphine, codeine, methadone etc)
+%\item anything that can be smoked (including cigarettes)
+%\item psychomotor stimulants (cocaine, amphetamine, methamphetamine)
+%\item designer drugs (substances that lack evidence clinical use)
+%\end{itemize}
+
+\textcolor{blue}{Article 1802.} Countryname citizens maintain the quantity of opioid analgetics в том объёме, в котором это необходимо для медицинских нужд граждан. 
+
+% Каждый имеет право на лучшее дожитие из доступных науке. Иное унижает человеческое достоинство.
+
+% Люди на обезбол для онкобольных сбрасываются сами.
+
+Нужно ли учреждать специальный фонд для опиоидных анальгетиков? Я думаю, что нет, поскольку эти препараты по карману любому человеку. Разумеется, онкобольной, у которого нет денег на обезболивание опиоидами, представляет опасность для окружающих, но такие ситуации вряд ли будут возникать, поскольку это недорогие препараты.
+
+
+
+%Axiom 74. Being intoxicated in a public place is the crime.
+
+
+%Some substances are so dangerous that they cannot be legally sold in the stores. Namely:
+
+%\begin{itemize}
+%\item opioids that cross blood-brain barrier (heroin, morphine, codeine, methadone etc)
+%\item stimulants (cocaine, amphetamine, methamphetamine)
+%\item designer drugs (substances that lack evidence clinical use)
+%\end{itemize} 
+
+
+
+
+
+
+Clearly, not all substances can be freely available. There is hardly a single person who would like to live in a society in which heroin can be bought in a supermarket or pharmacy.
+
+If I was the person responsible for the draft of the federal law, I would propose the following whitelist of substances:
+
+\begin{itemize}
+\item caffeine
+\item alcohol beverages
+\item nicotine in any form that cannot be smoked (in chewing gums, in tablet form)
+\item THC in any form that cannot be smoked
+\item serotonine receptor agonists
+\item NMDA-receptor antagonists
+\end{itemize}
+
+I would prefer to leave off the whitelist cigarettes, cigars, marijuana and other substances, the use of which consists in inhaling smoke. Smoke negatively affects respiratory tracts of consumers and people around them, and, most importantly, the respective active substances can be administered via variety of other routes besides smoking. 
+
+The whitelist format is chosen due to new psychoactive substances, the so-called designer drugs, constantly being synthesized. We do not want unexplored substances to be tested on our citizens. Since you cannot prohibit substances that have not yet been invented, it is wiser to opt for a permissive legalization order (whitelist) instead.
+
+
+
+
+
+%В свободной продаже должны быть только те вещества, которые могут употребляться эпизодически (которые не вызывают dependence) и относительно безопасны.
+
+
+
+
+
+%Мы не против того, чтобы люди рекреационно употребляли относительно безопасные психоактивные вещества время от времени. Но мы не хотим, чтобы люди употребляли психоактивные вещества часто или постоянно.
+
+
+
+
+Другим компонентом риска личной безопасности является то, что любому человеку, который едет из точки А в точку В, несложно подкинуть наркотики. Это может использоваться бизнес-конкурентами, бывшим супругом или внутрикорпоративными конкурентами. Сделать это можно, например, когда вы сдаёте куртку в любой гардероб или когда вы уходите в туалет в самолёте, не взяв с собой чемоданы. Это серьёзный риск безопасности, от которого в большинстве стран не защищён ни один житель.
+
+
+
+Минимизировать этот риск личной безопасности можно следующим образом: не считать хранение и транспортировку веществ преступлением. На первый взгляд кажется, что это привлечёт интерес наркоторговцев к стране: человек, занятый в наркоторговле, сможет сказать, что субстанции ему подбросили, благодаря чему избежать риска уголовной ответственности. С этим предлагается бороться так: ставить потребителей запрещённых веществ перед выбором --- либо сдаёшь своего дилера, либо садишься. При следующей попытке сбыта дилера задерживают с поличным.
+
+
+
+
+
+
+
+
+% сделает поставку запрещённых субстанций отличным бизнесом: человек, занятый в наркоторговле, сможет сказать, что субстанции ему подбросили. 
+ 
+%Однако каналы поставки запрещённых субстанций можно перекрывать иным способом: сделать употребление запрещённых веществ преступлением, если не сдал дилера.
+
+%Но у наркопотребителя два варианта: или сесть, или сдать предыдущее звено в канале поставки. Употребление запрещённых веществ является преступлением, если не сдал дилера.
+
+Преступление является законченным, когда человек закапывает запрещённое вещество или сбывает его непосредственно.
+
+%Преступлением считать нахождение в опьянении в общественном месте, т.е. во всех помещениях, куда можно попасть в ходе прогулки, не имея специальных пропусков или приглашений. 
+
+
+
+%Человек, который находится в любом из видов опьянения или испускает в воздух продукты горения, например, табака --- риск для безопасности окружающих. Соответственно, появление таких людей в общественных местах должно быть криминализовано.
+
+%It is not safe among people with an altered state of consciousness. Mind-altering substances.
+
+%Таким образом, нахождение в состоянии опьянения или испускание в воздух продуктов горения является преступлением. Однако это же деяние является преступлением даже не в общественных местах, если с вами в этот момент находится несовершеннолетний ребёнок. Причины понятны: совершеннолетний человек может покинуть территорию с табачным дымом и нетрезвым человеком, несовершеннолетний ребёнок не имеет финансовой возможности сделать это.
+
+%Нахождение в состоянии опьянения или испускание в воздух продуктов горения разрешено в тех местах, которые другой человек может покинуть. Любой, кто находится на вечеринке, может её покинуть, если его будет смущать дым или алкогольное опьянение окружающих. Партнёр, супруг, коллега, подчинённый человека, если его будет смущать пассивное курение, может его покинуть. Несовершеннолетний ребёнок не может покинуть квартиру родителя, в которой тот находится в нетрезвом состоянии или курит. Поэтому нахождение в состоянии опьянения или испускание в воздух продуктов горения при несовершеннолетнем ребёнке является преступлением.
+
+%Any harm to others is crime. Types of harm to others may include:
+
+%\begin{itemize}
+%\item domestic abuse and/or violence
+%\item robbery
+%\item homicide
+%\item harm to children, e.g. neglect, abuse, or in utero exposure to substances
+%\item passive smoking
+%\item family deprivation
+%\item fatal and non-fatal traffic accidents caused by intoxicated drivers
+%\end{itemize}
+
+
+
+
+
+% https://meduza.io/feature/2021/11/26/v-germanii-poyavilos-koalitsionnoe-pravitelstvo-kotoroe-smenit-angelu-merkel-samoe-interesnoe-v-dogovore-treh-partiy-legalizatsiya-marihuany
+
+
+
+
+% Addiction exacts an "astoundingly high financial and human toll" on individuals and society as a whole.[19][20][21] In the United States, the total economic cost to society is greater than that of all types of diabetes and all cancers combined.[21] These costs arise from the direct adverse effects of drugs and associated healthcare costs (e.g., emergency medical services and outpatient and inpatient care), long-term complications (e.g., lung cancer from smoking tobacco products, liver cirrhosis and dementia from chronic alcohol consumption, and meth mouth from methamphetamine use), the loss of productivity and associated welfare costs, fatal and non-fatal accidents (e.g., traffic collisions), suicides, homicides, and incarceration, among others.[19][20][21][22] Classic hallmarks of addiction include impaired control over substances or behavior, preoccupation with substance or behavior, and continued use despite consequences.[23] Habits and patterns associated with addiction are typically characterized by immediate gratification (short-term reward), coupled with delayed deleterious effects (long-term costs).[24]
+
+
+% Нет ничего плохого в том, что человек получает удовольствие от употребления веществ, если это не создаёт риски для окружающих --- например, у себя дома в одиночестве. Каждый взрослый человек волен распоряжаться своим здоровьем как угодно и нести ответственность за последствия. Проблема в том, что есть вещества, которые создают риски для окружающих. В случае с некоторыми категориями веществ риск настолько велик, что общество, в котором они легализованы, не может быть безопасным. 
+
+
+
+
+
+%There is nothing wrong with a person enjoying a substance when it does not create risks for others --- for example, the person isolated themselves at home. Every adult is free to do with their health whatever they wish and be responsible for consequences. The problem is that there are substances that pose risks to others. In the case of some categories of substances, the risk is so big that a society in which they are legalized cannot be safe.
+
+
+
+
+%Here is the list of substances or goods whose harm to others has been scientifically proven, and the circulation of which, for this reason, shall be restricted at the level of the Constitution:
+
+%\begin{itemize}
+%\item alcohol
+%\item opioids that cross blood-brain barrier (heroin, morphine, codeine, methadone etc)
+%\item anything that could be smoked (including cigarettes)
+%\item stimulants (cocaine, amphetamine, methamphetamine)
+%\end{itemize}
+
+
+
+% By definition, addiction is a biopsychosocial disorder characterized by compulsive engagement in rewarding stimuli despite adverse consequences. That is, addiction is unpleasant for the individual themselves. Therefore, there is nothing unethical in protecting people from the sources of addiction. 
+
+% Examples of drug and behavioral addictions include alcoholism, marijuana addiction, amphetamine addiction, cocaine addiction, nicotine addiction, opioid addiction, food addiction, chocolate addiction, shopping addiction, video game addiction, gambling addiction, and sexual addiction. 
+
+% Однако тем, кто всё это потребляет без аддикции, мы мешать не должны.
+
+Приводит ли криминализация наркотиков к снижению их употребления? Да, приводит, но это не самый эффективный способ. Самый эффективный способ предовтращения аддикций --- распространять честную информацию о них.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{How many civil servants are needed?}
+
+\section{Epilogue}
+
+
+
+Рецепт успеха любой территории одинаков. Это привлекать инвесторов и таланты (особенно тех, которые принадлежат группе, в адрес которой сделано высказывание), а следовательно негативно влияет на количество рабочих мест (именно инвесторы создают рабочие места), на количество талантов вовлечённых в созидание в нашей стране, на количество интересных собеседников в нашей стране, и на уровень заработка среднего человека (именно конкуренция предпринимателей за работников приводит к росту зарплат).
+
+
+
+Я вдохновлялся Wikipedia and Linux --- двумя величайшими примерами совместного труда десятков тысяч не знакомых друг другу людей.
+
+% The theorem on the minimum number of civil servants
+
+теорему о том, какое минимальное число госслужащих необходимо стране с населением в $N$ человек и длиной границы $L$ километров
+
+%The theorem on the needed annual budget expenditures
+
+
+
+Этот файл появился как попытка сформулировать и доказать следующие три теоремы:
+
+\begin{itemize}
+\item теорему о том, какое минимальное число госслужащих необходимо стране с населением в $N$ человек и длиной границы $L$ километров
+\item теорему о том, какие годовые бюджетные расходы необходимы стране с населением в $N$ человек и длиной границы $L$ километров
+\item теорему о том, каким должно быть налогообложение в стране с населением в $N$ человек и длиной границы $L$ километров.
+\end{itemize}
+
+
+
+Какие госуслуги потребляют люди?
+
+
+
+\begin{itemize}
+\item border guard
+\item immigration officer
+\item travel passport issuance department officer
+\item driver license issuance department officer
+\item judge
+\item law enforcement
+\end{itemize}
+
+
+%С тех пор человечеством было накоплено много знаний, а также развились информационные технологии, позволяющие учесть накопленные знания. Через несколько веков, вероятно, эта аксиоматика очевидно устареет, и родится новая аксиоматика.
+
+
+%В этом тексте мы формулируем теорему о том, сколько госслужащих нужно и каким должен быть годовой объём госрасходов на них. 
+
+
+
+Каковы минусы демократии по сравнению с сигмантократией? In particular, democracy carries the important risk: those who promise more social benefits and payouts during an election campaign are more likely to be elected (clearly, these social benefits and payouts can only be paid by printing new money or by raising taxes). This risk is removed by the outright constitutional ban on social benefits and payouts. В частности, классическая демократия несёт в себе важный риск: кто больше социальных пособий для дармоедов и пенсий пообещает в ходе предвыборных кампаний, того и изберут (разумеется, эти социальные пособия и пенсии будут выплачиваться за счёт повышения налогов). Этот риск убирается прямым конституционным запретом на социальные пособия и пенсии.
+
+табличка: демократия, сигмантократия, автократия
+
+
+От чиновника не должно зависеть ничего. Каждый раз, как решение некоторого вопроса зависит от чиновника, появляется риск взятки. Ни один чиновник не должен принимать никаких решений. (и будет меньше произвола, меньше потенциала для создания конфликта интересов, получения взяток)
+
+If something can be done without civil servants, it shall be done without them.
+
+
+%Законодательства этих стран писались в до-интернетную эпоху, и их авторы попросту не имели таких инструментов, как онлайн-суд, следствие за донат и онлайн-референдум.
+
+
+%Люди, которые не понимают, что происходит, не могут принимать участия в судьбе страны.
+
+
+В данный момент в мире наиболее распространены две политические модели: представительная демократия и информационная автократия. Мы презентуем иной тип общественного устройства, который мы называем sintagmocracy, от греческого $\sigma \upsilon \nu \tau \alpha \gamma \mu \alpha$ --- constitution, i.e. the literal translation of <<sintagmocracy>> is <<constitutionocracy>>. Если в двух словах, это общество, в котором властью не обладает никто и ничто, кроме настоящей Конституции, а все вопросы, не упомянутые в Конституции, решаются местным самоуправлением.
+
+
+В данный момент в мире наиболее распространены две политические модели: представительная демократия и информационная автократия. We present a different type of social order: limited direct democracy carried out with the help of electronic digital signature. Ничего инновационного ни в использовании ЭЦП для взаимодействия с государством, ни тем более в прямой демократии нет, но тем не менее модель, описываемая в настоящей Конституции, по состоянию на сейчас ни в одном из государств не реализована.
+
+Слово <<ограниченная>> здесь означает, что список того, какие вопросы можно выносить на референдум, строго детерминирован (see Article 216).
+
+
+\end{document} 

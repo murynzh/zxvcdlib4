@@ -1,0 +1,1446 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{pscyr}
+\usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+%\usepackage{wallpaper}
+\usepackage{pifont}
+%\usepackage{ulem}
+\usepackage{cancel}
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{comment}
+%\usepackage{background}
+%\usepackage{subcaption}
+\usepackage{tikz}
+
+\renewcommand\theequation{{\color{blue}\arabic{equation}}}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+%\def\be{\numberwithin{equation}{section}\begin{eqnarray}}
+%\def\ee{\end{eqnarray}}
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+
+\def\trademark{{\hbox{\tiny TM}}}
+\def\dim{\textmd{dim} \hskip 3 pt}
+\def\p{\partial}
+\def\R{\Rightarrow}
+\def\ph{\varphi}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{definition}
+\newtheorem{Def}[thm]{Definition}
+
+%\setcounter{section}{-1}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\cross}{\ding{55}}%
+
+
+
+
+
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][\ ]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\definecolor{backgroundcyan}{HTML}{61B1D2}     % 97, 177, 210
+\definecolor{modcyan}{HTML}{76DEF8}            % 118, 222, 248
+\definecolor{mygolden}{HTML}{F4E95D}           % 244, 233, 93
+\definecolor{mytruegolden}{HTML}{DEAA21}       % 222, 170, 33
+\definecolor{theirgolden}{HTML}{C1D68F}        % 193, 214, 143
+\definecolor{coolestblue}{HTML}{034775}        % 3, 71, 117
+\definecolor{modgreen}{HTML}{0CE6B8}           % 12, 230, 184
+\definecolor{newgolden}{HTML}{A27009}           % 162, 112, 9
+
+\def\bitcoinA{%
+  \leavevmode
+  \vtop{\offinterlineskip %\bfseries
+    \setbox0=\hbox{B}%
+    \setbox2=\hbox to\wd0{\hfil\hskip-.03em
+    \vrule height .3ex width .15ex\hskip .08em
+    \vrule height .3ex width .15ex\hfil}
+    \vbox{\copy2\box0}\box2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%$\sqrt[a]{b} \quad \oldsqrt[a]{b}$
+
+
+\begin{document}
+
+
+\baselineskip14pt
+\bigskip
+
+
+
+
+\title{Various thoughts}
+
+
+\maketitle
+
+%\tableofcontents
+%\bigskip
+%\bigskip
+
+
+
+
+
+
+
+\begin{enumerate}
+
+%\item Есть правило написания презентаций. Каждый слайд должен содержать одну и только одну мысль. Как правило, это означает, что слайд должен содержать заголовок (для примера, «Target Audience»), и одну фразу. Не пять фраз. Не десять фраз. А ОДНУ сука фразу. Лучше пусть слайдов будет в 10 раз больше, но зато каждый слайд будет понятным как дважды два.
+
+% Непонятный питчдек вызывает отторжение на эмоциональном уровне. Оффтоп, но в нашем мозге есть следующие причинно-следственные связи: «получается» -> «приятно» -> «хочется продолжать», «не получается» -> «неприятно» -> «хочется прекратить».
+
+\item Who thinks clearly, speaks clearly.
+
+\item If you're launching startups, Нанимайте на конкретную задачу, у которой есть срок экспирации. Нанимайте short-term. Не стесняйтесь пользоваться услугами фрилансеров.
+
+Также имейте на каждую позицию список задач для собеседования.
+
+
+\item If you want to get a position (for-profit company CEO position, head of a charity fund position, head of a marketing department position), practice in advance, namely: imagine that you already hold the position, and describe what you would do in the office --- write down your work plan for tomorrow, next week, next month, for the next few years.
+
+
+\item What does a human own? Here goes the full list: genes, knowledge, memories, acquaintances and relations with them, GUI to brain called body, criminal record, credit history, public reputation, citizenship(s), bank account balance, cryptocurrency balance, stocks and bonds, real estate.
+
+Will you always own your belongings (such as car, personal computer, cell phone, apartment keys, clothes, ID card, travel passport)? No, you may lose, forget or accidentally damage them. Will you always own your accounts? No, the services may be discontinued or you may fail in maintaining the list of password reminders. Will you always own your spouse and/or your kids? No, and you never owned them.
+
+\item Продукты это биологические организмы. Как и положено организмам, они постоянно придумывают способы атаки и защиты. Как только в какой-то незаселённой экосистеме появился продукт и обнаружил что тут много еды (денег), туда набегут другие продукты. Форк опенсорс-кода на гитхабе это распространённый у бактерий и архей горизонтальный перенос генов. То есть это война, это естественный отбор в чистом виде.
+
+
+\item Если вынести за скобки то что с неба могут сваливаться шальные доходы, ты либо умеешь придумать продукт в сфере которая будет быстро расти и вовремя сделать MVP, либо можешь продать себя в формате «вашему продукту сейчас нужен человек который будет выполнять функционал Х, я умею Х и готов взять на себя ответственность за Х», либо не сможешь заработать. 
+
+
+\item A good way to look at yourself competing for earnings or for position in office is to watch a video of bacteria competing for food. A good way to look at competition of for-profit companies (for markets, for talents, for funding), political parties, political concepts, religions differently is to watch a video of bacterial colonies competing against each other (learn how bacteria constantly rebalance their genomes via horizontal gene transfer to adapt to challenges brought by environment). A good way to look differently at human migration is to create different conditions at different areas of a large Petri dish with a partially permeable baffle and watch bacterial colonies move.
+
+\item Many people get their long-awaited high positions being bad at management by that time. Don't be like them, be prepared for executive positions, know what and how you will do.
+
+
+\item Being a good manager means to understand what is important and what is not.
+
+\item Knowledge allows you to build things (devices, vehicles, ships, hardware, software, legal agreements, websites, companies) and to be competitive. Knowledge = facts + causal relationships between them. Thus, getting knowledge = learning facts + inspecting causal relationships between them. (If you know facts in a particular area but do not understand causal relationships between them, you do not have knowledge.)
+
+Applied knowledge are called skills. Thus, every skill is knowledge (ability to grind a detail or to build a hut means knowing how to do it), but not every knowledge is skill (e.g. knowing that distance between Sun and Earth is roughly 150 million km is the knowledge, but not the skill).
+
+
+\item Рейтинги вроде "список самых успешных предпринимателей младше 30" вредны, поскольку они провоцируют вредные мыслительные паттерны. Они измеряют количество заработанного бабла, но не количество блага, созданного человеком.% Маловероятно, что юный человек знает достаточно много о мире, 
+
+\item По поводу нытья о том, что в жизни что-то не так: принимай правила игры. Они заключаются в том, что произойти может всё, что не противоречит законам физики. И ты не обязан был родиться в богатой семье с адекватными родителями. И ты не обязан был родиться здоровым. И ты не обязан был не получить увечье. И если ты не добьёшься славы, ничего страшного не случится.
+
+
+\item Apart from avoiding negative incentives, people only do what they enjoy. This includes entering only communications that bring pleasure. When talking to someone, always figure out what unconditional reward makes this communication pleasant to them.
+
+
+\item Whie skin color appeared roughly 7 thousand years ago. This fact cures from nationalism.
+
+As populations migrated away from the tropics into areas of low UV radiation,[8] they developed light skin pigmentation as an evolutionary selection acting against vitamin D depletion.[3][9]
+
+Humans with light skin pigmentation have skin with low amounts of eumelanin, and possess fewer melanosomes than humans with dark skin pigmentation. Light skin provides better absorption qualities of ultraviolet radiation. This helps the body to synthesize higher amounts of vitamin D for bodily processes such as calcium development.[3][10] Light-skinned people who live near the equator with high sunlight are at an increased risk of folate depletion. As consequence of folate depletion, they are at a higher risk of DNA damage, birth defects, and numerous types of cancers, especially skin cancer.[3] 
+
+It is widely supposed that light skin pigmentation developed due to the importance of maintaining vitamin D3 production in the skin.[22] Strong selective pressure would be expected for the evolution of light skin in areas of low UV radiation.[9]
+
+\item All industries go through a stage in which society doesn't take it serious (treats it like a fooling around). This stage can last for as long as several decades.
+
+\item Never promise things that have a single chance of not being done. Be very accurate with your words. 
+
+\item Having people around you who have achieved more (or are otherwise superior to you) by the same age can cause noticeable anxiety, reducing the quality of life largely. I regret every episode of me not changing classmates and peers from those who are better than me to those who are worse than me. 
+
+
+
+\item When preparing to make a change to a working business model, keep in mind that each change has a non-zero cost (making a change requires time and, in some cases, money).
+
+
+
+
+\item Psychotherapist, private tutor and fitness coach professions are similar in the following aspects:
+
+\begin{itemize}
+
+\item you approach these specialists when you need to get from a current unsatisfactory state to a state in which you want to be
+
+\item you can do the work yourself, for free and without a clear schedule, or you can pay a specialist and work under their supervision according to a schedule
+
+\item they can shorten your path from 100+\% (say, 160\%) to 100\%, helping you avoid unnecessary steps. But you will have to walk 100\% of the way on your own. Fitness coach cannot do the needed amount of exercises for you. Private tutor cannot solve the needed amount of tasks for you. Therapist cannot do the needed amount of mind adjustment for you.
+
+\end{itemize}
+
+\item The right way to work with a scientific advisor, with a psychotherapist, with a doctor, with a tutor, with any guru is to seek their help only when you were doing your own research, are now stuck with it, and have written a list of questions, the answers to which will break the deadlock.
+
+Having a guru does not allow you to go less than 100\% of a way from A to B by someone else's legs. But having a guru allows your path from A to B to be the most straight one.
+
+
+
+\item "We should maybe increase our prices by 100\% on Black Friday so people don't consume that much and more reflecting over how they consume."
+
+
+\item Don't marry until you can fund your wife's expenses.
+
+
+\item I regard remote work as positive phenomenon. People shall be valued solely based on their performance; their score shall not depend on their communication skills or attendance.
+
+
+\item Теорема 1. Люди живут богато в тех обществах, где бизнесу хорошо.
+
+Доказательство теоремы 1: в такие юрисдикции старается переместиться капитал (как иностранного происхождения, так и местного), этот капитал создаёт рабочие места, чем больше рабочих мест — тем больше конкуренция за квалифицированных сотрудников, тем выше заработные платы, утверждение доказано.
+
+Определение 1. Юрисдикция называется политически стабильной, если при любой смене власти/правительства "мало что меняется" (законодательная база и правоприменительная практики меняются слабо). 
+
+Теорема 2. Бизнесу хорошо в тех юрисдикциях, где выполнены два условия — а) политическая стабильность б) беспристрастный суд.
+
+Доказательство теоремы 2: в юрисдикциях, где суд беспристрастен, капитал невозможно отнять по беспределу, риск таких неожиданностей сведён к нулю, поэтому капитал чувствует себя в безопасности; условие политической стабильности превращает это чувство безопасности из временного в постоянное; таким образом, при выполнении условий а) и б) капитал чувствует себя в безопасности бесконечно долго, утверждение доказано.
+
+
+\item Pop culture tells us that happiness can only be achieved by a sea among girls in bikinis. This is manipulation; besides the presence of a sea or an ocean, there are many other factors to consider when choosing a place of residence, e.g. tax rates, street crime rate, investment climate, prices levels, income levels, and quality of schools, universities and academic environment. Never be afraid to move to a place that suits you the most.
+
+
+\item Люди склонны к конспирологии, поскольку она решает следующие задачи:
+
+- снятие ответственности с себя
+- вера в управляемость мира как способ снятия тревожности.
+
+
+
+\item You do not know how someone works until you've worked with them.
+
+\item Registering your relationship makes sense in cases of inheritance event, imprisonment of you or your beloved, getting into intensive care of you or your beloved, divorcing this idiot to get half of his wealth. Besides that, there's no need to register. You don't need to register your relationship to live and raise children with your beloved. There is something strange about registering your love, care and affection with government.
+
+
+\item У бедных родителей бедные дети, у богатых родителей богатые дети, и даже не потому что богатые родители могут дать детям денег на бизнес (хотя это важно), а в первую очередь потому что богатые родители знают каким навыкам надо научиться чтобы хорошо зарабатывать, и могут транслировать это своё знание своим детям. Поэтому дети богатых родителей «знают, куда копать», а дети бедных родителей не знают.
+
+люди которые ничего не умеют и которые не видят перспектив в жизни. Есть регионы, в которых эта проблема решена. Решить эту проблему можно только одним путём — качественным образованием, нацеленным на современный рынок труда. 
+
+
+\item Either be unique in what you do, or don't do it at all.
+
+
+\item Stress is caused by not being able to do your task. There is no stress when you solve a quadratic equation. This means that if something causes you stress, the work is not organized correctly. You shall not set yourself tasks or get tasks that are not clear how to resolve. 
+
+
+\item Если неравенства нет вообще, то у экономических агентов нет мотивации. И поскольку у них нет мотивации, то они перестают конкурировать, создавать, экономика перестаёт развиваться. Если неравенство слишком большое, то у богатых нет мотивации развиваться дальше, а у тех, кто имеет очень маленький доход и мало возможностей, мотивация есть, но нет возможностей двигаться дальше, потому что у них очень низкая база.
+
+Неравенство является естественным продуктом природного неравенства людей. Есть люди более умные и менее умные, более энергичные и менее энергичные, есть люди с большими крепкими семьями и люди одиночки, есть люди у которых родители богаче и люди у которых родители беднее. Есть обстоятельства: одному повезло, другому неповезло. Мы живём в мире, в котором много случайности. 
+
+Неравенство крайне важно, потому что оно создаёт мотивацию. Без неравенства не будет мотивации.
+
+
+
+\item Нет смысла запускать стартап без следующего набора:
+
+\begin{itemize}
+\item наличие внутренней мотивации, которая не иссякнет после того как финансовые потребности будут удовлетворены
+\item способы монетизации
+\item умение найти капитал на время, пока бизнес не может содержать сам себя (fundraising это самостоятельный скилл)
+\item умение замотивировать людей реализовывать твои идеи
+\item план действий в случае поражения в рыночной конкуренции (большое количество других бизнес-идей, к реализации которых можно приступить той же командой или с минимальными изменениями в команде)
+
+\end{itemize}
+
+
+\item You shouldn't explain a sophisticated subject if not asked to: creating a stress for a person you talk to is probably not what you're interested in.
+
+
+\item Facts from mathematics, physics, chemistry and biology will always be what they are now. They cannot be changed, regardless of how much money or power one has. Understood once, you won't have to understand them again.
+
+On the contrary, markets are constantly changing. If you understood a topic in science, this knowledge will be with you for the rest of your life. If you understood a market, this knowledge may get irrelevant in as low as 3-6 months. 
+
+\item There are two types of advancement in science: discovering new knowledge and structuring (simplifying) the already discovered knowledge. 
+
+\item Деньги --- не более чем возможность прожить следующие N месяцев так, как вы хотите.
+
+
+\item As long as it is more lucrative to send children to study engineering or IT than to send them study religious texts, the quantity of priests will diminish.
+
+
+\item Более талантливые люди, как правило, ставят перед собой более сложные цели. Иногда не просто сложные, а призрачные, едва достижимые (например, в науке). Поэтому в этой когорте людей высока доля тех, кто обращается к психотерапевту. 
+
+
+\item Качество мужской спермы падает с возрастом из-за мейоза; качество женской яйцеклетки с возрастом не падает, но повышается вероятность хромосомных мутаций. Можно обходить это заморозкой спермы или яйцеклеток; можно не обходить и просто иметь в виду. В то же время, раньше обретения 29 qualities детей точно заводить не стоит.
+
+
+\item You shall not rely on your school or on university. You shall not reckon them will teach you something relevant. Your education is your responsibility, not theirs. You manage your education, not them. (Your level of education determines your level of income and, eventually, your quality of life; it is so strange to delegate determining your quality of life to someone else.)
+
+\item If a kid asks <<why should I study this instead of playing or doing X>>, the answer is <<you are getting knowledge; knowledge are facts + causal relationships between them; understanding causal relationships is pleasant>>.
+
+\item People spend their lives on five things:
+
+\begin{itemize}
+\item inevitable activities: eating, sleeping, grooming (brushing teeth, taking shower)
+\item selling their time doing things they already know how to do (they call it <<work>>)
+\item studying things they currently do not know how to do (they call it <<acquiring new skills>>); typically your employer does not pay you for this
+\item getting all kinds of knowledge that are not a skill you will ever get paid for (e.g. history, math, astrophysics)
+\item all other activities (e.g. fitness, hanging out with friends, listening to music, watching films and videos, kitesurfing, wake boarding, hiking and backpacking, road tripping, travelling and seeing the world, volleyball, tennis, table tennis, skating, skiing, piano, guitar, flute)
+\end{itemize}
+
+Note that kids and wealthy adults do not have to sell their time doing things they already know how to do (on <<work>>). This is good side of being a kid or a wealthy adult, and this is your goal in work --- stop wasting your time on work as early as you can. You don't even have to be a wealthy adult; even in case you're born in a middle-class family, you can build your life in a way that you'll never need to sell your time for money. (Though there's nothing wrong with selling your time for money in case you enjoy your work.) % If you're born in a poor family, you probably have to sell your time for money for a while, but the earlier you won't have to do it anymore, the better.  
+
+
+
+\item Patients often judge a doctor's qualifications by their friendliness, attentiveness or confidence. However, these personality characteristics have nothing to do with competence.
+
+A doctor is competent if he or she:
+
+\begin{itemize}
+\item knows what are randomized controlled trials, evidence levels pyramid, meta analysis
+\item is expert in their field (reads articles regularly)
+\item knows an expert for (almost) every other fields.
+\end{itemize}
+
+Most of doctors do not satisfy these criteria.
+
+\item A competent doctor will just retell what's written in up-to-date guidelines about your condition. 
+
+Хороший врач будет говорить в точности то, что написано в гайдлайнах. Поэтому, если сюжет несложный, идти к врачу смысла нет, ты просто заплатишь ему за то, что поленился гуглить (и получишь меньше понимания — понимание возникает, когда копаешься в предмете). Другое дело, если сюжет сложный. Сложный — это когда многодневный вдумчивый гуглинг не помогает, всё равно ничего не понятно. Таких сюжетов немало. В этом случае пишем список вопросов и идём задавать этот список вопросов врачу. До составления списка вопросов я бы идти на приём не рекомендовал.
+
+In most cases, googling is not worse than your local GP.
+
+In easy cases, googling is not worse than a good doctor.
+
+In case the situation is life-threatening, you need not 1 but minimum minimorum 2 (or 3, or 5, or 10) doctors. Do not rely on your ability to research information in these situations.
+
+\item Конечно, можно полагаться на врачей, но настоящее понимание темы приходит only after you've read all recent meta analyses and treatment guidelines associated with your condition yourselves.
+
+
+\item Some people tend to memorize medicines by the names under which they are sold. This practice is misleading. Instead, medicines should be memorized by active substance names and their dosages.
+
+\item %Когда люди говорят о медицинских состояниях, они, как правило, делают утверждения двух типов:
+
+%\begin{itemize}
+
+%\item <<механизм, стоящий за развитием состояния, на молекулярном или клеточном уровне устроен так>>
+
+%\item <<клинические испытания препарата на клеточных культурах, животных или людях показали такой-то результат>>.
+
+%\end{itemize}
+
+%В первом случае автор высказывания рассуждает о причинно-следственных связях, во втором --- не делает этого. Мне нравится рассказывать о причинно-следственных связях и не нравится, когда они неясны. Мы постараемся описать все причинно-следственные связи, достоверно установленные к текущему моменту. 
+
+Иногда можно понять причинно-следственные связи --- например, в случае ОРВИ, кариеса и грибка ногтей мы сейчас их изложим. Это проще чем кажется на первый взгляд.
+
+
+
+\item Over any given period of time the energy conservation law holds: $$\Delta W = \text{CC} - \text{BMR} - \text{CB},$$ where $\Delta W$ is the change in the amount of calories disposed in your fat tissues, $\text{CC}$ is calories consumed (amount of calories you consumed with food), $\text{BMR}$ is basal metabolic rate (the amount of calories you lose with zero physical activity --- heart, brain, digestive system and many other systems functioning requires energy), $\text{CB}$ is calories burned (the amount of calories you burned via physical activity).
+
+<<I want to lose weight, but I have different metabolism>> is the common misconception. There's no <<different metabolism>>. All adults have roughly the same basal metabolic rate: men spend roughly 2200 kcal/day, women spend roughly 1800 kcal/day; this rate varies with your mass, height and age, but insignificantly. See wiki article \href{https://en.wikipedia.org/wiki/Basal_metabolic_rate}{<<Basal metabolic rate>>} for exact formulas.
+
+Since $\text{BMR}$ is roughly the same for all people, there are only two ways to modulate your weight: to modulate $\text{CC}$ (calories consumed) and to modulate $\text{CB}$ (calories burned with physical activity). Younger people are in a better position, since physical activity is much more accessible to them (they probably don't have osteoarthritis).
+
+To control weight, do the two following steps:
+\begin{enumerate}
+\item buy floor scales
+\item set your weight goal.
+\end{enumerate}
+
+What may help: caffeine (every psychostimulant reduces weight, but caffeine is the only one not damaging your health).
+
+There are only two motivations to maintain weight: sex and social domination. In case you don't care, you're fine. However, look at [Aerobic exercises and their impact on health].
+
+
+If you do not consume enough food to compensate for the body's energy expenditure, your blood glucose levels drop. The body's first response to a drop in blood glucose is hunger. Not satisfying hunger is a very unpleasant sensation that must be endured. Every day that you lose weight, you will experience this unpleasant sensation, and this is normal: evolution has made malnutrition unpleasant.
+
+
+Люди в современном мире едят не столько от голода, сколько от того что это способ поднять себе настроение. (Утоление голода требует поглощение значительно меньшего количества калорий.) Причина переедания в том, что человек не понимает, что этот механизм поднятия себе настроения можно заменить на другой механизм.
+
+Лишний вес вызван тем, что в современных условиях еда --- самый простой способ достичь дозы удовольствия. Но можно изменить набор поощрений, за счёт которых вы получаете эту дозу. Поощрения, приводящие к пагубным последствиям, можно заменить на иные. К примеру, удовольствие от еды можно заменить на удовольствие от чего-то другого. 
+
+Каждые сутки мозг требует примерно одну и ту же суточную дозу поощрения, без разницы как именно. Вряд ли от этой дозы получится существенно отклониться (когда мы её недополучаем, возникает компульсивная тяга к поощрениям — слабоконтролируемая тяга к вкусной еде, к покупкам и к другим поощрениям). Патогенез ожирения именно в этом — вы недополучаете поощрение/получаете наказания от своей работы и прибегаете к легкодоступным поощрениям (лёгкие задачи и микроменеджмент, вкусная еда, листание соцсетей и чтение новостей, смешные картинки, компьютерная игра, просмотр кино или иного релакс-видеоконтента).
+
+
+
+
+\item Некоторые думают, что инвестирование это не для всех ("это для умных", "это только для тех кому это интересно"). Нет, консервативное инвестирование для всех, абсолютно для всех. Оно не позволяет заработать, но позволяет не потерять заработанное, потому что даёт доходность примерно равную инфляции. Те, кто не хочет консервативно инвестировать, должны быть готовы жить в старости на welfare выплаты от государства.
+
+
+
+
+\item Phytotherapy, or <<I want to use only natural components>> is the common misconception. First, what is unnatural about carbon, oxygen and hydrogen atoms that constitute the molecules in tables/capsules? Second, in tablet/capsule it is much easier to control the dosage of active substance you intake than in a plant root. Third, almost every plant is placebo. Fourth, a decent amount of tablet/capsule medications have vegetable origin (e.g. roughly half of chemotherapy medications).
+
+\item Some doctors prescribe placebos knowing that it is a placebo (for conditions that cannot be treated, e.g. chronic pelvic pain syndrome). To me, this is deceiving people and I do not advocate this practice; explaining the truth is better than giving placebo. 
+
+\item There is no way to <<boost your immune system>>. Сама концепция «понижения иммунитета» и возможности его «повышения» есть уродливое упрощение знаний о сложной иммунной системе. The only <<immunomodulators>> that work are immunodepressant medications.
+
+
+
+\item Качество жизни определяется не уровнем доходов, а состоянием психики. Поэтому перед тем, как начать делать что угодно, необходимо добиться психического здоровья. Психическое здоровье заключается в понимании и принятии (например, можно рационально понимать собственное старение, но не принимать этого) причинно-следственных связей, в том числе, в умении объяснить себе, почему я делаю те или иные вещи.
+
+
+
+
+\item Спорт, особенно единоборства, может делать тебя здоровее через вырабатывание thinking pattern <<я могу выиграть, могу и проиграть; сегодня проиграл --- завтра выиграю, сегодня выиграл --- завтра проиграю; всегда есть тот кто сильнее и тот кто слабее меня; тренируйся и всё получится>>. майндфулнес может делать тебя здоровее через вырабатывание thinking pattern не думать ни о чем кроме того на что смотришь.
+
+
+
+\item The insidiousness of mental illness is that you do not understand that you are sick. Thoughts like <<XYZ is so scary and frightening>> or <<I am absolutely incapable of anything>> seem logical and natural with such disorders. As a result, a person consults a doctor several years later than the onset of the disease.
+
+\item Stress is the question of your perception. There are no <<objective external factors>> that cause stress.
+
+
+
+
+
+\item If you're interested in some occupation, find 5-10 people with that occupation and talk to them in person (better if they are a bit drunk). How does their working day look like? If they work for a company, what companies do they want to work for, what feedback do they give on their current employers, to what responsibilities and to what levels of compensation can one grow there? If they are running a small business, how do they attract customers, what is their biggest problem?
+
+Get the complete picture. This is the most important step that shall not be neglected. Reserve a couple of months for getting this understanding. 
+
+
+\item Remember that it is you who chooses between job offers (in case you undergo interviews to many companies). E.g. you get interviewed by 10 companies, 3 of them would like to hire you and start negotiating compensation and other terms, then you choose the best offer. It is not they who choose, it is you who choose. 
+
+
+
+
+
+
+\item The more interviews you undergo the better. The more interviews you undergo, the broader is your view of current market, the more useful contacts you get, the more offers you have, the better is your salary negotiating position. There are only positive sides about being interviewed by more and more companies.
+
+
+
+
+
+
+
+\item There are three options for a media to write about you and your product:
+\begin{itemize}
+\item they will do it for free without any effort on your side
+\item they will do it for a fee (paid partnership, sponsored article, press release)
+\item they will decline your paid partnership offer.
+\end{itemize}
+
+
+
+\item You avoid speaking out on topics that might blur the original PR message you wanted to convey. You only talk about what you planned to talk about.
+
+
+
+
+
+\item What conservative investment algorithm is the optimal one?
+
+%Вы можете купить индекс американского рынка, можете ETF такой-то отрасли, можете ETF такой-то. Вы защищены при этом законом таким-то и таким-то. Риски наступают от таких-то сумм.
+
+
+% написать файл, отвечающий на вопрос «у меня есть \$X, как выглядит оптимальный алгоритм пассивного консервативного инвестирования этой суммы, т.е. инвестирования в акции, ETFы, облигации частных компаний и облигации федерального займа» (invest.tex)
+
+
+% как выглядит оптимальный алгоритм пассивного консервативного инвестирования этой суммы, т.е. инвестирования в акции, ETFы, облигации частных компаний и облигации федерального займа
+
+
+
+Человек, у которого нет навыка либо времени (либо и того и другого) разбираться в финансовой отчётности отдельных компаний, должен инвестировать как можно более пассивно. Не инвестировать в отдельные компании, а инвестировать в индексы --- причём в те индексы, которые соответствуют той стране, в которой он хочет выйти на пенсию. Если вы будете жить в развивающихся странах, вам нужно инвестировать в индекс emerging markets. Чем вы моложе, тем большую долю вашего портфеля вы можете инвестировать в акции и тем меньшую --- в облигации. Часть портфеля должна быть в облигациях просто для того, чтобы защищать вас от волатильности курсов акций. В долгосрочной перспективе акции растут быстрее, чем доходность облигаций, поэтому, конечно, чем вы моложе, тем больше у вас должно быть в портфеле акций. И вам нужно думать о том, чтобы сэкономить на комиссионных, всегда смотреть на мелкий шрифт, на то, какие именно комиссии с вас будут брать брокеры, управляющие и так далее --- к счастью, сейчас есть много ETFов, которые вы можете купить относительно дёшево. Не переоценивайте свою компетентность. Старайтесь не выбирать отдельные инструменты, а инвестировать в широкий диверсифицированный портфель. 
+
+Люди думают, что они лучше других умеют инвестировать и могут обыгрывать весь остальной рынок. Когда вы что-то покупаете на финансовом рынке, всегда думайте, почему тот, кто вам это продаёт, готов продать вам это по этой цене. Что такого он знает, что вы не знаете.
+
+Самое важное, что нужно знать --- стратегия вашего инвестирования. Что конкретно вы будете делать, как долго, почему и зачем. 
+
+Если вы хотите жить хорошо всю жизнь, вам нужно планировать на всю жизнь. Если вы хотите выиграть в долгосрочной перспективе, вам нужно думать на долгосрочную перспективу.
+
+Когда вы действуете на финансовом рынке, вы когда что-нибудь покупаете, должны задаться вопросом "почему продавец этого актива это продаёт по этой цене". Нужно думать о том, как поступают другие люди и почему вы покупаете, когда они продают. 
+
+Законы для проф трейдера и начинающего инвестора разные. Начинающему инвестору не стоит надеяться на то, что он может обыграть проф трейдера. Начинающему инвестору нужно думать о том, какие у него долгосрочные цели, где он собирается выходить на пенсию, когда ему нужно покупать недвижимость себе и детям, когда ему нужно платить за образование детям, в какой валюте.
+
+Благодаря чему рынки растут? Фондовый рынок --- институт, который позволяет оценить стоимость компаний (активов). Эти компании стоят столько, сколько стоит чистая приведённая стоимость будущих прибылей. Компания стоит столько, сколько она заработает чистой прибыли для своих инвесторов во все будущие периоды.
+
+По мере того как экономика растёт, будущие прибыли растут, и, соответственно, компания заработает больше денег. Другое дело, что в краткосрочной перспективе, если вы просто измените процентную ставку, если вы её повысите --- рынки упадут, понизите --- вырастут. 
+
+Нужно понимать, что на другой стороне сидят люди, 
+
+Активы стоят столько, сколько они должны стоить сегодня
+
+Среди людей, которые играют против вас --- Goldman Sachs, JP Morgan, Morgan Stanley, у которых сотни квалифицированных аналитиков, которые анализируют и каждое слово, которое говорят центральные банкиры, и все макроэкономические данные, и отчётность компаний, и они считают, что сегодняшние цены на акции являются справедливыми --- то непонятно почему вы лучше знаете, чем они.
+
+Непрофессиональным инвесторам не нужно заниматься стокпикингом (выборочной покупкой отдельных акций). Дело в том, что каждую конкретную компанию, акцию которой вы покупаете, вы знаете хуже профессиональных участников рынка. Покупайте индексы. Купите ETF. 
+
+Вы играете на рынке с профессионалами. Если вы думаете, что вы их умнее --- вы должны себе объяснить, почему. Почему Goldman Sachs, на который работают тысячи людей, которые получают огромные деньги, имеют лучшее в мире образование, почему эти инвестиционные банки хуже понимают то, что происходит, чем вы.
+
+Когда вы думаете над тем, что вы точно знаете, что именно эта акция будет расти, именно эта компания будет работать лучше, чем весь остальной рынок, вы должны быть убеждены в том, что вы обладаете хорошими знаниями об этой компании: лучшими, чем тот, кто вам продаёт эту бумагу (лучшими, чем рынок). На получение таких знаний нужно тратить много времени. Покупая ценную бумагу, задумайтесь, почему тот человек, который вам её продаёт, готов её по этой цене продать. Особенно вам стоит задуматься, если на той стороне сделки большой инвестбанк с десятками аналитиков, которые работают в этом секторе или в этой стране. Наверное, они более информированы, чем вы, они посчитали гораздо больше разных финансовых соотношений и моделей. 
+
+То, что ты не видишь оппонента в трейдинг-терминале, не означает, что его нет. Оппонент есть, и он настолько же реален, как оппонент в теннисе или в игре в футбол. Этот оппонент --- лицо (организация), которое тебе по какой-то причине продаёт бумагу, которую ты покупаешь по цене Х (или наоборот, по какой-то причине покупает бумагу, которую ты продаёшь по цене Х).
+
+ETF --- самый недорогой способ купить диверсифицированный долгосрочный продукт. Широкий ликвидный портфель за минимальные комиссионные. Купить ETF большого индекса. 
+
+Какой ETF? Должно быть понятно, как он обновляется. Достаточно ли в нём много компаний (на уровне страны это 10-50-100). Не должно быть такого, что большая часть компаний в ETF имеет доходность, коррелирующую друг с другом. Идея ETF
+
+Если вы хотите жить в стране Х и ваши вложения в её активы подешевеют --- упадут и цены на тот уровень жизни, который вы хотите себе обеспечить: подешевеют рестораны, подешевеет недвижимость. Сама идея пассивных инвестиций в том, чтобы диверсифицировать риски и уйти от stock picking. 
+
+Отрасли будущего: возобновляемые источники энергии, темпы роста в развивающихся странах выше чем в развитых, цифровые технологии будут развиваться быстрее чем физические.
+
+
+
+
+Дэвид Свенсен:
+Вам нужно определиться со своими целями. Вам нужно понять, как вы распределяете активы. Столько-то вы будете инвестировать в такой класс активов, столько --- в такой класс активов. Акции, облигации, долгосрочные неликвидные активы, земля, недвижимость. Как только вы определились с классами активов, внутри класса активов вы можете определяться с управляющим.
+
+
+С акциями понятно: мы хотим ETF, достаточно широкий портфель, желательно ориентированный на ту страну, риски которой вы готовы брать на себя. Часть портфеля должна быть в безрисковых активах: американские гособлигации, корпоративные облигации высокого класса. Чем дальше горизонт, тем больше должно быть акций; чем ближе горизонт, тем больше должно быть облигаций.
+
+Золото --- волатильный и не очень ликвидный актив. Но в плохие времена золото растёт в цене. Вместо него можно использовать швейцарский франк. Есть и другие безопасные активы. Когда наступают тяжёлые времена, люди покупают безрисковые активы типа немецких или американских облигаций.
+
+
+
+Идея консервативного инвестирования не в том, чтобы заработать, а в том, чтобы иметь доходность не ниже инфляции.
+
+
+
+
+
+Курс валюты зависит от: 
+
+- того, насколько наш экспорт ценится в мире по отношению к нашему импорту
+- отток/приток капитала
+
+
+
+
+
+Shall you invest in real estate? Стоимость недвижимость в городе Х отражает покупательную способность населения этого города.
+
+
+Здесь два вопроса: хорошо ли инвестировать в недвигу в целом и хорошо ли инвестировать в недвигу сейчас (купить на всё, что не является долларовой наличностью, какой-то актив, из тех соображений, что возможная галопирующая инфляция съест рублёвую наличность, а банковские счета — как долларовые, так и рублёвые — теоретически могут быть заморожены для спасения матушки России).
+
+Ответ на первый вопрос известен. Предположим, у тебя есть сумма X. Если ты купила на эти деньги квартиру, то ты купила не самый ликвидный (ликвидностью называется скорость конвертации в деньги) актив, у которого есть какая-то динамика стоимости f(t), вероятный доход со сдачи в аренду этого актива, ежегодный налог на недвижимость в размере 0.1-0.15\% от кадастровой стоимости квартиры, необходимость раз в N лет крупно тратиться на мебель/ремонт квартиры. Если ты купила на эти деньги S&P 500, NASDAQ, или хороший ETF, ты купила нечто, у чего есть динамика стоимости g(t). Далее, f(t) < g(t), ибо неясно, за счёт чего стоимость недвижимости в Москве (отражающая покупательскую способность жителей Москвы) будет расти быстрее финансовых результатов компаний из S&P 500 (Apple, Microsoft и других). Кроме того, сумма трёх слагаемых «вероятный доход со сдачи в аренду + ежегодный налог на недвижимость + необходимость раз в N лет тратиться на мебель, мелкий либо крупный ремонт» — отрицательное число. (Траты на мебель/ремонт здесь следует размазать по N годам и думать о них как о ежегодных расходах — это называется амортизация.) Таким образом, осталось сравнить «f(t) + отрицательное число» и «g(t)», при том что известно, что f(t) < g(t). 
+
+
+
+набор утверждений которые будут верны всегда + набор регуляций (какими законами защищены деньги, и защищены ли)
+
+теорема о том, как лучше разложить по разным корзинам сумму \$X, где X — любое
+
+
+
+
+
+
+
+
+\item В компьютерных играх баланс --- это одно число. Однако в реальной жизни не столь важна сумма денег, сколь важны ещё две её характеристики: легальность происхождения этой суммы и безопасность этой суммы. То есть каждая сумма --- это не одно число, а упорядоченная тройка (a,b,c).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\item Есть люди, у которых есть деньги. Есть люди, у которых есть идеи, но нет денег. Например, вы хотите построить завод, вы знаете как он будет работать, но у вас не хватает денег, чтобы купить оборудование и нанять людей. Или вы хотите сделать стартап и вам нужен стартовый капитал до момента, как он начнёт зарабатывать. Финансовая система --- посредник между этими двумя категориями людей.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\item In case your dream occupation requires skills that you don't have yet, acquire the skills. In case it requires you live in a certain city, move there. If there's a place where you can do your dream job on a higher level, consider moving there. Don't let the circumstances stall you.
+
+\item If you can avoid getting part-time jobs, avoid it. Time spent on a low-pay job could be spent on acquiring skills for a high-paid job.
+
+\item If you go to school, you shouldn't place too much emphasis on your relationship with your classmates. There are people outside of your class or your school who are much closer to you in interests and/or values.
+
+
+
+%Q: Я пользуюсь услугами некоторого educational institution (посещаю его сам либо мой ребёнок посещает). Как мне измерить качество оказываемых мне образовательных услуг?
+
+
+\item Я называю образовательное учреждение \textit{минимально приемлемым}, если одновременно выполнены следующие два условия:
+
+- на его территории вы не сталкиваетесь с физическим насилием
+- на его территории вы не сталкиваетесь с психологическим насилием.
+
+Если хотя бы одно из этих условий не выполнено, я называю такое образовательное учреждение \textit{неприемлемым}.
+
+Я называю образовательное учреждение \textit{хорошим}, если оно является \textit{минимально приемлемым} и в дополнение к этому одновременно выполнены следующие пять условий:
+
+- оно снабдило вас знаниями в сфере естественных наук и наук о жизни (solid background in math, physics, chemistry and biology), достаточными, чтобы вы имели neither religious nor esoteric but scientific mindset; в частности, это означает, что you can explain most of the natural phenomena by laws of physics or chemistry, что вы не прибегаете к услугам священников, магов, астрологов, не верите в опасность ГМО, понимаете какие классы лекарств существуют и за счёт какого механизма какое лекарство действует etc
+
+%state-forming product <<Myths about the world we live in>>
+
+
+- оно снабдило вас знаниями в сфере макроэкономики и микроэкономики, достаточными, чтобы вы не вкладывали деньги в мошеннические проекты, а также владели принципами консервативного пассивного инвестирования
+
+
+- оно снабдило вас пониманием, что для того чтобы добиться того что вам нужно от другого человека, нужно понять что он хочет взамен
+
+
+- оно снабдило вас стейтом --- списком позиций, таким что к каждой из позиций приложена:
+* информация о том, как много работодателей сейчас нанимают на эту позицию
+* информация о том, какими hard and soft skills нужно овладеть для трудоустройства на эту позицию 
+* информация о том, каков нынешний уровень дохода на этой позиции
+* информация о том, как выглядит типичный рабочий день на этой позиции
+
+- оно снабдило вас умением предсказывать динамику стейта.
+
+
+Я называю образовательное учреждение \textit{отличным}, если оно является \textit{хорошим} и в дополнение к этому одновременно выполнены следующие четыре условия:
+
+- оно снабдило вас списком ссылок на качественные источники информации (тексты, учебники, книги) по каждой из следующих сфер знаний: решение уравнений и систем уравнений, планиметрия, теория алгоритмов, структуры данных, теория графов, механика, молекулярная физика, электродинамика, геометрическая оптика, волновая оптика, неорганическая химия, органическая химия, цитология, молекулярная биология, эволюционная биология
+
+- оно снабдило вас списком ссылок на качественные источники информации (тексты, учебники, книги, самоучители) по каждой из позиций на которую вы могли бы наняться (по каждому из hard skills, перечисленных в стейте) % позволяют человеку получить квалификацию, необходимую для успешного трудоустройства
+
+- ваши соученики --- умные люди (умные часто становятся успешными, а нетворк из успешных людей --- отличная инвестиция)
+
+- ваши соученики --- дети влиятельных людей (дети влиятельных людей часто становятся успешными, а нетворк из успешных людей --- отличная инвестиция).
+
+
+Оценить, какой процент окружающих вас учебных заведений является \textit{неприемлемым}, какой \textit{минимально приемлемым}, какой \textit{хорошим}, а какой \textit{отличным}, вы можете самостоятельно. 
+
+
+
+
+\item Some people pay for their children's education in prestigious schools because of valuable contacts: the idea is not so much for the child to gain knowledge, but to make your child a classmate of the children of hedge fund heads and other knowledgeable persons. In some cases this may be a good investment.
+
+
+
+\item Я называю преподавателя fine, если выполнены все три следующие условия: человек свободно владеет предметом, который преподаёт; students admire/adore/respect him; человек ясно и доходчиво доносит до студентов, какие career opportunities на глобальном рынке труда открыты для тех, кто свободно овладеет его предметом. В противном случае я называю преподавателя unacceptable.
+
+
+
+\item Можно выделить три причины, из-за которых люди изучают некоторую тему или сферу знаний:
+- она вызывает удовольствие
+- она открывает карьерные перспективы, ведёт к трудоустройству на желанную должность
+- "так принято" в моём окружении, всё моё окружение так делает, это социально одобряемое поведение
+
+
+
+
+\item There's no such notion as <<state goals>>: those are the goals of the politicians in charge. If you are doing something <<in the name of the country>> or <<for the good of the party>>, then you are most likely deceived. 
+
+
+\item Any work is either learning new things, or exploiting already acquired knowledge and skills.
+
+\item One of the effects of endogenous opiates is the blockade (suppression by pleasure) of weak pain signals from the limbs. Therefore, the more a person is satisfied with their life, the higher their pain threshold.
+
+
+\item The problem with making money is that sometimes you lose understanding which amount of money you need. Especially when you've travelled enough, bought all clothes that you've wanted etc. To avoid that, you should have a life-long plan and a list of wills. 
+
+\item There are jurisdictions governed by law and there are jurisdictions governed by knowing influential officials. In both cases, you need to know how to protect yourself from trouble. External conditions can be anything; adapt.
+
+
+
+\item Any meeting of a well-known public person who is not a politician (sportsman, musician) with an acting politician has only one beneficiary: this politician. The purpose of such meetings is PR of a specific politician at your expense. It is better for honored persons to avoid state awards: it is not the state that awards you, it is specific politician who awards.
+
+
+\item Never outsource the core part of your business. There's nothing wrong with outsourcing the non-core part of your business.
+
+\item Most business needs do not require developers --- landing page templates are freely available, cloud computing services are a highly competitive market, data backup services are sold on a SaaS model. Hiring devs only makes sense if IT is the core of your business.
+
+
+
+
+\item At the turn of the 18-19th centuries, the language of international communication and scientific publications was French, at the turn of the 19th and 20th centuries, the language of scientific publications was rather German. Now the language of international communication and scientific publications is English. The language of international communication is the language in which people from all over the world have minimal knowledge of. Mandarin, Korean, Japanese will never become such a language: they are too difficult to learn. But any of them may well be the lingua franca in some regions.
+
+
+
+\item Why are some talented people afraid of pursuing a scientific career? Little money, a lot of routine and, most importantly, a very big chance to work hard and never get a prominent finding and a tenure contract.
+
+
+\item In structures that do not create new products but manage a financial flow, there is a struggle for every part of the financial flow, people intrigue against each other. This is a completely different way of thinking compared to people who are engaged in creation.
+
+
+
+
+
+\item Some students ask: what's the point of knowing e.g. the sine sum formula or the protein synthesis algorithm on the ribosome, how will it help anyone in achieving one's dreams? Here is my answer.
+
+\begin{itemize}
+
+\item First of all, you like to experience pleasure (anyone does). Studying offers two pathways towards pleasure: \textit{new information pathway} (for any human brain, whenever a new information is consumed, brain rewards the owner with the feeling of pleasure), \textit{success pathway} (for any human brain, whenever an activity results in what brain evaluates as <<success>>, brain rewards the owner with the feeling of pleasure).
+
+Studying can be unpleasant (\textit{no success pathway}): for any human brain, whenever an activity continues long enough without resulting in what brain evaluates as <<success>>, brain punishes the owner with the feeling of dissatisfaction. This punishment entails the subsequent will to distract, i.e. to avoid the punishment-causing activity.
+
+
+The most probable reason of \textit{no success pathway} getting activated is setting unrealistic goals. E.g. you've decided to understand quantum mechanics this evening and at the second hour you feel irritated due to the deliberate <<no success>>.
+
+
+Thus, one of the applications of studying is to use the way the human brain is wired to experience pleasure. To do that, avoid problems and papers which are too complicated for you at the moment. Instead, engage in activities that will highly likely end with <<success>>, i.e. study things that you will succeed in studying. In case you treat understanding a sophisticated topic as <<success>>, change this maladaptive belief as follows: break down the topic into small pieces and treat understanding every small piece of it as <<success>>.
+
+
+
+
+\item Sine sum formula, protein synthesis algorithm, as well as facts from astronomy, history, chemistry, are unlikely to help you in your work themselves. However, both via solving problems (mathematical, physical, chemical) and via studying historical, political, cultural changes, you acquire the following skills:
+
+- to extract facts and causal relationships from someone's text or speech
+
+- to discover facts and causal relationships yourself
+
+- to validate facts and causal relationships
+
+- to concatenate causal relationships into reasonings.
+
+These skills are indispensable for succeeding in any field, including relationships with others. Getting these skills is the most rewarding way to spend your teenage years. 
+
+These skills also lie in the foundation of cognitive behavioral therapy that has proven its effectiveness in relieving stress and anxiety. 
+
+
+\item Some (though not all) types of knowledge prevent illiterate behavior. Wrong treatment of a disease or illiterate investing your retirement savings can cost you a lot.
+
+
+
+\item In the era of global replacement of human intellectual labor by artificial intelligence and human manual labor by robots, a person who is insufficiently versatile has bleak prospects. Chances are, at some point such a person will struggle with finding a job to make a living.
+
+
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\item Three things limit us: laws of physics (they cannot be violated), our inner ethical code of conduct (which is not violated \textit{de facto}: in almost every situation we choose not to violate it), state laws that are not part of the inner ethical code of conduct (people feel okay about violating them but do it with caution).
+
+
+
+\item Always evaluate the risk of your profession becoming obsolete.
+
+
+\item Some of those who achieve great things do so out of hatred of the status quo. Why people who have everything hate the status quo is an interesting question.
+
+\item The most successful people work not on the fuel of discipline but on the fuel of obsession. They are madly carried away by problems that are so interesting only to them. There's little insanity in their eyes, they break through everything that gets in their way. 
+
+
+\item Надо заниматься созиданием, приносить пользу людям, создавать полезные продукты, создавать добавленную стоимость. Продавать друг другу воздух тоже можно, но это допустимо если жрать нечего.
+
+\item Довольно многое определяется рандомом. То, в каком веке ты родился, в какой семье родился, подсказали ли тебе идти куда-то что принесёт успех.
+
+В то же время вещи детерминированы в том смысле, что у любого события можно указать причину.
+
+
+% 1) всё в большой степени детерминировано, нет повода переживать, волноваться, нет неопределённости --- как только ты научишься решать квадратные уравнения, ты сможешь их решать, а до этого решать не сможешь
+
+% 2) если ты чему-то учишься, рано или поздно ты научишься
+
+
+
+\item The leading skill of some entrepreneurs is the charisma that allows them to convince of literally anything (that white is black and black is white). Such entrepreneurs are very confident when they act or speak, they have no fear of making a wrong decision or statement. They can blatantly state absolute nonsense with no confusion. Don't be like them.
+
+\item Let person A write to person B. If past communication with A resulted in a reward for B, then seeing a message from A is pleasant for B. If past communication with A resulted in punishment for B, then seeing a message from A is unpleasant for B.
+
+
+
+
+
+\item In a team of $n$ people, the complexity of project management is close to $2^n$ due to following reasons:
+\begin{itemize}
+\item each of your team members experiences unpredictable changes in their motivation to work
+\item dynamics of in-team personal relationships can be unpredictable as well
+\end{itemize}
+
+However, both you and your competitors face this problem to the same extent.
+
+
+\item If you do not satisfy 28 qualities, did not formulate a path following the results of work on the <<life algorithm for adults>>, do not follow the path formulated following the results of work on the <<life algorithm for adults>>, it is wiser to refrain from meeting serious people. Serious people are impressed by a clear knowledge of what you want and movement in this direction; if not, the second meeting may not take place.
+
+\item Being rich doesn't give you the feeling of safety, but concealing the information about your assets does. 
+
+
+
+
+\item We all are very different on personal level, including those with the same skin color, the same sexual orientation, the same level of education and the same level of income. 
+
+
+%\item Business is a game of speed. In this, it is fundamentally different from science and art. (even Coca-Cola and Gazprom are a game of speed?)
+
+
+\item Nothing lowers birth rate more than a city apartment. The desire to have many children is much more likely to arise when living in a country house (preferably multi-storey and with a larger plot).
+
+The reason for the sharp decline in the birth rate in the 20th and 21st centuries is the mass movement from countryside to apartments. There is nothing that reduces the motivation to have children more than an apartment. In the countryside, boys and girls are helpful.
+
+
+\item If you are serial entrepreneur, you only need to win once.
+
+\item Человек --- существо внушаемое, и окружение способно навязать ему почти любые представления о справедливости. Если вы вырастаете в обществе, в котором есть кастовая система, рабство, крепостное право, коммунистический передел собственности, и ваше окружение считает это нормой --- вы тоже начинаете считать это нормой. 
+
+История знает общества с самыми разными видами социального устройства --- кастовая система, рабство, апартеид, коммунизм, средневековое влияние духовенства. Люди, которые жили в этих обществах, принимали сложившееся социальное устройство.
+
+%У homo sapiens есть внутреннее понятие о справедливости, существующее независимо от тех представлений о справедливости, которые приняты в окружающем его обществе. Я бы назвал это hunter-gatherer представлением о справедливости: сколько рыбы выловил, столько у тебя и есть; сколько орудий труда ты изготовил или выменял, столько у тебя и есть; сколько зерна запас, столько у тебя и есть; не смей без спроса трогать чужое. Если опрашивать случайных людей на улице о том, что такое справедливый заработок, большинство будет отвечать нечто наподобие <<заработок, полученный в конкурентной среде>> и <<как поработал, так и заработал>>.
+
+%Таким образом, в рамках hunter-gatherer понимания справедливости справедливым является общество с нулевыми налогами без госрасходов на образование, медицину и пенсии, где каждый сам занимается повышением своей квалификации, каждый сам покупает ту медстраховку которая ему нужна, каждый сам инвестирует, откладывая себе на старость. Однако неверно, что мы хотим жить в справедливом обществе. На самом деле мы хотим жить в обществе с высоким качеством жизни.
+
+Внутригрупповые взаимоотношения любого общества можно описать набором из $N$ аксиом, упорядоченных в порядке убывания важности --- т.е. таких, что наибольший приоритет имеет первая аксиома, и в рамках тех степеней свобод, которые после этого остались, наибольший приоритет имеет вторая аксиома; затем в рамках тех степеней свобод, которые после этого остались, наибольший приоритет имеет третья, и так далее. В качестве самостоятельного упражнения читатель может выписать наборы упорядоченных аксиом для следующих обществ: Shariah law, US constitution and legislation, Древний Рим эпохи Нерона, древнеиндийское кастовое государство, Священная Римская Империя, поздний СССР, французская абсолютная монархия, конституционная монархия, южноафриканский апартеид.
+
+Аксиомы и их порядок, вообще говоря, могут быть любыми, и определяются вашими приоритетами. Для удержания власти силовыми методами нужен один набор аксиом, для максимизации качества жизни среднего человека --- совсем другой набор аксиом. 
+
+You can call it describing a political regime through axioms that its leaders impose on the society. Clearly, if you modify the list of axioms, the new list will describe another regime.
+
+
+
+
+\item Pros of having no cofounder(s) upon launch of a product:
+\begin{itemize}
+\item you cannot disagree on development with cofounder(s)
+\item you cannot disagree on fundraising with cofounder(s)
+\item you cannot disagree on PR \& marketing strategy with cofounder(s)
+\item you cannot disagree on hiring with cofounder(s)
+\item you cannot get angry and lose motivation due to the fact that cofounder(s) has lowered the requirements for himself
+\end{itemize}
+
+Cons of having no cofounder(s) upon launch of a product:
+\begin{itemize}
+\item you need to have competencies in all areas necessary for launch, not in some part of them
+\item you do not have a mate to discuss all the stuff with.
+\end{itemize}
+
+
+\item Тот, кто выплачивает зарплаты (принимает решение о размерах зарплат), де-факто обладает всей властью в компании.
+
+
+\item Люди, которые ничего не умеют, живут в страхе, что их уволят и они не найдут себе новую работу. Большинство взрослых людей не востребованы на рынке труда и живёт в страхе потери работы. Прикольно владеть востребованным ремеслом — тогда тебе наплевать, что тебя уволят, ведь ты моментально найдёшь себе нового работодателя/заказчика.
+
+\item При неудачном выборе школы ребёнок усваивает от одноклассников и/или учителей в том числе дезадаптивные установки, т.е. адаптивные в данном учебном заведении и дезадаптивные на глобальном конкурентном рынке труда взгляды на то какие цели следует ставить перед собой, как коммуницировать с другими людьми, какие методы достижения целей приемлемы.
+
+\item Если стать специалистом в некоторой теме легко, то владение ей редко влечёт за собой карьерные перспективы --- слишком много людей тоже стали в этом специалистами.
+
+
+\item We elicit behavior. We can start or stop a behavior, and we are driven by stimuli. Some stimuli urge to start or continue a behavior, some urge to stop it.
+
+Imagine no external enforcement.
+
+Компьютерная игра. Urge to start or continue: красивая картинка, победа в игре либо персонаж без особых проблем достигает целей. Urge to stop: поражение в игре либо персонаж с большим трудом начал достигать целей, присутствующее в некоторых семьях социальное неодобрение (<<опять ты своей ерундой занимаешься вместо получения квалификации и зарабатывания денег>>). Мобильные и компьютерные игры доставляют массу удовольствия когда ты выигрываешь либо продвигаешься вперёд (а делаются они так, чтобы игрок выигрывал либо продвигался вперёд почти всегда).
+
+Общение в соцсетях и мессенджерах. Urge to start or continue: внимание к социальному статусу, знакомство с новыми людьми противоположного пола. Urge to stop: общества в которых не придают значимости социальному статусу, присутствующее в некоторых семьях социальное неодобрение (<<опять ты своей ерундой занимаешься вместо получения квалификации и зарабатывания денег>>).
+
+Новости и случайные факты. Urge to start or continue: информация, притом лёгкая к усвоению. Urge to stop: присутствующее в некоторых семьях социальное неодобрение (<<опять ты своей ерундой занимаешься вместо получения квалификации и зарабатывания денег>>).
+
+Учёба. Urge to start or continue: получается продвинуться вперёд, социальное одобрение (<<наконец-то ты получаешь знания, сможешь себя прокормить и маме помочь>>), социальный статус (<<буду хорошо зарабатывать и красиво жить>>). Urge to stop: не получается продвинуться вперёд (понять некоторый новый материал либо решить задачу).
+
+
+
+Как видно, urge to stop возникает намного чаще в случае с учёбой, чем в случае с другими активностями. Причина человеческого нежелания учиться в древнем психическом механизме: то, что получается, приятно и хочется продолжать; то, что не получается, неприятно и хочется прекратить. Решается это просто: учиться должно быть так же просто, как играть в компьютерную игру. От того, что вы оградите себя от всех остальных активностей (компьютерных игр, соцсетей итд), продвижение в теме либо задаче you've stumbled upon не будет.
+
+
+
+На это можно ответить следующее. Действительно, первопричин того, что некоторый человек не овладел некоторой сферой знаний, три:
+
+- нет мотивации изучить тему Х: изучение темы Х ни вызывает социальное одобрение (подкрепление), ни вызывает избегание социального наказания (мамка будет орать если провалишь экзамен или уволят), ни рисует внятные карьерные перспективы % не требует вмешательства --- ни одна психика не будет получать знания без понятной внутренней мотивации
+- мотивация есть, но есть компульсивная тяга к другому времяпрепровождению --- возможность провести время значительно интереснее, она выигрывает конкуренцию за время (компьютерная игра, вечеринка)
+- мотивация есть, компульсивной тяги к другому времяпрепровождению нет, но изучение темы Х неприятно, т.к. сложно (нет текста или видеоматериала, где тема Х изложена кристально ясно).
+
+
+Первопричин у человеческой неуспеваемости две:
+- нет мотивации изучить тему Х: изучение темы Х ни вызывает социальное одобрение (подкрепление), ни вызывает избегание социального наказания (мамка будет орать если провалишь экзамен), ни рисует внятные карьерные перспективы
+- мотивация есть, но изучить тему Х сложно (нет текста или видеоматериала, где тема Х изложена кристально ясно).
+
+
+О первой первопричине. Насчёт перспектив --- Countryname maintains the state-forming product <<Labor market>>, используя который, каждый может сделать вывод, какие темы влекут за собой карьерные перспективы а какие нет. Что касается того, что у вашего окружения вызывает социальное одобрение а что не вызывает --- вопрос, на который государство без полного контроля над медиа повлиять не может, а причины отказа от этого контроля изложены в комментарии к Article Y. 
+
+
+
+\item Services shall not be funded by those who do not use them. Psychotherapy is a service. Religion is one of the branches of psychotherapy. As a consequence, any religion shall not be funded by those who do not use it. Everyone shall choose their branch of psychotherapy on their own and pay for their psychotherapy on their own upon every usage.
+
+
+\item Есть профессии, сама суть которых предполагает, что у любого из работников почти каждый день не получается вообще ничего, а карьерные перспективы прямо зависят от достижений. Это профессии, связанные с ресёрчем и изобретательством. Например, такова работа в науке — наука это когда работник ищет неизвестные человечеству факты, и кому повезло наткнуться на что-то важное до 30-35 лет тот сделал карьеру, а кому не повезло, с тем не продлили контракт и тот остался без возможности найти себе нового работодателя в этой сфере. Такова работа в R \& D department of a for-profit company. Такова работа поэта — в большинство дней людям этой профессии за день не удаётся написать вообще ничего качественного. Такова любая попытка повышения квалификации.
+
+Есть профессии, на которые публикуется мало вакансий, и работники таких профессий часто не знают, как ответить себе на мысль (how to counter the thought) <<что мне делать если меня уволят>>.
+
+Тревожное расстройство может быть вызвано выбором профессии.
+
+
+
+
+
+\item Мне нравится посыл у Сапольски, что религия --- шизофрения (у лидеров) + окр (у обычных последователей)
+
+один человек придумал «учение», суть которого — если делать А, В и С, всё у вас будет хорошо
+
+суть обсессивно-компульсивного расстройства — если делать ритуалы А, В и С, всё будет хорошо (мыть руки по 10 раз в день, молиться)
+
+религия это просто набор ритуалов для людей с ОКР
+
+не так важно какие ритуалы, важно, что больные ОКР, проделав их, испытывают облегчение
+
+
+
+
+
+\item Человеческие страдания вызваны постановкой малореалистичных целей (стать великим ). Если цель простая, достижимая с вероятностью 1 --- страданий нет. (Впрочем, стремиться к малореалистичным целям можно и без переживаний --- подобно тому как художник пишет картину несколько лет.)
+
+\item Надо сказать, что наебалова в мире достаточно много. Почти любая работа --- наебалово. Преподавание школьникам того, что им не нужно, но того, что требуется по программе --- наебалово. Продажа услуг, которые людям не настолько уж нужны --- наебалово. Любые деньги, которые ты взял за свою работу, ты у кого-то отнял.
+
+Вам, вероятно, будет неприятно получать деньги за то, в чём вы не создаёте добавленную стоимость для того, кто платит вам деньги.
+
+Какие виды занятий являются этичными? Можно ли огласить полный список?
+
+Великие --- те, кто повышает качество жизни других людей. Сам факт внимания широких масс людей к вам не означает, что вы повышаете качество жизни других людей. И наоборот, факт невнимания широких масс людей к вам не означает, что вы не повышаете качество жизни других людей.
+
+Шальные деньги бывают. Но если вы не умеете придумать продукт либо приносить пользу продукту (брать на себя и выполнять некоторый функционал), вы не сможете заработать. В школе надо учить в том числе придумыванию продуктов, и разбиению продукта на позиции с чётким функционалом.
+
+
+
+
+«работа» это в большинстве случаев неэтичная штука 
+
+большинство бизнесов продают если не воздух, то нечто, что людей на самом деле не делает счастливыми
+
+посмотри на «ставки на спорт»
+
+посмотри на косметику, которая говорит тебе «ведь ты этого достойна». Сделает ли одинокую бабу счастливой шоппинг в ЛЭтуале? Нет, нет и нет. Но работники ЛЭтуаля работают на то, чтобы уговорить бабу оставить в ЛЭтуале как можно больше денег.
+
+Повысит ли соковыжималка из Эльдорадо качество жизни покупателя? Нет, он будет пользоваться ей 2 раза в месяц, а стоит она дохрена. Но тем не менее Эльдорадо заказывает рекламу соковыжималки у Дудя. (Там в рекламе на самом деле не соковыжималка, а какой-то экзотический гриль для жарки мяса, нужный только на голову больным шопоголикам)
+
+Повысит ли начинающий исследователь в сфере искусственного интеллекта (21-летний выпускник вуза) прибыль Huawei Russia, которая его наняла? Нет, потому что он во-первых юный и начинающий, а во-вторых потому что он не общается с людьми принимающими решения в Huawei (китайцами, сидящими в головном офисе в Шеньчжене). Такому человеку работать в Huawei значит наебать Huawei, воспользоваться тем, что у них в отделе кадров сидят девочки, которым премию платят не за то что они принесли пользу бизнесу, а за то что они наняли определённое количество людей.
+
+Повысит ли техлид, который решил переписать весь код продукта на языке Kotlin потому что это его любимый язык, прибыль компании? Нет, он занимается тем что лично ему интересно, а не тем что влияет на прибыль компании. За счёт того, что никто не понимает, чем занимаются технари, он может делать бесполезные для компании вещи, которые ему хочется делать. Встречается сплошь и рядом — технарям похуй на бизнес-задачи компании, им интересно реализовать красивый алгоритм или другое технарское дрочерство. Если прогеров не ебать жёстко, не следить за тем чем именно они занимаются, они в 100% случаев начинают делать то что вызывает у них эстетическое удовольствие вместо того чтобы делать то что нужно бизнесу. 
+
+
+этичного зарабатывания денег, т.е. продажи клиенту того, что повышает качество его жизни, очень мало
+
+этичного найма, т.е. найма, при котором сотрудник приносит пользу бизнесу, а не просто имитирует штаны, тоже мало
+
+я не очень вдохновлён перспективой продавать какое-то говно, которое мне неинтересно
+
+повышать процент людей кликнувших на это говно с 10% до 12%
+
+участвовать в программировании этого говна или в управлении программистами, пишущими это говно
+
+пойми, жизнь одна, и не хочется тратить её на рост числа пользователей Сбермаркета или что-нибудь такое
+
+хочется тратить её на реально полезные и интересные вещи
+
+\item There are statements that you can prove right away without using trusted sources (the Pythagorean theorem, the fact of light refraction at the air-water interface). There are statements that cannot be proven both quickly and without trusted sources (<<World War II started in 1939>>, <<in humans, neurogenesis occurs in hippocampus and in olfactory bulb>>). And there are statements that cannot be proven at all (<<Isaac Newton pondered how the inheritance of biological traits works>>, <<2000 years ago it was a rainy day on the territory of modern Paris>>). Any reduction in uncertainty (any new information), thanks to millions of years of natural selection, is subjectively pleasant; statements that can be proven without trusted sources are more pleasant since they reduce uncertainty stronger.
+
+\item Нельзя сказать, что дать на лечение тому, кто прямо сейчас нуждается --- плохой поступок. Но можно подойти к вопросу благотворительности системно.
+
+
+\item Чем объёмнее задача, тем меньше хочется её делать. Это так, видимо, за счёт того, что мозг прогнозирует "неуспех" (не чувствует обозримость успеха) и отказывается в этом участвовать.
+
+%Делать работу, когда ты знаешь как её делать, легко и приятно.
+
+
+\item В прошлые века расправы над группами лиц приводили к резкому росту качества жизни тех, кто участвует в расправах, ведь у жертв отбиралось имущество. Этот рост качества жизни, однако, был краткосрочным. Расправы над людьми снижают инвестиционную привлекательность юрисдикции, а часто и приводят к наложению международных санкций и ограничению торговли и, как следствие, снижают в том числе уровень жизни тех, кто расправляется --- не говоря уже об уровне жизни тех, над кем расправляются. (Но это не касается, например, призывов к насилию над лицами, неэтично ведущими себя.)
+
+Расправа с некоторой социальной группой действительно повышает уровень жизни тех, кто осуществляет расправу. Поэтому агитация за расправу эффективна.
+
+Людям приятно верить, что существуют простые (несложные в осуществлении) решения (<<отнять всё у богатых и поделить>>, <<отнять всё у геев>>, <<напасть на соседнюю страну и разграбить её>>), приводящие к резкому росту качества жизни. Немало людей можно убедить, что расправа с некоторой социальной группой повысит их уровень жизни: даст возможность забрать деньги и иное имущество, освободит рабочие места, создаст новые рабочие места. Люди, которые такие решения озвучивают (предлагают), с большой вероятностью станут популярными, потому что обещают более простой способ роста качества жизни, чем получение востребованных навыков. У некоторых людей популярность --- самая сильная награда. Такие люди будут делать ради популярности то, что работает.
+
+Интересно, что почти все из этих public calls действительно повышают уровень жизни причастных. Создание тайной полиции повышает уровень жизни полицейских. Создание новой бюрократической структуры повышает уровень жизни тех, кого поставят ей руководить. Закрытие зарплат госслужащих повышает уровень жизни госслужащих. После успешных грабительских набегов те, кто выжил, обладают существенно более значительным имуществом, чем до набега. Во времена инквизиции в некоторых странах пожаловавшемуся на колдовство жителю отдавали часть имущества приговорённого к смерти, так что уровень жизни пожаловавшегося рос. 
+
+Успешная вооружённая агрессия действительно приводила к резкому росту качества жизни.
+
+
+\item Для насилия достаточно, что есть группа, которую вы определяете как свои, и есть группа, которую вы определяете как чужие. Homo sapiens так устроены, что с удовольствием делят общество на <<своих>> и <<чужих>> и начинают враждовать. Homo sapiens нравится чувствовать причастность к большой группе, в которой любят друг друга и ненавидят врага.
+
+%Для насилия достаточно, что вы состоите в одной группе по какому-либо признаку, а другие люди состоят в другой группе. Homo sapiens нравится чувствовать причастность к большой группе, в которой любят друг друга и ненавидят врага. Это было очень важно для выживания. Разжечь насилие очень легко; людям нравится чувствовать причастность к большой группе, в которой любят друг друга и ненавидят врага.
+
+% Человеческая природа такова, что люди легко и с удовольствием делятся на <<своих>> и <<чужих>>. Homo sapiens эволюционно формировались в условиях, когда важно было быстро определять, кто свой, кто чужой. Мозгу нужны shortcuts о том, кто свой, кто чужой; с кем едой поделиться, а кого копьём проткнуть. Лучше всего для этого подходят расовые признаки.
+
+
+\item Each founder must be a professional psychotherapist, as well as a professional engineer, as well as a professional PR specialist. Otherwise, he will not be able to hire the best people, and those who he can will demand non-market money and non-market influence.
+
+\item Libido works the same for all people, since those with non-adaptive genes were wiped away by natural selection. Human libido has five components:
+
+\begin{itemize}
+
+\item social status of a potential or permanent partner
+
+\item unwillingness of a potential partner to mate (awakens competitive interest) 
+
+\item devotion (knowing that you're ready to do anything for your partner and/or your partner is ready to do anything for you)
+
+\item adaptability (knowing that your partner behaves rationally and the offspring will survive)
+
+\item physiological component (health, youth, genetic dissimilarity)
+
+\end{itemize}
+
+\item the unchanging over time answer to the question <<why have you chosen me>>, enthusiasm for my life-long plan 
+
+\item willingness to agree with me on all issues that are important to me (I will make all the key decisions for us two)
+
+\item discernment: my partner shall constantly think about what I want at the moment and how I feel
+
+\item mental health: calmness, no imprecise statements, goal-oriented behavior, no pleasure from people's favor or recognition, no interest in anything luxury, no high-risk behavior, no talking too much
+
+\item research mindset: regular solo study of mathematics, astrophysics, particle physics, cytology, poetry, human physiology.
+
+% на моё либидо сильнее всего влияет социальный статус потенциального партнёра и её уверенность в себе
+% ну вот на моё - наличие амбиций
+
+%Здесь стоит заметить, что во время эволюции человека социальный статус и власть ничем не отличались (ну это тоже неправда, социальный статус у всех есть, а власть не у всех)
+
+
+\item Быть лучше тех, кто вокруг, обладать конкурентным преимуществом, обладать win condition субъективно приятно. Быть хуже тех, кто вокруг, субъективно неприятно. Интересно, почему это так?
+
+\item Почему делиться знаниями приятно? По двум причинам: ты получаешь награду из-за того, что лучше кого-то; ты получаешь награду из-за того, что помогаешь другому человеку.
+
+Почему людям нравится проводить время в загнивающем родном городе, с глупыми родственниками, с глупыми коллегами? Потому что это позволяет реализовать мотивацию 14 (сравнение в свою пользу).
+
+
+Почему люди проповедуют (стараются убедить других в чём-то)? Мотивация 5.
+
+
+Почему люди любят давать советы? Потому что им кажется, что это способ почувствовать, в зависимости от ситуации, либо уважение к себе (мотивация 14), либо одобрение себя (мотивация 1).
+
+\item Существует ли такая мотивация, как <<преодоление препятствий>>? Да, это мотивация 16. Желание соревноваться и побеждать это она. Азарт и риск (казино, экстремальный спорт). Удовольствие от преодоления. Удовольствие от того, что обыграли контрагента в сделке.
+
+\item Чем вызвана потребность вступать в близкий социальный контакт или эмоционально раскрываться с теми, кто ниже тебя в социальной иерархии, и лимитировать своё общение или эмоционально закрываться с теми, кто равен или выше? Потребность эмоционально закрываться с крутанами вызвана тремя аверсивными стимулами --- собственным сравнением в не свою пользу, страхом произвести негативное впечатление и страхом, что будет дискомфорт из-за обязанности поддерживать неинтересный диалог. 
+
+Чем меня смущают встречи вживую? Теми же двумя аверсивными стимулами (необходимость сидеть и вести неинтересный диалог, боязнь отвержения).
+
+
+
+\item Registering your relationship makes sense in cases of inheritance event, imprisonment of you or your beloved, getting into intensive care of you or your beloved, divorcing this idiot to get half of his wealth. Besides that, there's no need to register. You don't need to register your relationship to live and raise children with your beloved. There is something strange about registering your love, care and affection with government.
+
+Not many comprehend they are likely to lose no less than half of their assets by marrying and divorcing, especially if minor children are involved.
+
+
+
+\item Почему одни люди испытывают любопытство к одним вещам (чёрные дыры), а другие --- к другим (Алла Пугачёва)?
+
+\item Почему людям интересны трагедии и их детали? Почему детали трагедий вызывают больше любопытства, чем обычные новости? Трагедия --- это новость о том, что кто-то испытывал сильнейшие эмоции.
+
+
+\item Профессиональный рост (рост вашей квалификации) и карьерный рост (рост вашей сферы ответственности) не очень-то и связаны. Вы можете иметь очень высокую квалификацию как профессионал и занимать низкую позицию (или вообще не работать по этой специальности), вы можете иметь низкую квалификацию как профессионал и занимать высокую позицию (то есть брать на себя задачи, которые вы не умеете хорошо решать).
+
+
+\item Почему сближение (как сексуальное, так и дружеское), за которым последовало отдаление, приводит к негативным эмоциям у обоих? Потому что А настроил (нафантазировал) планов на будущее, а В решил не соответствовать чужим ожиданиям и отдалиться. Соответственно, у А префронтальная кора не сумела правильно предсказать поведение и получает заслуженный негативный стимул, а В избегает А т.к. мозг А помнит, что с В связаны негативные эмоции.
+
+\item Поглощение сложного контента имеет две цели: чистое любопытство и повысить свой социальный статус. Поглощение простого контента имеет одну цель: отдохнуть.
+
+Поглощение сложного контента может иметь разные цели: любопытство, социальный статус, власть, желание соревноваться и победить.
+
+% Есть два типа приятного веб-сёрфинга. Один --- с целью разобраться в чём-то до деталей (сопряжено с поглощением сложной информации, т.е. аверсивным стимулом, но и с подкреплением в виде реализации мотиваций 2/14 тоже). Другой --- без этой цели (происходит поглощение простой информации, это мотивация 2, либо поглощение смешной информации, это мотивация 15).
+
+
+
+\item Чем вызвано счастье, которое я испытываю, когда выхожу на оппозиционный митинг (впадаю в религиозный экстаз, болею на фанатской трибуне за любимый клуб)? \textit{(<<Чего ради люди выходят на улицы, кроме того, что есть формальный повод, удовлетворяющий критериям? А потому что воодушевлённая толпа воодушевляет. У людей есть потребность в чувстве общности, в единой цели, это одно из мощнейших эмоциональных переживаний. Именно поэтому люди так прутся от футбольных матчей, или религиозных экстазов, или шествий с факелами. Это социум, который можно пощупать, не как абстрактную категорию, а как живую бесконечно могучую зверюгу, которая любит тебя и ненавидит твоих врагов, прямо сейчас.>>)}
+
+Существуют группы людей с убеждениями, групповые идеологии, секты, культы — религиозные, политические, деструктивные, авторитарные. Тренинги личностного роста навроде Lifespring. На собраниях адептов люди испытывают сильнейшую эйфорию от группового единства, от информационной наркоты, которая контрастирует с серой реальностью. Чем вызвано желание быть частью какой-то большой группы (секты, религии, идеологии)? Мотивацией 5. Ксенофобия, кстати, растёт отсюда же. Религиозные теракты это тоже мотивация 5.
+
+
+\item Почему люди получают удовольствие от решения задач? Если они делают это в одиночку, то причина — в зависимости от характера, либо азарт, fighting spirit (мотивация 16), либо любопытство (мотивация 2). Если это решение задач, которые поднимут социальный статус, или решение задач совместно с кем-то (в рамках репетиторства, в рамках соревнования, в рамках попытки доказать гипотезу Пуанкаре), то причина, очевидно, мотивация 14.
+
+
+
+
+\item Почему людям приятно читать новости, подтверждающие их картину мира, и неприятно читать новости, разрушающие их картину мира? Видимо, дело в базовой мотивации <<удовольствие от предвидения>>. 
+
+Чем вызвано оперантное научение и удовольствие от сбывшегося предсказания?
+
+
+Чем вызвана зависимость от компьютерных игр? \textit{<<Она восходит к условной базовой мотивации <<удовольствие от предвидения>>. Человеку нравится делать сбывающиеся прогнозы. Это основа оперантного научения. Это важно биологически. Когда животное живет в сложной и меняющейся среде, когда он не висит как коала на ветке круглый год, когда ему для выживания необходимо менять поведение --- становится важным умение предугадывать последствия своего поведения, оценивать риски, предсказывать выигрыши и тому подобное. Такое поведение получает подкрепление. Нам это нравится, и мы склонны поступать так снова и снова, и от этого наши адаптационные возможности возрастают. Это все осталось и у современного человека, и из этого вырастают все наши увлечения рисками, неопределенностью и желанием узнать что будет --- от азарта в казино до астрологии и разных нострадамусов.>>}
+
+
+
+\item People tend to extrapolate the current status quo into the future, but paradigm changes happen unexpectedly. Changes of political and other paradigms can be described by the phrase <<it was forever and ever, until it was over>>.
+
+%\item Robert Sapolsky once noted that religion is schizophrenia in leaders + OCD in followers. I would comment that generating any content and, in particular, writing fiction or music is not that far from schizophrenia.
+
+
+\item Успех отдельно взятого человека зависит от стартовой позиции (окружения), интересов (определяющимися генетическим кодом), рандома (не попадал в авиа и автокатастрофы).
+
+
+
+\item Some knowledge of an industry can be gained at home via internet, some --- by talking to working professionals, some --- only by working in the industry yourself.
+
+\item Вообразим, что вы распоряжаетесь всем мировым финансированием наук о жизни. Каков, на ваш взгляд, наиболее разумный способ это сделать? Если можно, хотел бы попросить вас дать ответ в виде точной формулы. А именно, пусть (i,j) — научная группа номер i из числа тех, которая занимается темой (неизученным сюжетом) j. Обозначим общее количество неизученных сюжетов за N. Есть метрика квалификации учёных из каждой группы Q(i,j), что бы это ни значило (это может значить среднее арифметическое трёх самых больших хиршей этой группы, к примеру).
+
+В одном из интервью вы говорили, что деньги давать надо всем, потому что угадать, изучение чего приведёт к следующему важному фундаментальному открытию, невозможно. Означает ли это, что общий бюджет в \$X нужно поровну распределить по N неизученным сюжетам (чтобы народ перетекал из более модных сюжетов в менее модные), и полученные бюджеты в (1/N)*\$X распределять между группами пропорционально метрикам квалификации Q(i,j)?
+
+
+
+\item On the so-called <<dopamine detox>>: indeed, abstaining from a pleasure makes the future pleasure stronger. This works at the receptor level: when intensity of a pleasure drops, cells synthesize more receptors for it. The most delicious breakfasts are when you're hungry. The most interesting Internet is when you've been deprived of it for a long time. The most pleasant journey is when you haven't had it for a long time.
+
+That is, biologically it works, you can do this. But suffering for the sake of a higher level of subsequent pleasure causes mood swings, which are harmful to mental health, I would not advocate this. Prohibited substances harm mental health exactly via mood swings.
+
+%\item Рост профессионализма со временем: в фигурном катании, в футболе, 
+
+%В любой достаточно долго существующей индустрии нужно всё больше и больше времени, чтобы достичь высокого уровня (добраться до вершин). Уровень, который нужно показывать футболистам или в фигурном катании, вырос кратно за последние 20 лет. К технологиям это относится не в меньшей степени. С другой стороны, вырос и доход этих людей, и слава. И  обучение на каждую из этих профессий более-менее стандартизировалось.
+
+%Чем больше людей занимаются чем-то профессионально (фигурным катанием, футболом, машинным обучением), тем выше уровень конкуренции и тем сложнее достичь вершин. Вполне возможно, выбирать нужно сферу с низким уровнем конкуренции. <<Или будь уникальным в своём деле, или не занимайся им вообще>>
+
+\item Если вам нужно понравиться человеку, говорите на темы, которые ему интересны.
+
+
+
+
+\item Always have simple tasks, i.e. ones that you know how to do (reading a book as an example).
+
+
+\item With few exceptions, people around us do not have realistic life-long plan that they monotonously execute.
+
+\item Read some stories about how people agreed to carry a bag for a friend from one city or country to another and are now imprisoned for life since there were illegal drugs in the bag. Do not carry bags that you did not assemble with your own hands (an exception can be made for your parents).
+
+
+\item Don't let external factors (such as amount of money, political regime or family) influence your life-long plan. You can do what you planned to in almost any conditions; Leray invented spectral sequences in a concentration camp, Schwarzschild got his solution for black hole gravitation equations in a hospital. If the political regime prevents you from working, leave. However, most political regimes do not interfere with your work. (In general, live where it is best for your everyday life.)
+
+There is no need to make an emotional change of place you live in or tax jurisdiction due to the fact that you do not like the political system. Act rationally.
+
+
+\item Люди легко и с удовольствием делают то, что они умеют, и прокрастинируют то, что не знают как сделать. Учитывайте это при найме. Не нужно нанимать человека, который не знает как сделать задачу --- вы оба только расстроитесь от такого сотрудничества.
+
+% люди легко, с удовольствием и бесплатно делают то, что для них легко
+%люди прокрастинируют то, что не знают как сделать
+
+Даже олимпиады возьми. Те задачи, к которым ты не знаешь как подступиться, раздражают, отталкивают. Те задачи, которые ты знаешь с какой стороны начать крутить, вызывают желание это сделать.
+
+
+
+\item Не беритесь за работу, если пока что не знаете, как её сделать.
+
+
+
+\item The ego is completely wiped away with the first serious disease. If serious diseases passed you by, there's another method of ego destruction --- to be interested in evolutionary biology, the origin of the Earth and when the Earth will leave the habitable zone.
+
+Sobriety is more adaptive than insobriety. 
+
+I have the same significance as a plant. Yes, it has grown, it may have won the competition with other plants for a place in the sun. But it will certainly die, and other plants will grow in its place, just as other people will live in my apartment after me.
+
+\item Autocratic regimes hold on the three pillars: lies, fear, economic well-being.
+
+\item Какие игры аддиктивны, а какие нет?
+
+
+
+
+
+\item Mental health and crystal clear understanding of causal relationships are virtually the same thing.
+
+\item You shall learn to estimate task complexity as accurately as possible. This will allow you to correctly assess the times for completing tasks and, more importantly, save mental health preventing you from mood swings.
+ 
+\item The difference between physics and such areas of knowledge as mathematics or biology is that physics seems to be finite, and therefore it looks like it can be cognized in its entirety. Tasks that seem to be executable (<<study all the physics>>) are more pleasant to the brain than those that seem to be not (<<study all the mathematics>>).
+
+\item What you own begins to own you. Buying an apartment or opening a business in a country makes you vulnerable to the government of that country. Placing funds in a bank makes you vulnerable to the management of that bank.
+
+\item Four factors contribute to the financial stratification: variety of starting positions, asymmetry of information, variety of sets of strongest basic motivations, variety of risk tolerance.
+
+%\item Любая ли плановая экономика (жёстко регулируемая сверху экономика, в найме у которой находится всё население страны) приводит к банкротству?
+
+%\item Государство это массовое помешательство, такое же как религия, такое же как боление за один футбольный клуб. В действительности между нами нет ничего общего, кроме умения объясниться на одном языке. У меня гораздо больше общего с людьми, похожими на меня, живущими в других странах. Не факт, что у вас много общего с вашими соседями. Вполне возможно, что у вас гораздо больше общего с кем-то, кто живёт в другой стране.
+
+\item The deal only took place if you were paid. Even a signed contract does not guarantee you will ever receive the money.
+
+\item People bond to those with similar values, people separate from those with opposite values. Most likely, the reason is that people who have similar values have some genes in common, and helping someone with the same genes is the mechanism that improves reproductive success of these genes. 
+
+For basic desires on which two people are matched --- that is, both have a strong need for the desire, or both have a weak need, the individuals share the same value, tend to understand each other, and generally think positively about one another. For basic desires on which two people are mismatched --- that is, one has a strong need for the desire while the other has a weak need, the individuals have opposing values, tend to misunderstand each other, and generally think negatively about one another.
+
+\item Is the idea of electoral educational or property qualification good?
+
+% The problem with educational, property qualifications, <<class A votes and class B votes>> or constructions like quadratic voting is that they bear the risk of destabilization: state decisions affect every inhabitant of the territory (the variety of jobs and average wages depend on that decisions). % Therefore, everyone should have a <<voting share>>. 
+
+% Another argument is that humanity has not yet come up with any way to introduce a qualification that excludes the risk of corruption and gerrymandering. 
+
+If you try to come up with an effective educational qualification that cannot be easily circumvented, you will see that it is not so easy to do. As for property qualification, this is definitely a very unpopular step that would lead to tension in society and carry the risk of destabilization.
+
+It is better to defend against the imbecile decisions of the crowd not by electoral rights restrictions, but by decisions taken at the very start of statehood --- by direct constitutional ban of everything that is unacceptable.
+
+
+
+
+
+
+\item Systems tend to reproduce themselves. If you are raised among musicians (scientists, artists, businessmen), you are likely to inherit their patterns of thinking and grow up like them. If you are raised in poverty among little-educated people, you are likely to inherit their patterns of thinking and grow up like them. Kids who do not understand in which social elevator to invest their childhood, adolescence and early adulthood have little chance of breaking out of poverty.
+
+\item Can all the civil servants, including cleaners, be elected in direct elections, since we pay them their salaries? No, voters should let every head independently build their personnel policy: the head, whose subordinates are not appointed by him, will always have the opportunity to justify unsatisfactory results by this. Voters can compare the CVs of several clerk candidates and vote for the best CV, but they cannot assess the actual work quality of each individual clerk. 
+
+\item Why is federalization (economic autonomy of regions) better than the division into the new independent states? The reason is, such division carries three types of risks:
+
+\begin{itemize}
+
+\item the duty-free movement of goods between the regions will be disrupted (any duty leads to higher prices for consumers)
+
+\item there's the risk that some of the heads of the new states would dispute the new state borders, turning this into military aggression and armed conflict
+
+\item in the newly formed states, a variety of unacceptable things that are directly prohibited by Constitution may become possible (violation of property rights, female circumcision, religious fundamentalism, dictatorship, cult of personality)
+
+\end{itemize}
+
+
+\item If you want a person to like you, talk to that person only about things they're interested in or preoccupied with. Talking about your own interests and worries is the common mistake.
+
+\item There are things that do not depend on the place and political regime you live in (such as psychology, physics, math). Focus on these during your education.
+
+\item The set of people who care about your problems is extremely limited. Here it is:
+\begin{itemize}
+\item parents
+\item people who enjoy diving in other people's problems
+\item people who like your life-long plan, who want the problems that you solve to be solved.
+\end{itemize}
+
+(Caring about your problems does not mean that the person understands you.)
+
+\item Какие представления о справедливости свойственны всем homo sapiens без исключения, а какие зависят от социальной среды, в которой формируется и/или живёт человек (которая окружает либо окружала человека)? Для ответа на этот вопрос заметим, что:
+
+\begin{itemize}
+\item крестовые походы и коммунистические переделы собственности совершались во имя справедливости, и немалая часть участвовавших в этих событиях людей искренне верила в справедливость происходящего
+
+\item средневековая инквизиция подавалась обывателю как торжество справедливости
+
+\item Платон и Пифагор рассуждали о добродетели, но имели рабов и им в голову не приходило, что в рабстве есть что-то дурное
+
+\item княжеские, дворянские титулы наследовались, а сын слуги становился слугой 
+
+\item индийская система каст существовала очень долго и была нормой того общества (информации о протестах против кастовой системы нет или почти нет)
+
+\item большинство людей считает, что ситуация, при которой они раз в год отдают внушительную долю от своего заработка в виде налогов, справедлива.
+\end{itemize}
+
+Таким образом, основную массу людей можно убедить в справедливости почти любой формы общества. В то же время, некоторая небольшая доля людей будет протестовать, особенно если раньше было не так (есть динамика) или если известно о том, что в других странах не так.
+
+
+
+%сформированы эволюционно и являются частью нашей физиологии, а какие навязаны социумом? История знает немало сомнительных событий под лозунгом торжества справедливости.   тоже не вызывала вопросов у современников. 
+
+%Человек --- существо внушаемое, и наши понятия о справедливости являются довольно гибкими. 
+
+
+
+%Таким образом, высокоуровневые представления о справедливости обычно навязаны окружающей средой. В то же время, низкоуровневые представления о справедливости мы имеем свои собственные. Есть знаменитый эксперимент: два капуцина получают вознаграждение: одна огурец, другая виноградину. Та, которая получает огурец, кидает его обратно и в бешенстве трясёт клетку. Если предположить повторяемость (фальсифицируемость) этого эксперимента, получается, понятие несправедливости доступно даже капуцинам.
+
+
+
+%Вот кшатрий, вот слуга, а вот Его Сиятельство Князь, звания выдаются в начале игры и изменить их невозможно. За счёт пропаганды, если она эффективна, большинство людей верит в естественную иерархию, господство элит. 
+
+\item People who tolerate the injustice do it for the two reasons:
+\begin{itemize}
+\item it may be unclear what kind of actions could be both efficient and risk-free (in some countries, authorities monitor for unapproved political activity and cause troubles for activists)
+
+\item if your income is higher than you would have in fair society, rational calculation typically outweighs the desire for social justice.
+\end{itemize}
+
+\item People tend to move their savings to jurisdiction where they want to live after retirement. %which they regard safest for the savings and/or where they want to live after retirement. 
+
+%In those jurisdictions prices are relatively high and salaries are relatively high. (Proof: part of these savings is used for investment, these investments creates jobs, the more jobs the more competition for qualified employees, the higher salaries, the higher prices.) % Одно дело --- safest jurisdictions, другое дело --- инвестиционно привлекательные юрисдикции. Разные вещи.
+
+
+%\item Если судебная система обладает безупречной репутацией, есть мотивация переводить свой капитал в такую юрисдикцию и обзаводиться в ней собственностью (бизнесом, ценными бумагами, недвижимостью). Если репутация судебной системы сомнительна, мотивация к притоку капитала и приобретению собственности ниже, т.к. в такой юрисдикции в любой момент, когда ваша собственность заинтересует более влиятельных людей, вы можете быть от неё избавлены. (Нет смысла зарабатывать второй миллион, когда в любой момент могут отобрать первый.)
+
+% Несправедливость демотивирует заниматься созиданием: зачем созидать, когда результат труда у тебя могут отобрать?
+
+\item Существует ли экономика в юрисдикциях, в которых репутация судебной системы сомнительна? Да, конечно. Бизнесы в таких экономиках могут быть классифицированы следующим образом:
+
+\begin{itemize}
+\item бизнес лиц, близких к лицу с властными полномочиями (президенту, губернатору, прокурору, министру, главе полиции)
+\item бизнес с коротким производственным циклом (сроком возврата инвестиций)
+\item бизнес, в котором личность владельца незаменима (который не может автономно приносить прибыль, если заменить владельца)
+\item бизнес лиц, понимающих, что их собственность в любой момент может быть отнята у них в пользу лица, близкого к лицу с властными полномочиями (кстати, отъём активов нельзя произвести без повода, поэтому перед этим посадят в следственный изолятор, затаскают по судам и допросам).
+\end{itemize}
+
+%Торговля агропродуктами не может производиться никак, кроме как с регистрацией юрлица в такой стране. Однако все юрлица, которые могут быть зарегистрированы в другой стране, будут зарегистрированы.
+
+Из-за странового риска рыночная оценка коммерческих компаний, зарегистрированных в автократических юрисдикциях, ceteris paribus в несколько раз меньше, чем в демократических. А значит, гораздо меньше инвестиций может быть получено на развитие, и поэтому сложно платить сотрудникам такие же зарплаты, как в демократических странах (выиграть финансовую конкуренцию за таланты).
+
+
+
+
+
+
+% Диктатор не ограничен законом и потому активно вмешивается в распределение собственности (подконтрольный суд всегда принимает сторону диктатора). 
+
+% Поскольку диктаторы во всём видят угрозу своей власти, их окружению свойственно играть на этом страхе, наговаривая на людей, обвиняя их в нелояльности, с целью инициировать отъём собственности и стать бенефициаром этого отъёма (или с целью получения иных преференций). 
+
+% Именно бизнес создаёт услуги, производит товары, создаёт рабочие места --- всё то, что приводит к росту качества жизни. А ещё точнее --- конкуренция между бизнесами. 
+
+% Если суд беспристрастен, можно открывать коммерческие и некоммерческие организации, создавать услуги, производить товары, создавать рабочие места. Если суд небеспристрастен, то в этом есть смысл лишь если ты уверен, что твой бизнес не заинтересует тех кто обладает более сильным лобби чем ты сам.
+
+
+% Диктатура стабильна, пока диктатор у власти. 
+
+% Вопреки распространённому мнению, диктатура не является политически стабильной конструкцией. Причина в том, что когда человеку дана власть менять важные элементы общественного договора, он этой властью, как правило, пользуется. Как правило, диктаторы во всём видят угрозу своей власти, поэтому им свойственно вмешиваться в законодательство, запрещать и ограничивать. Обычно такие вмешательства инициируют корыстно заинтересованные советники, которым новые запреты выгодны.
+
+% Кроме того, при диктатуре каждая смена власти --- это высокие риски. Новый диктатор --- это другая личность, бог его знает как он себя поведёт в новых обстоятельствах, а "защиты от дурака" нет, он ничем и никем не ограничен.
+
+% При диктаторских режимах каждый следующий диктатор выбирается внутриэлитным консенсусом, что может приводить к смуте и вооружённым конфликтам в случае отсутствия консенсуса элит по преемнику.
+
+% Contrary to popular belief, dictatorship is not a politically stable structure. The reason is that when a person is given the power to change important elements of a social contract, the person tends to use that power. Dictators tend to see everything as a threat to their power, so they tend to influence legislative processes, prohibit and restrict. Typically, such interventions are initiated by advisers who earn on the new restrictions.
+
+%\item In authoritarian regimes, each change of power bears a high risk (for whom?) for the two reasons:
+
+%\begin{itemize}
+%\item by definition of authoritarian regime, there is no foolproof and a high chance of significant changes in legislation (the new authority is likely to differ in behavior from its predecessor, and their will is not limited by any checks and balances)
+
+%\item transit of power is the time when power is weak; in any transit there are winners and losers, and 
+
+%\item транзит власти --- время, когда власть слаба; в любом транзите есть выигравшие и проигравшие, и те, кто проигрывают при утверждённом сценарии транзита, могут попытаться этой слабостью воспользоваться, which can lead to martial coups and armed conflicts
+
+%\item by definition of authoritarian regime, each successive authority is elected either by predecessor or by intra-elite consensus; if a part of elite is dissatisfied with the transit scenario, it can initiate a martial coup trying to take advantage of the temporal weakness of power.
+%\end{itemize}
+
+% Moreover, under a dictatorship, each change of power bears a high risk. God only knows how the new dictator behaves in new circumstances, and there is no foolproof, he is not limited by anything or anyone.
+
+% Under dictatorial regimes, each successive dictator is elected by intra-elite consensus, which can lead to unrest and armed conflicts in the absence of elite consensus on a successor.
+
+%\item Вполне может быть, что при другом диктаторе изменения законов и правоприменительной практики будут существенными. Каждый новый диктатор --- это потрясение (очень многое зависит от личности, системы ценностей), а каждый новый лидер, обладающий ограниченной властью --- нет.
+
+
+\item In authoritarian regimes, every change of dictator may lead to significant changes in legislation and law enforcement practices. The new authority is likely to differ in behavior from its predecessor, and, by definition of authoritarian regimes, their will is not constrained by any checks and balances.
+
+
+
+
+
+
+
+
+%Entrepreneurs feel safe in those jurisdictions where the two conditions are met:
+%\begin{itemize}
+%\item political stability
+%\item an impartial court.
+%\end{itemize}
+
+
+%Proof: in jurisdictions where the court is impartial, capital cannot be taken away voluntarily (the risk of such surprises is reduced to zero), so the capital feels safe; the condition of political stability transforms this sense of security from temporary to permanent; thus, if the two conditions are met, capital feels safe for an infinitely long time, the statement is proven.
+
+% Therefore we proved that if in a society the following four conditions hold:
+
+% \begin{itemize}
+% \item separation of powers (executive, legislative, judicial, municipal)
+% \item regular competitive general elections to each of these authorities
+% \item impartial court
+% \item existence of large unbiased media
+% \end{itemize}
+% people live richly and enjoy a variety of high-paying jobs. If at least one of these four conditions gets violated, people live in poverty.
+
+
+
+
+
+
+% What kind of entities have comparable guaranteed annual revenue? IRS has \$4.1 trillion annual revenue.
+
+% If we want universal basic income to stay universal.
+
+% Is it ok to change UBI for direct grants?
+
+\item На тему UBI в публичном пространстве высказываются разные мнения. Есть те, кто считает, что если просто так раздавать людям деньги, они перестанут работать. Есть люди, которые считают, что лишние деньги будут потрачены на алкоголь и азартные игры. Есть люди, которые считают, что раздавать деньги тем, кто не работает --- нечестно.
+
+Очевидного способа найти деньги на UBI нет. Define universal basic income as guaranteed income of \$800 per month. There are 0.33 billion Americans, thus you would need 0.33*800=264 billion USD guaranteed annually to cover the whole US. And 0.04*800 = 32 billion USD annually to cover the California. Таким образом, чтобы ввести UBI, нужно кратно увеличить налоговую нагрузку, на что большинство государств пока что пойти не могут.
+
+Было N экспериментов. Финский эксперимент показал, что люди меньше работать не начинают и на алкоголь больше тратить не начинают. Скорее всего, люди так вели себя по нескольким причинам. Во-первых, на эти деньги хорошо жить нельзя. Во-вторых, большинству людей, вероятно, нравилась их работа и коллектив, в котором они работают. 
+
+Так как вы не боитесь за светлое будущее, вам не нужно хвататься за первую попавшуюся работу. Когда вам не нужно нервничать, это хорошо для здоровья и долгосрочного планирования жизни. Имея долгую перспективу, люди занимаются самообразованием и решают свои медицинские проблемы. 
+
+UBI makes more sense в странах, где бюрократия работает хуже. Там, где профессиональная некоррумпированная хорошо образованная бюрократия, смысла особо нет, т.к. можно раздавать только нуждающимся.
+
+%Чем проще и прозрачнее устроена система получения соцвыплат и квартир от государства, тем меньше возможностей коррупционного использования знания системы для собственного обогащения.
+
+
+
+Там, где нет бедности, там где люди точно знают что никогда не будут умирать с голода --- мало преступности, высокое доверие людей друг к другу. Доверие людей друг к другу коррелирует с экономическим успехом.
+
+Мы не хотим, чтобы вокруг нас было слишком много бедных, больных, одиноких, пожилых; бедных, которые не могли бы реализовать себя, дети которых не могли бы получить равные возможности. В таком обществе опасно жить --- пырнут ножом в подворотне вас, такого успешного человека, который платит 0\% налогов. 
+
+У богатых людей есть традиция отгораживаться от этой проблемы. 
+
+В некоторых странах богатые люди отгораживаются от остальных с помощью gated communities: коттеджные посёлки, где люди живут за высокими заборами, ездят в бронированных автомобилях, ходят с охраной, их дети учатся в частных школах, в которых тоже есть заборы. Но есть страны, где богатые люди ходят на работу пешком, без охраны; если ездят в машине, то без бронированных стёкол. Как мне кажется, важная составляющая высокого качества жизни --- не бояться. Стиль жизни сверхбогатых людей в небогатых странах --- они боятся, что их пырнут ножом. 
+
+Кому-то может показаться, что несправедливо, что богатые (или по крайней мере не нуждающиеся люди) тоже получат UBI. Но если вы богатый человек, который получает UBI --- вероятно, объём налогов, который вы платите, в разы выше того, что вы получите через UBI.
+
+
+
+%Важна соцподдержка семей, которые страдают от роботизации. Для человека, рабочего место которого замещено роботом, это жизненная трагедия. Им нужно помочь, а также помочь воспитать детей. 
+
+
+
+
+
+\item People who blog for positive feedback, in my opinion, are not healthy mentally. When you post your amazingly interesting life to social media, it means that social approval is important to you, and your emotional state and behavior can be influenced through social approval or disapproval. % Или им может быть попросту одиноко, и в поисках поощрения <<social contact>> они могут делать посты для поклонников. 
+
+%\item Risk elimination. Именно поэтому нужно изучать здоровье и вводить массовые скрининги. Именно поэтому этично хотеть иметь своих людей во власти, которые в случае чего защитят. Именно поэтому нужно минимизировать уличную преступность и притоны.
+
+\item Devs (and engineers in general) think differently from researchers. Researchers are interested in algorithms, devs are interested in algorithm implementations. Researcher is interested in a theoretical concept, dev is interested in how to quickly assemble it with their own hands.
+
+%\item Not everything is a competition. When you do something or study something for your own pleasure, it is not a competition. Love and friendship are not competitions in any sense, though one may argue than these are markets as well with more attractive and knowledgeable people having better chances than less attractive and less knowledgeable.
+
+\item You should not compete with anyone, you should not have focus on becoming better than someone. Instead, create things that you like. Create services, products, things, code, content.
+
+
+\item Some people say <<no competition leads to no improvement>>. Although, in practice, competition has strong positive influence on work quality, there's no causal relationship here. One may perform great not due to competition, but due to some other reason(s).
+
+
+
+
+% "What is the Good Life?" The book's answer is a life of friendship, health, art, a healthy balance between work and leisure, a minimum of unpleasantness, and a feeling that one has made worthwhile contributions to a society in which resources are ensured, in part, by minimizing consumption.
+
+
+\item The reason of what people call <<burnout>> varies largely from case to case. 
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 
